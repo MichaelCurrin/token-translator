@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import ConvertInput from "./components/ConvertInput";
+import Header from "./components/Header";
 import ModelsTable from "./components/ModelsTable";
 import SortingButtons from "./components/SortingButtons";
 import { MODELS } from "./constants";
@@ -20,7 +21,7 @@ function App() {
         return a.provider.localeCompare(b.provider);
       });
     } else if (key === "tokens") {
-      sortedArray.sort((a, b) => a.tokens - b.tokens);
+      sortedArray.sort((a, b) => b.tokens - a.tokens);
     }
 
     setSortedModels(sortedArray);
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Token Translator</h1>
+      <Header />
       <div>
         <h2>Popular models</h2>
         <SortingButtons
