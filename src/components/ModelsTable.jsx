@@ -19,10 +19,10 @@ function ModelsTable({ models }) {
           <tr key={index}>
             <td>{model.provider}</td>
             <td>{model.modelName}</td>
-            <td className="numeric">{model.tokens}</td>
-            <td className="numeric">{model.wordCount.toFixed(1)}</td>
-            <td className="numeric">{model.a4PageCount.toFixed(1)}</td>
-            <td className="numeric">{model.a5NovelCount.toFixed(1)}</td>
+            <td className="numeric">{model.tokens.toLocaleString()}</td>
+            <td className="numeric">{model.wordCount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</td>
+            <td className="numeric">{model.a4PageCount.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</td>
+            <td className="numeric">{model.a5NovelCount.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</td>
           </tr>
         ))}
       </tbody>
