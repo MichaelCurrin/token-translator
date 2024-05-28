@@ -1,0 +1,9 @@
+input[type="text"],
+textarea {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea label {
+    margin-right: 10px;
+}

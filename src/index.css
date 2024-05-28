@@ -22,3 +22,25 @@ code {
 h1 {
   margin-bottom: 20px;
 }
+
+table {
+  max-width: 800px;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+td.numeric {
+  text-align: right;
+}
