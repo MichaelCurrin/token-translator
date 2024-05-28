@@ -4,10 +4,6 @@ import {
   WORDS_PER_TOKEN,
 } from "./constants";
 
-function roundToOneDecimal(num) {
-  return Math.round(num * 10) / 10;
-}
-
 export function tokenCountToWordCount(tokenCount) {
   return tokenCount * WORDS_PER_TOKEN;
 }
@@ -28,20 +24,8 @@ export function addCounts(model) {
 
   return {
     ...model,
-    wordCount: roundToOneDecimal(wordCount),
-    a4PageCount: roundToOneDecimal(a4PageCount),
-    a5NovelCount: roundToOneDecimal(a5NovelCount),
+    wordCount: wordCount,
+    a4PageCount: a4PageCount,
+    a5NovelCount: a5NovelCount,
   };
 }
-
-// // User input.
-// const tokenCount = 10001;
-// const wordCount = tokenCountToWordCount(tokenCount);
-// console.log(`Word Count: ${wordCount.toFixed(0)}`);
-
-// const { a4PageCount, a5NovelCount } = wordCountToPageCounts(wordCount);
-// console.log(`A4 Page Count: ${a4PageCount.toFixed(1)}`);
-// console.log(`A5 Novel Count: ${a5NovelCount.toFixed(1)}`);
-
-// models = MODELS.map(addCounts)
-// console.log(models)
