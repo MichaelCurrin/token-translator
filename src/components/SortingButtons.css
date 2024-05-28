@@ -1,10 +1,7 @@
 .sorting-buttons {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.sorting-buttons label {
-  margin-right: 10px;
-}
 
 .sorting-buttons label input[type="radio"] {
   appearance: none;
