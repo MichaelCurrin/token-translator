@@ -19,12 +19,8 @@ code {
   padding: 20px;
 }
 
-h1 {
-  margin-bottom: 20px;
-}
-
 table {
-  max-width: 800px;
+  width: 600px;
   border-collapse: collapse;
   margin-bottom: 15px;
 }
@@ -39,6 +35,7 @@ td {
 th {
   background-color: #e5e5e5;
   cursor: pointer;
+  text-align: center;
 }
 
 td.numeric {
