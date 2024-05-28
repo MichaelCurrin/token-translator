@@ -1,5 +1,5 @@
-import React from 'react';
-import './SortingButtons.css';
+import React from "react";
+import "./SortingButtons.css";
 
 function SortingButtons({ sortOption, onSort }) {
   return (
@@ -9,8 +9,8 @@ function SortingButtons({ sortOption, onSort }) {
         <input
           type="radio"
           value="providerAndModel"
-          checked={sortOption === 'providerAndModel'}
-          onChange={() => onSort('providerAndModel')}
+          checked={sortOption === "providerAndModel"}
+          onChange={() => onSort("providerAndModel")}
         />
         Name
       </label>
@@ -18,8 +18,8 @@ function SortingButtons({ sortOption, onSort }) {
         <input
           type="radio"
           value="tokens"
-          checked={sortOption === 'tokens'}
-          onChange={() => onSort('tokens')}
+          checked={sortOption === "tokens"}
+          onChange={() => onSort("tokens")}
         />
         Tokens
       </label>
