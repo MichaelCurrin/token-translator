@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import ConvertInput from "./components/ConvertInput";
 import ModelsTable from './components/ModelsTable';
 import SortingButtons from './components/SortingButtons';
 import { MODELS } from './constants';
@@ -10,6 +11,7 @@ function App() {
 
   const sortModels = (key) => {
     let sortedArray = [...sortedModels];
+
     if (key === 'providerAndModel') {
       sortedArray.sort((a, b) => {
         if (a.provider === b.provider) {
@@ -20,6 +22,7 @@ function App() {
     } else if (key === 'tokens') {
       sortedArray.sort((a, b) => a.tokens - b.tokens);
     }
+
     setSortedModels(sortedArray);
     setSortConfig(key);
   };
@@ -27,8 +30,15 @@ function App() {
   return (
     <div className="container">
       <h1>Token Translator</h1>
-      <SortingButtons sortOption={sortConfig} onSort={sortModels} className="sorting-buttons" />
-      <ModelsTable models={sortedModels} />
+      <div>
+        <h2>Popular models</h2>
+        <SortingButtons sortOption={sortConfig} onSort={sortModels} className="sorting-buttons" />
+        <ModelsTable models={sortedModels} />
+      </div>
+      <div>
+        <h2>Custom input</h2>
+        <ConvertInput />
+      </div>
     </div>
   );
 }
