@@ -8,7 +8,7 @@
 Provide your own token count or input text and compare against models by popular providers.
 
 
-## Usecases
+## Use-cases
 
 - See how powerful a model is in real-world terms - choose a token count and see it translated to other metrics.
 - Check which models can handle your given content - paste text and see which models would accept or reject the content.
