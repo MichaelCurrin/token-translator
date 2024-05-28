@@ -1,57 +1,34 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
+import ModelsTable from './components/ModelsTable';
+import SortingButtons from './components/SortingButtons';
 import { MODELS } from './constants';
 import { addCounts } from './lib';
 
 function App() {
   const [sortedModels, setSortedModels] = useState(MODELS.map(addCounts));
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+  const [sortConfig, setSortConfig] = useState('providerAndModel');
 
-  // sorting not really nedd if there's some other visual way to show size across columns
-  // or sort by Provider OR count only with buttons
-  function sortBy(key) {
-    let direction = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+  const sortModels = (key) => {
+    let sortedArray = [...sortedModels];
+    if (key === 'providerAndModel') {
+      sortedArray.sort((a, b) => {
+        if (a.provider === b.provider) {
+          return a.modelName.localeCompare(b.modelName);
+        }
+        return a.provider.localeCompare(b.provider);
+      });
+    } else if (key === 'tokens') {
+      sortedArray.sort((a, b) => a.tokens - b.tokens);
     }
-
-    const sortedArray = sortedModels.sort((a, b) => {
-      if (a[key] < b[key]) return direction === 'ascending' ? -1 : 1;
-      if (a[key] > b[key]) return direction === 'ascending' ? 1 : -1;
-      return 0;
-    });
-
     setSortedModels(sortedArray);
-    setSortConfig({ key, direction });
-  }
-
-
+    setSortConfig(key);
+  };
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th onClick={() => sortBy('provider')}>Provider</th>
-            <th onClick={() => sortBy('modelName')}>Model Name</th>
-            <th onClick={() => sortBy('tokens')}>Tokens</th>
-            <th onClick={() => sortBy('wordCount')}>Word Count</th>
-            <th onClick={() => sortBy('a4PageCount')}>A4 Pages</th>
-            <th onClick={() => sortBy('a5NovelCount')}>A5 Novels</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedModels.map((model, index) => (
-            <tr key={index}>
-              <td>{model.provider}</td>
-              <td>{model.modelName}</td>
-              <td className="numeric">{model.tokens}</td>
-              <td className="numeric">{model.wordCount.toFixed(1)}</td>
-              <td className="numeric">{model.a4PageCount.toFixed(1)}</td>
-              <td className="numeric">{model.a5NovelCount.toFixed(1)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container">
+      <h1>Token Translator</h1>
+      <SortingButtons sortOption={sortConfig} onSort={sortModels} className="sorting-buttons" />
+      <ModelsTable models={sortedModels} />
     </div>
   );
 }
