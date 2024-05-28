@@ -59,10 +59,10 @@ function ConvertInput() {
     const { a4PageCount, a5NovelCount } = wordCountToPageCounts(wordCount);
 
     setResult({
-      tokens: tokenCount,
-      wordCount,
-      a4PageCount: a4PageCount.toFixed(1),
-      a5NovelCount: a5NovelCount.toFixed(1),
+      tokens: tokenCount.toLocaleString(),
+      wordCount: wordCount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }),
+      a4PageCount: a4PageCount.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
+      a5NovelCount: a5NovelCount.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
     });
   }, [textValue]);
 
@@ -87,17 +87,17 @@ function ConvertInput() {
         <thead>
           <tr>
             <th>Tokens</th>
-            <th>Word Count</th>
-            <th>A4 Pages</th>
-            <th>A5 Novels</th>
+            <th>Word count</th>
+            <th>A4 pages</th>
+            <th>A5 novels</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>{result.tokens}</td>
-            <td>{result.wordCount}</td>
-            <td>{result.a4PageCount}</td>
-            <td>{result.a5NovelCount}</td>
+            <td className="numeric">{result.tokens}</td>
+            <td className="numeric">{result.wordCount}</td>
+            <td className="numeric">{result.a4PageCount}</td>
+            <td className="numeric">{result.a5NovelCount}</td>
           </tr>
         </tbody>
       </table>
