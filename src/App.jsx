@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import ConvertInput from "./components/ConvertInput";
 import Header from "./components/Header";
 import ModelsTable from "./components/ModelsTable";
+import Notes from "./components/Notes";
 import SortingButtons from "./components/SortingButtons";
 import { MODELS } from "./constants";
 import { addCounts } from "./lib";
@@ -43,6 +44,10 @@ function App() {
       <div>
         <h2>Custom input</h2>
         <ConvertInput />
+      </div>
+      <div>
+        <h2>Notes</h2>
+        <Notes />
       </div>
     </div>
   );
