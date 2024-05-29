@@ -11,6 +11,7 @@ function calculateFromToken(tokenValue, setResult) {
   const tokenCount = parseInt(tokenValue, 10);
   const wordCount = tokenCountToWordCount(tokenCount);
   const { a4PageCount, a5NovelCount } = wordCountToPageCounts(wordCount);
+
   setResult({
     tokens: tokenCount,
     wordCount,
@@ -23,6 +24,7 @@ function calculateFromText(textValue, setResult) {
   const tokenCount = Math.ceil(textValue.length / 4);
   const wordCount = tokenCountToWordCount(tokenCount);
   const { a4PageCount, a5NovelCount } = wordCountToPageCounts(wordCount);
+
   setResult({
     tokens: tokenCount.toLocaleString(),
     wordCount: wordCount.toLocaleString(undefined, {
