@@ -1,9 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
-import ConvertInput from "./ConvertInput";
-
+import { default as React } from "react";
 import { LONG_TEXT } from "../fixtures";
-
+import ConvertInput from "./ConvertInput";
 
 describe("ConvertInput Component", () => {
   test("renders default state", () => {
@@ -16,6 +14,7 @@ describe("ConvertInput Component", () => {
 
   test("submits token input and displays results", () => {
     render(<ConvertInput />);
+
 
     fireEvent.change(screen.getByPlaceholderText(/Enter token count/i), {
       target: { value: "10000" },
@@ -31,7 +30,6 @@ describe("ConvertInput Component", () => {
 
   test("submits text input and displays results", () => {
     const sampleText = "This is a test text.";
-    const tokenCount = Math.ceil(sampleText.length / 4);
 
     render(<ConvertInput />);
 
