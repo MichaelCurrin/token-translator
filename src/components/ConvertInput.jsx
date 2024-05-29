@@ -94,10 +94,10 @@ function ConvertInput() {
         </thead>
         <tbody>
           <tr>
-            <td className="numeric">{result.tokens}</td>
-            <td className="numeric">{result.wordCount}</td>
-            <td className="numeric">{result.a4PageCount}</td>
-            <td className="numeric">{result.a5NovelCount}</td>
+            <td className="numeric" data-testid="user-table-tokens">{result.tokens}</td>
+            <td className="numeric" data-testid="user-table-word-count">{result.wordCount}</td>
+            <td className="numeric" data-testid="user-table-page-count">{result.a4PageCount}</td>
+            <td className="numeric" data-testid="user-table-novel-count">{result.a5NovelCount}</td>
           </tr>
         </tbody>
       </table>
