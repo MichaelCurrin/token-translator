@@ -8,9 +8,6 @@
 
 Provide your own token count or input text and compare against models by popular providers.
 
-
-## Website
-
 <div align="center">
 
 [![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://michaelcurrin.github.io/token-translator/)
@@ -26,17 +23,10 @@ Provide your own token count or input text and compare against models by popular
 </div>
 
 
-## Use-cases
+## Purpose
 
 - See how powerful a model is in real-world terms - choose a token count and see it translated to other metrics.
 - Check which models can handle your given content - paste text and see which models would accept or reject the content.
-
-
-## Notes
-
-- The given text is not broken into actual tokens but just using a rough estimate of 100 words = 75 tokens.
-- Models have limit is for input and output tokens. For the first calculator, this does not matter. For the second calculator, we assume your pasted text is your input.
-
 
 ## License
 
