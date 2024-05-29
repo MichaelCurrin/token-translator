@@ -123,7 +123,7 @@ function InputForm({
         />
         <label htmlFor="text">Input Text: </label>
         <textarea
-          style={{ width: "100%", height: "200px" }}
+          style={{ width: "100%", height: "50px" }}
           value={textValue}
           onChange={handleTextChange}
           disabled={inputType === "number"}
