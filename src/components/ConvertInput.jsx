@@ -6,7 +6,6 @@ const DEFAULT_TOKEN_COUNT = 10000;
 const DEFAULT_TEXT =
   "Paste as much text as you like here and have the token count and other values estimated.";
 
-
 function calculateFromToken(tokenValue, setResult) {
   const tokenCount = parseInt(tokenValue, 10);
   const wordCount = tokenCountToWordCount(tokenCount);
@@ -64,10 +63,18 @@ function ResultTable({ result }) {
       </thead>
       <tbody>
         <tr>
-          <td className="numeric" data-testid="user-table-tokens">{result.tokens}</td>
-          <td className="numeric" data-testid="user-table-word-count">{result.wordCount}</td>
-          <td className="numeric" data-testid="user-table-page-count">{result.a4PageCount}</td>
-          <td className="numeric" data-testid="user-table-novel-count">{result.a5NovelCount}</td>
+          <td className="numeric" data-testid="user-table-tokens">
+            {result.tokens}
+          </td>
+          <td className="numeric" data-testid="user-table-word-count">
+            {result.wordCount}
+          </td>
+          <td className="numeric" data-testid="user-table-page-count">
+            {result.a4PageCount}
+          </td>
+          <td className="numeric" data-testid="user-table-novel-count">
+            {result.a5NovelCount}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -186,6 +193,5 @@ function ConvertInput() {
     </div>
   );
 }
-
 
 export default ConvertInput;
