@@ -116,6 +116,7 @@ function ConvertInput() {
           <input
             type="number"
             value={tokenValue}
+            min="1"
             onChange={handleTokenChange}
             disabled={inputType === "text"}
             placeholder="Enter token count"
