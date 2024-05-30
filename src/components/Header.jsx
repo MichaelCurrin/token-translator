@@ -1,4 +1,5 @@
 import headerImage from "../header-image.jpg";
+import "./Header.css";
 
 function Header() {
   return (
