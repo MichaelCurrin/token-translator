@@ -40,4 +40,4 @@ function ResultTable({ result }) {
   );
 }
 
-export default ResultTable
+export default ResultTable;

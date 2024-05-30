@@ -17,8 +17,8 @@ function Notes() {
 
       <ul>
         <li>
-          The "Tokens" and "Words" values are roughly estimated, they are
-          only give general meaning to inputs or to compare model power.
+          The "Tokens" and "Words" values are roughly estimated, they are only
+          give general meaning to inputs or to compare model power.
         </li>
         <li>
           According to OpenAI's approximation, 1 token is approximately equal to
@@ -54,10 +54,11 @@ function Notes() {
       <h3>Models</h3>
 
       <p>
-        Models limits are sourced from the links below. They are presented either as "context
-        window" token limit (which considers a history of interactions) or "IN"
-        and "OUT" token limits (for a single interaction). This tool focuses on the input you can provide
-        to a model, so ignores the "OUT" portion.
+        Models limits are sourced from the links below. They are presented
+        either as "context window" token limit (which considers a history of
+        interactions) or "IN" and "OUT" token limits (for a single interaction).
+        This tool focuses on the input you can provide to a model, so ignores
+        the "OUT" portion.
       </p>
 
       <ul>
@@ -76,7 +77,7 @@ function Notes() {
           .
         </li>
         <li>
-          <b>Meta</b> models sourced  the{" "}
+          <b>Meta</b> models sourced the{" "}
           <a href="https://ollama.com/blog/llama3">Ollama blog</a>, the{" "}
           <a href="https://ollama.com/library/phi3">Phi model</a> page, and the{" "}
           <a href="https://ollama.com/library/mixtral">Mixtral model</a> page. .
@@ -84,7 +85,13 @@ function Notes() {
       </ul>
 
       <h3>Artwork</h3>
-      <p>Robot image generated AI using <a href="https://www.bing.com/images/create/cute-ai-chatbot-holding-a-stack-of-books-and-pages/1-665870ad5607457bab4d54a5a9e9dda8?FORM=GUH2CR">Bing Designer</a>.</p>
+      <p>
+        Robot image generated AI using{" "}
+        <a href="https://www.bing.com/images/create/cute-ai-chatbot-holding-a-stack-of-books-and-pages/1-665870ad5607457bab4d54a5a9e9dda8?FORM=GUH2CR">
+          Bing Designer
+        </a>
+        .
+      </p>
     </div>
   );
 }

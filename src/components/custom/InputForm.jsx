@@ -1,12 +1,20 @@
 import React from "react";
 
 function InputForm({
-  inputType, tokenValue, textValue, handleTokenChange, handleTextChange, handleRadioChange,
+  inputType,
+  tokenValue,
+  textValue,
+  handleTokenChange,
+  handleTextChange,
+  handleRadioChange,
 }) {
   return (
     <form>
-      <div >
-        <label htmlFor="radio-number" onClick={() => handleRadioChange("number")}>
+      <div>
+        <label
+          htmlFor="radio-number"
+          onClick={() => handleRadioChange("number")}
+        >
           <input
             id="radio-number"
             type="radio"
@@ -16,9 +24,7 @@ function InputForm({
             checked={inputType === "number"}
             readOnly
           />
-          <span data-testid="user-input-number-label">
-            Input Token:
-          </span>
+          <span data-testid="user-input-number-label">Input Token:</span>
         </label>
         <input
           data-testid="user-input-number"
@@ -31,7 +37,7 @@ function InputForm({
           style={{ textAlign: "right" }}
         />
       </div>
-      <div >
+      <div>
         <label htmlFor="radio-text" onClick={() => handleRadioChange("text")}>
           <input
             id="radio-text"
@@ -42,9 +48,7 @@ function InputForm({
             checked={inputType === "text"}
             readOnly
           />
-          <span data-testid="user-input-text-label">
-            Input Text:
-          </span>
+          <span data-testid="user-input-text-label">Input Text:</span>
         </label>
         <textarea
           data-testid="user-input-text"
@@ -55,10 +59,8 @@ function InputForm({
           placeholder="Enter text content"
         />
       </div>
-
-
     </form>
   );
 }
 
-export default InputForm
+export default InputForm;

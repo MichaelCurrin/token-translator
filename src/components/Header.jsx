@@ -5,8 +5,16 @@ function Header() {
     <header id="header">
       <h1>Token Translator</h1>
 
-      <p><i>Compare the input token limits of GPT models as real-world measures</i></p>
-      <img src="token-translator/robot-art.jpg" alt="Robot holding books" width="202"></img>
+      <p>
+        <i>
+          Compare the input token limits of GPT models as real-world measures
+        </i>
+      </p>
+      <img
+        src="token-translator/robot-art.jpg"
+        alt="Robot holding books"
+        width="202"
+      ></img>
 
       <div>
         <a
@@ -17,9 +25,8 @@ function Header() {
             src="https://img.shields.io/static/v1?label=MichaelCurrin&message=token-translator&color=blue&logo=github"
             alt="MichaelCurrin - token-translator"
           />
-        </a></div>
-
-
+        </a>
+      </div>
     </header>
   );
 }
