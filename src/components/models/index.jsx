@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import { MODELS } from "../../constants";
 import { addCounts } from "../../lib";
 import ModelsTable from "./ModelsTable";
