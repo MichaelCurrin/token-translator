@@ -8,7 +8,7 @@
     "test:all": "react-scripts test --watchAll=false",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "preversion": "git fetch --tags && npm run test:all",
+    "preversion": "git fetch --tags && npm run fmt:check && npm run test:all",
     "version": "npm run build",
     "postversion": "git push --follow-tags"
   },
