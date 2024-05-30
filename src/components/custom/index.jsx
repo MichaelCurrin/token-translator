@@ -10,7 +10,7 @@ import "./index.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
 const DEFAULT_TEXT =
-  "Paste as much text as you like here and have the token count and other values estimated.";
+  "Enter custom text.";
 
 function calculateFromToken(tokenValue, setResult) {
   const tokenCount = parseInt(tokenValue, 10);
@@ -112,13 +112,11 @@ function ConvertInput() {
 
   return (
     <div>
-      <ResultTable result={result} />
       <p>
-        <i>
-          Choose your own token number or paste text content and get the token
-          count estimated for you.
-        </i>
+        Convert any token number to more practical measures. If you enter text, it will be converted to estimated tokens first.
       </p>
+      <ResultTable result={result} />
+      <br />
       <InputForm
         inputType={inputType}
         tokenValue={tokenValue}
@@ -127,7 +125,10 @@ function ConvertInput() {
         handleTextChange={handleTextChange}
         handleRadioChange={handleRadioChange}
       />
-    </div>
+      <p>
+        Enter text as long as you like (such as from an article or a book), then you find out how many tokens it is and that will help you figure out which models are capable of handling that content.
+      </p>
+    </div >
   );
 }
 
