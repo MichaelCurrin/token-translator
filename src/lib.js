@@ -7,7 +7,7 @@ import {
 
 export function textToTokenCount(textValue) {
   if (!textValue) {
-    return 0
+    return 0;
   }
   return Math.ceil(textValue.length / CHARS_PER_TOKEN);
 }

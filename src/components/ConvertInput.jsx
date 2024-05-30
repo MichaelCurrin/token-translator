@@ -1,5 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { textToTokenCount, tokenCountToWordCount, wordCountToPageCounts } from "../lib";
+import {
+  textToTokenCount,
+  tokenCountToWordCount,
+  wordCountToPageCounts,
+} from "../lib";
 import "./ConvertInput.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
@@ -109,7 +113,9 @@ function InputForm({
           checked={inputType === "number"}
           onChange={() => handleRadioChange("number")}
         />
-        <label data-testid="user-input-number-label" htmlFor="number">Input Token: </label>
+        <label data-testid="user-input-number-label" htmlFor="number">
+          Input Token:{" "}
+        </label>
         <input
           data-testid="user-input-number"
           type="number"
@@ -130,7 +136,9 @@ function InputForm({
           checked={inputType === "text"}
           onChange={() => handleRadioChange("text")}
         />
-        <label data-testid="user-input-text-label" htmlFor="text">Input Text: </label>
+        <label data-testid="user-input-text-label" htmlFor="text">
+          Input Text:{" "}
+        </label>
         <textarea
           data-testid="user-input-text"
           style={{ width: "100%", height: "50px" }}
