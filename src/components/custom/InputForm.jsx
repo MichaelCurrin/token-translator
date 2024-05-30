@@ -9,10 +9,7 @@ function InputForm({
   return (
     <form>
       <div>
-        <label
-          htmlFor="radio-number"
-          onClick={() => handleRadioChange("number")}
-        >
+        <label htmlFor="radio-number">
           <input
             id="radio-number"
             type="radio"
@@ -20,7 +17,7 @@ function InputForm({
             name="inputType"
             value="number"
             checked={inputType === "number"}
-            readOnly
+            onClick={() => handleRadioChange("number")}
           />
           <span data-testid="user-input-number-label">Tokens: </span>
         </label>
@@ -36,7 +33,7 @@ function InputForm({
         />
       </div>
       <div>
-        <label htmlFor="radio-text" onClick={() => handleRadioChange("text")}>
+        <label htmlFor="radio-text">
           <input
             id="radio-text"
             type="radio"
@@ -44,7 +41,7 @@ function InputForm({
             name="inputType"
             value="text"
             checked={inputType === "text"}
-            readOnly
+            onClick={() => handleRadioChange("text")}
           />
           <span data-testid="user-input-text-label">Text: </span>
         </label>
