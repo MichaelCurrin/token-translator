@@ -4,9 +4,9 @@ import {
   tokenCountToWordCount,
   wordCountToPageCounts,
 } from "../../lib";
-import "./ConvertInput.css";
 import InputForm from "./InputForm";
 import ResultTable from "./ResultTable";
+import "./index.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
 const DEFAULT_TEXT =
