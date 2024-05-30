@@ -7,7 +7,10 @@
 
 [![Package - react](https://img.shields.io/github/package-json/dependency-version/MichaelCurrin/token-translator/react?color=blue)](https://www.npmjs.com/package/react)
 
-Provide your own token count or input text and compare against models by popular providers.
+
+## About
+
+Provide your own token count or input text and compare against the input limits of various popular genAI / GPT models.
 
 <div align="center">
 
@@ -15,19 +18,29 @@ Provide your own token count or input text and compare against models by popular
 
 </div>
 
+### Features
 
-## Preview
+See how powerful a model is in real-world terms - choose a token count and see it translated to other metrics.
 
 <div align="center">
     <img src="/sample-1.png" alt="Sample first screenshot" width="400">
+</div>
+
+Check which models can handle your given content - paste text and see which models would accept or reject the content.
+
+<div align="center">
     <img src="/sample-2.png" alt="Sample second screenshot" width="400">
 </div>
 
 
-## Purpose
+## Documentation
 
-- See how powerful a model is in real-world terms - choose a token count and see it translated to other metrics.
-- Check which models can handle your given content - paste text and see which models would accept or reject the content.
+<div align="center">
+
+[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
+
+</div>
+
 
 ## License
 
