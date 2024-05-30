@@ -9,8 +9,7 @@ import ResultTable from "./ResultTable";
 import "./index.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
-const DEFAULT_TEXT =
-  "Enter custom text.";
+const DEFAULT_TEXT = "Enter custom text.";
 
 function calculateFromToken(tokenValue, setResult) {
   const tokenCount = parseInt(tokenValue, 10);
@@ -113,7 +112,8 @@ function ConvertInput() {
   return (
     <div>
       <p>
-        Convert any token number to more practical measures. If you enter text, it will be converted to estimated tokens first.
+        Convert any token number to more practical measures. If you enter text,
+        it will be converted to estimated tokens first.
       </p>
       <ResultTable result={result} />
       <br />
@@ -126,9 +126,11 @@ function ConvertInput() {
         handleRadioChange={handleRadioChange}
       />
       <p>
-        Enter text as long as you like (such as from an article or a book), then you find out how many tokens it is and that will help you figure out which models are capable of handling that content.
+        Enter text as long as you like (such as from an article or a book), then
+        you find out how many tokens it is and that will help you figure out
+        which models are capable of handling that content.
       </p>
-    </div >
+    </div>
   );
 }
 
