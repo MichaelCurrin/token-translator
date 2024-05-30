@@ -40,13 +40,13 @@ describe("ConvertInput Component", () => {
 
     render(<ConvertInput />);
 
-    fireEvent.click(screen.getByLabelText(/Input Text:/i));
+    const textInputLabel = screen.getByTestId("user-input-text-label");
+    const textInput = screen.getByTestId("user-input-text");
 
-    fireEvent.change(screen.getByPlaceholderText(/Enter text content/i), {
+    fireEvent.click(textInputLabel);
+    fireEvent.change(textInput, {
       target: { value: sampleText },
     });
-
-    fireEvent.blur(screen.getByPlaceholderText(/Enter text content/i)); // Triggering blur to submit
 
     expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("5");
     expect(screen.getByTestId("user-table-word-count")).toHaveTextContent("4");

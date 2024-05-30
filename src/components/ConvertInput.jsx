@@ -100,8 +100,9 @@ function InputForm({
           checked={inputType === "number"}
           onChange={() => handleRadioChange("number")}
         />
-        <label htmlFor="number">Input Token: </label>
+        <label data-testid="user-input-number-label" htmlFor="number">Input Token: </label>
         <input
+          data-testid="user-input-number"
           type="number"
           value={tokenValue}
           min="1"
@@ -110,7 +111,6 @@ function InputForm({
           placeholder="Enter token count"
           style={{ textAlign: "right" }}
         />
-        <input type="text" hidden />
       </div>
       <div>
         <input
@@ -121,8 +121,9 @@ function InputForm({
           checked={inputType === "text"}
           onChange={() => handleRadioChange("text")}
         />
-        <label htmlFor="text">Input Text: </label>
+        <label data-testid="user-input-text-label" htmlFor="text">Input Text: </label>
         <textarea
+          data-testid="user-input-text"
           style={{ width: "100%", height: "50px" }}
           value={textValue}
           onChange={handleTextChange}
