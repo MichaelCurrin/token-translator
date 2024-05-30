@@ -17,7 +17,7 @@ function Notes() {
 
       <ul>
         <li>
-          The "Tokens" and "Word count" values are roughly estimated, they are
+          The "Tokens" and "Words" values are roughly estimated, they are
           only give general meaning to inputs or to compare model power.
         </li>
         <li>
