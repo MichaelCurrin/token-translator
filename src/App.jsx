@@ -1,7 +1,7 @@
 import { React, useState } from "react";
-import ConvertInput from "./components/ConvertInput";
 import Header from "./components/Header";
 import Notes from "./components/Notes";
+import ConvertInput from "./components/custom/ConvertInput";
 import ModelsTable from "./components/models/ModelsTable";
 import SortingButtons from "./components/models/SortingButtons";
 import { MODELS } from "./constants";

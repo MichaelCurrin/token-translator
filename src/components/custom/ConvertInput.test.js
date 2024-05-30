@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { default as React } from "react";
-import { LONG_TEXT } from "../fixtures";
+import { LONG_TEXT } from "../../fixtures";
 import ConvertInput from "./ConvertInput";
 
 describe("ConvertInput Component", () => {

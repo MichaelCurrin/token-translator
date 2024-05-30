@@ -3,7 +3,7 @@ import {
   textToTokenCount,
   tokenCountToWordCount,
   wordCountToPageCounts,
-} from "../lib";
+} from "../../lib";
 import "./ConvertInput.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
