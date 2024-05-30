@@ -1,6 +1,6 @@
 # Token Translator
-> Tool to understand GPT token counts in terms of words, pages, and books
-
+> Web app to compare the input token limits of GPT models as real-world measures
+>
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/token-translator?include_prereleases=&sort=semver&color=blue)](https://github.com/MichaelCurrin/token-translator/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 

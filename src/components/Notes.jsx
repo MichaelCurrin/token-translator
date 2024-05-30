@@ -54,35 +54,37 @@ function Notes() {
       <h3>Models</h3>
 
       <p>
-        The sources outline model constraints in two ways: through a "context
-        window" token limit, which considers a history of interactions, or "IN"
-        and "OUT" token limits. This tool focuses on the input you can provide
-        to a model, so we opt for either "context window" or "IN" alone
-        (excluding OUT) to maintain simplicity.
+        Models limits are sourced from the links below. They are presented either as "context
+        window" token limit (which considers a history of interactions) or "IN"
+        and "OUT" token limits (for a single interaction). This tool focuses on the input you can provide
+        to a model, so ignores the "OUT" portion.
       </p>
 
       <ul>
         <li>
-          <b>Gemini</b> models' "IN" values sourced from{" "}
+          <b>Gemini</b> models sourced from{" "}
           <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
             Google's Gemini API documentation
           </a>
           .
         </li>
         <li>
-          <b>OpenAI</b> models' context windows obtained from{" "}
+          <b>OpenAI</b> models sourced from{" "}
           <a href="https://platform.openai.com/docs/models">
             OpenAI Platform documentation
           </a>
           .
         </li>
         <li>
-          <b>Meta</b> models' "IN" values referenced from the{" "}
+          <b>Meta</b> models sourced  the{" "}
           <a href="https://ollama.com/blog/llama3">Ollama blog</a>, the{" "}
           <a href="https://ollama.com/library/phi3">Phi model</a> page, and the{" "}
           <a href="https://ollama.com/library/mixtral">Mixtral model</a> page. .
         </li>
       </ul>
+
+      <h3>Artwork</h3>
+      <p>Robot image generated AI using <a href="https://www.bing.com/images/create/cute-ai-chatbot-holding-a-stack-of-books-and-pages/1-665870ad5607457bab4d54a5a9e9dda8?FORM=GUH2CR">Bing Designer</a>.</p>
     </div>
   );
 }
