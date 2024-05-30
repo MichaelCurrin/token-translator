@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/token-translator/static/css/main.87281f0e.css",
-    "main.js": "/token-translator/static/js/main.988ec226.js",
+    "main.css": "/token-translator/static/css/main.edbbb2d3.css",
+    "main.js": "/token-translator/static/js/main.2547d5d6.js",
     "static/js/453.9bbb4251.chunk.js": "/token-translator/static/js/453.9bbb4251.chunk.js",
     "index.html": "/token-translator/index.html",
-    "main.87281f0e.css.map": "/token-translator/static/css/main.87281f0e.css.map",
-    "main.988ec226.js.map": "/token-translator/static/js/main.988ec226.js.map",
+    "main.edbbb2d3.css.map": "/token-translator/static/css/main.edbbb2d3.css.map",
+    "main.2547d5d6.js.map": "/token-translator/static/js/main.2547d5d6.js.map",
     "453.9bbb4251.chunk.js.map": "/token-translator/static/js/453.9bbb4251.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87281f0e.css",
-    "static/js/main.988ec226.js"
+    "static/css/main.edbbb2d3.css",
+    "static/js/main.2547d5d6.js"
   ]
 }
