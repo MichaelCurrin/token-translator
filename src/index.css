@@ -12,8 +12,9 @@ body {
 
 #root {
   max-width: 600px;
+  width: 100%;
   text-align: center;
-  padding: 2px 15px 5px 15px;
+  padding: 2px 20px 5px 20px;
   margin: auto;
   background-color: #fff;
 }
@@ -26,7 +27,6 @@ body {
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 15px;
 }
 
 th,
@@ -38,8 +38,11 @@ td {
 
 th {
   background-color: #e5e5e5;
-  cursor: pointer;
   text-align: center;
+}
+
+tr {
+  background-color: #fff;
 }
 
 td.numeric {
