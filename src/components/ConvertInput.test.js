@@ -15,9 +15,9 @@ describe("ConvertInput Component", () => {
     expect(numberInput).toBeInTheDocument();
     expect(textInput).toBeDisabled();
 
-    expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("10000");
+    expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("10,000");
     expect(screen.getByTestId("user-table-word-count")).toHaveTextContent(
-      "7500",
+      "7,500",
     );
     expect(screen.getByTestId("user-table-page-count")).toHaveTextContent(
       "16.7",
@@ -38,9 +38,9 @@ describe("ConvertInput Component", () => {
 
     fireEvent.blur(numberInput);
 
-    expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("12300");
+    expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("12,300");
     expect(screen.getByTestId("user-table-word-count")).toHaveTextContent(
-      "9225",
+      "9,225",
     );
     expect(screen.getByTestId("user-table-page-count")).toHaveTextContent(
       "20.5",

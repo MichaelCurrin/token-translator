@@ -64,16 +64,25 @@ function ResultTable({ result }) {
       <tbody>
         <tr>
           <td className="numeric" data-testid="user-table-tokens">
-            {result.tokens}
+            {result.tokens.toLocaleString()}
           </td>
           <td className="numeric" data-testid="user-table-word-count">
-            {result.wordCount}
+            {result.wordCount.toLocaleString(undefined, {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })}
           </td>
           <td className="numeric" data-testid="user-table-page-count">
-            {result.a4PageCount}
+            {result.a4PageCount.toLocaleString(undefined, {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            })}
           </td>
           <td className="numeric" data-testid="user-table-novel-count">
-            {result.a5NovelCount}
+            {result.a5NovelCount.toLocaleString(undefined, {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            })}
           </td>
         </tr>
       </tbody>
@@ -157,7 +166,12 @@ function ConvertInput() {
 
   function handleRadioChange(type) {
     setInputType(type);
-    setResult({});
+    setResult({
+      tokens: 0,
+      wordCount: 0,
+      a4PageCount: 0,
+      a5NovelCount: 0,
+    });
   }
 
   const handleTokenSubmit = useCallback(() => {
