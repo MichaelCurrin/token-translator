@@ -60,9 +60,9 @@ function ResultTable({ result }) {
       <thead>
         <tr>
           <th>Tokens</th>
-          <th>Word count</th>
+          <th>Words</th>
           <th>A4 pages</th>
-          <th>A5 novels</th>
+          <th>Novels</th>
         </tr>
       </thead>
       <tbody>
@@ -205,6 +205,7 @@ function ConvertInput() {
   return (
     <div className="container">
       <ResultTable result={result} />
+      <br />
       <InputForm
         inputType={inputType}
         tokenValue={tokenValue}

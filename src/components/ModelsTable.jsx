@@ -9,9 +9,9 @@ function ModelsTable({ models }) {
           <th>Provider</th>
           <th>Model</th>
           <th>Tokens</th>
-          <th>Word count</th>
+          <th>Words</th>
           <th>A4 pages</th>
-          <th>A5 novels</th>
+          <th>Novels</th>
         </tr>
       </thead>
       <tbody>
