@@ -1,5 +1,8 @@
 import React from "react";
 import "./Header.css";
+
+import headerImage from "../header-image.jpg";
+
 function Header() {
   return (
     <header id="header">
@@ -11,7 +14,7 @@ function Header() {
         </i>
       </p>
       <img
-        src="token-translator/robot-art.jpg"
+        src={headerImage}
         alt="Robot holding books"
         width="202"
       ></img>
