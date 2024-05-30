@@ -94,7 +94,7 @@ function InputForm({
       <div>
         <input
           type="radio"
-          id="number"
+          data-testid="radio-number"
           name="inputType"
           value="number"
           checked={inputType === "number"}
@@ -115,7 +115,7 @@ function InputForm({
       <div>
         <input
           type="radio"
-          id="text"
+          data-testid="radio-text"
           name="inputType"
           value="text"
           checked={inputType === "text"}
