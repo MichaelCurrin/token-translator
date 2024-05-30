@@ -1,4 +1,3 @@
-
 function ResultTable({ result }) {
   return (
     <table>

@@ -1,4 +1,3 @@
-
 function InputForm({
   inputType,
   tokenValue,

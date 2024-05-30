@@ -1,4 +1,3 @@
-
 import headerImage from "../header-image.jpg";
 
 function Header() {
@@ -11,11 +10,7 @@ function Header() {
           Compare the input token limits of GPT models as real-world measures
         </i>
       </p>
-      <img
-        src={headerImage}
-        alt="Robot holding books"
-        width="202"
-      ></img>
+      <img src={headerImage} alt="Robot holding books" width="202"></img>
 
       <div>
         <a

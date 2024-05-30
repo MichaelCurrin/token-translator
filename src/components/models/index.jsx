@@ -4,7 +4,6 @@ import { addCounts } from "../../lib";
 import ModelsTable from "./ModelsTable";
 import SortingButtons from "./SortingButtons";
 
-
 function Models() {
   const [sortedModels, setSortedModels] = useState(MODELS.map(addCounts));
   const [sortConfig, setSortConfig] = useState("providerAndModel");
