@@ -5,6 +5,8 @@ import {
   wordCountToPageCounts,
 } from "../../lib";
 import "./ConvertInput.css";
+import InputForm from "./InputForm";
+import ResultTable from "./ResultTable";
 
 const DEFAULT_TOKEN_COUNT = 10000;
 const DEFAULT_TEXT =
@@ -52,104 +54,6 @@ function resetResult(setResult) {
     a4PageCount: 0,
     a5NovelCount: 0,
   });
-}
-
-function ResultTable({ result }) {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Tokens</th>
-          <th>Words</th>
-          <th>A4 pages</th>
-          <th>Novels</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="numeric" data-testid="user-table-tokens">
-            {result.tokens.toLocaleString()}
-          </td>
-          <td className="numeric" data-testid="user-table-word-count">
-            {result.wordCount.toLocaleString(undefined, {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            })}
-          </td>
-          <td className="numeric" data-testid="user-table-page-count">
-            {result.a4PageCount.toLocaleString(undefined, {
-              minimumFractionDigits: 1,
-              maximumFractionDigits: 1,
-            })}
-          </td>
-          <td className="numeric" data-testid="user-table-novel-count">
-            {result.a5NovelCount.toLocaleString(undefined, {
-              minimumFractionDigits: 1,
-              maximumFractionDigits: 1,
-            })}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  );
-}
-
-function InputForm({
-  inputType,
-  tokenValue,
-  textValue,
-  handleTokenChange,
-  handleTextChange,
-  handleRadioChange,
-}) {
-  return (
-    <form>
-      <div>
-        <input
-          type="radio"
-          data-testid="radio-number"
-          name="inputType"
-          value="number"
-          checked={inputType === "number"}
-          onChange={() => handleRadioChange("number")}
-        />
-        <label data-testid="user-input-number-label" htmlFor="number">
-          Input Token:{" "}
-        </label>
-        <input
-          data-testid="user-input-number"
-          type="number"
-          value={tokenValue}
-          min="1"
-          onChange={handleTokenChange}
-          disabled={inputType === "text"}
-          placeholder="Enter token count"
-          style={{ textAlign: "right" }}
-        />
-      </div>
-      <div>
-        <input
-          type="radio"
-          data-testid="radio-text"
-          name="inputType"
-          value="text"
-          checked={inputType === "text"}
-          onChange={() => handleRadioChange("text")}
-        />
-        <label data-testid="user-input-text-label" htmlFor="text">
-          Input Text:{" "}
-        </label>
-        <textarea
-          data-testid="user-input-text"
-          style={{ width: "100%", height: "50px" }}
-          value={textValue}
-          onChange={handleTextChange}
-          disabled={inputType === "number"}
-          placeholder="Enter text content"
-        />
-      </div>
-    </form>
-  );
 }
 
 function ConvertInput() {
