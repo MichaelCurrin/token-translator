@@ -24,7 +24,7 @@ function InputForm({
             checked={inputType === "number"}
             readOnly
           />
-          <span data-testid="user-input-number-label">Input Token:</span>
+          <span data-testid="user-input-number-label">Tokens: </span>
         </label>
         <input
           data-testid="user-input-number"
@@ -48,7 +48,7 @@ function InputForm({
             checked={inputType === "text"}
             readOnly
           />
-          <span data-testid="user-input-text-label">Input Text:</span>
+          <span data-testid="user-input-text-label">Text: </span>
         </label>
         <textarea
           data-testid="user-input-text"

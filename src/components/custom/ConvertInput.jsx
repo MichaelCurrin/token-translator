@@ -107,9 +107,9 @@ function ConvertInput() {
   }, [tokenValue, textValue, inputType, handleTokenSubmit, handleTextSubmit]);
 
   return (
-    <div className="container">
+    <div >
       <ResultTable result={result} />
-      <br />
+      <p><i>Choose your own token number or paste text content and get the token count estimated for you.</i></p>
       <InputForm
         inputType={inputType}
         tokenValue={tokenValue}
