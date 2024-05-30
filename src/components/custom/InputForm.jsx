@@ -29,7 +29,7 @@ function InputForm({
           onChange={handleTokenChange}
           disabled={inputType === "text"}
           placeholder="Enter token count"
-          style={{ textAlign: "right" }}
+          style={{ textAlign: "right", width: "10em", fontSize: "medium" }}
         />
       </div>
       <div>
@@ -43,7 +43,7 @@ function InputForm({
             checked={inputType === "text"}
             onClick={() => handleRadioChange("text")}
           />
-          <span data-testid="user-input-text-label">Text: </span>
+          <span data-testid="user-input-text-label">Text content: </span>
         </label>
         <textarea
           data-testid="user-input-text"
