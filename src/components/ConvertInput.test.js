@@ -7,21 +7,13 @@ describe("ConvertInput Component", () => {
   test("renders default state", () => {
     render(<ConvertInput />);
 
-    expect(screen.getByLabelText(/Input Token:/i)).toBeChecked();
-    expect(
-      screen.getByPlaceholderText(/Enter token count/i),
-    ).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/Enter text content/i)).toBeDisabled();
-  });
+    const radioNumber = screen.getByTestId("radio-number");
+    const numberInput = screen.getByTestId("user-input-number");
+    const textInput = screen.getByTestId("user-input-text");
 
-  test("submits token input and displays results", () => {
-    render(<ConvertInput />);
-
-    fireEvent.change(screen.getByPlaceholderText(/Enter token count/i), {
-      target: { value: "10000" },
-    });
-
-    fireEvent.blur(screen.getByPlaceholderText(/Enter token count/i)); // Triggering blur to submit
+    expect(radioNumber).toBeChecked();
+    expect(numberInput).toBeInTheDocument();
+    expect(textInput).toBeDisabled();
 
     expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("10000");
     expect(screen.getByTestId("user-table-word-count")).toHaveTextContent(
@@ -35,15 +27,38 @@ describe("ConvertInput Component", () => {
     );
   });
 
+  test("submits token input and displays results", () => {
+    render(<ConvertInput />);
+
+    const numberInput = screen.getByTestId("user-input-number");
+
+    fireEvent.change(numberInput, {
+      target: { value: "12300" },
+    });
+
+    fireEvent.blur(numberInput);
+
+    expect(screen.getByTestId("user-table-tokens")).toHaveTextContent("12300");
+    expect(screen.getByTestId("user-table-word-count")).toHaveTextContent(
+      "9225",
+    );
+    expect(screen.getByTestId("user-table-page-count")).toHaveTextContent(
+      "20.5",
+    );
+    expect(screen.getByTestId("user-table-novel-count")).toHaveTextContent(
+      "0.1",
+    );
+  });
+
   test("submits text input and displays results", () => {
     const sampleText = "This is a test text.";
 
     render(<ConvertInput />);
 
-    const textInputLabel = screen.getByTestId("user-input-text-label");
+    const radioText = screen.getByTestId("radio-text");
     const textInput = screen.getByTestId("user-input-text");
 
-    fireEvent.click(textInputLabel);
+    fireEvent.click(radioText);
     fireEvent.change(textInput, {
       target: { value: sampleText },
     });
@@ -58,17 +73,16 @@ describe("ConvertInput Component", () => {
     );
   });
 
-  test("switches between input types and resets state", () => {
+  test("submits large text input and displays results", () => {
     render(<ConvertInput />);
 
-    // Switch to text input and provide some text
-    fireEvent.click(screen.getByLabelText(/Input Text:/i));
-    fireEvent.change(screen.getByPlaceholderText(/Enter text content/i), {
+    const radioText = screen.getByTestId("radio-text");
+    const textInput = screen.getByTestId("user-input-text");
+
+    fireEvent.click(radioText);
+    fireEvent.change(textInput, {
       target: { value: LONG_TEXT },
     });
-
-    // Ensure the text input state is populated
-    fireEvent.blur(screen.getByPlaceholderText(/Enter text content/i));
 
     const tokensValue = screen.getByTestId("user-table-tokens");
     expect(tokensValue).toHaveTextContent("5,373");
