@@ -21,7 +21,7 @@ function SortingButtons({ sortOption, onSort }) {
           checked={sortOption === "tokens"}
           onChange={() => onSort("tokens")}
         />
-        Large input
+        Input size (largest first)
       </label>
     </div>
   );
