@@ -6,7 +6,7 @@ function Notes() {
       </p>
 
       <p>
-        For detailed constants, refer to{" "}
+        For detailed constants, refer to{' '}
         <a href="https://github.com/MichaelCurrin/token-translator/blob/main/src/constants.js">
           <code>constants.js</code>
         </a>
@@ -22,7 +22,7 @@ function Notes() {
         </li>
         <li>
           According to OpenAI's approximation, 1 token is approximately equal to
-          4 characters or ¾ words. (Source:{" "}
+          4 characters or ¾ words. (Source:{' '}
           <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">
             OpenAI Help Center
           </a>
@@ -30,7 +30,7 @@ function Notes() {
         </li>
         <li>
           For precise values, consider using OpenAI's user-friendly tokenizer
-          tool available at{" "}
+          tool available at{' '}
           <a href="https://platform.openai.com/tokenizer">OpenAI Platform</a>.
           They also recommend integrating <code>tiktoken</code> package into
           your application for accurate tokenization.
@@ -63,30 +63,30 @@ function Notes() {
 
       <ul>
         <li>
-          <b>Gemini</b> models sourced from{" "}
+          <b>Gemini</b> models sourced from{' '}
           <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
             Google's Gemini API documentation
           </a>
           .
         </li>
         <li>
-          <b>OpenAI</b> models sourced from{" "}
+          <b>OpenAI</b> models sourced from{' '}
           <a href="https://platform.openai.com/docs/models">
             OpenAI Platform documentation
           </a>
           .
         </li>
         <li>
-          <b>Meta</b> models sourced the{" "}
-          <a href="https://ollama.com/blog/llama3">Ollama blog</a>, the{" "}
-          <a href="https://ollama.com/library/phi3">Phi model</a> page, and the{" "}
+          <b>Meta</b> models sourced the{' '}
+          <a href="https://ollama.com/blog/llama3">Ollama blog</a>, the{' '}
+          <a href="https://ollama.com/library/phi3">Phi model</a> page, and the{' '}
           <a href="https://ollama.com/library/mixtral">Mixtral model</a> page. .
         </li>
       </ul>
 
       <h3>Artwork</h3>
       <p>
-        Robot image generated AI using{" "}
+        Robot image generated AI using{' '}
         <a href="https://www.bing.com/images/create/cute-ai-chatbot-holding-a-stack-of-books-and-pages/1-665870ad5607457bab4d54a5a9e9dda8?FORM=GUH2CR">
           Bing Designer
         </a>

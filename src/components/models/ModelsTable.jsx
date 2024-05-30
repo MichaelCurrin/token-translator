@@ -1,4 +1,4 @@
-import "./ModelsTable.css";
+import './ModelsTable.css';
 
 function ModelsTable({ models }) {
   return (

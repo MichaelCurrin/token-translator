@@ -3,7 +3,7 @@ import {
   WORDS_PER_A4_PAGE,
   WORDS_PER_A5_BOOK,
   WORDS_PER_TOKEN,
-} from "./constants";
+} from './constants';
 
 export function textToTokenCount(textValue) {
   if (!textValue) {

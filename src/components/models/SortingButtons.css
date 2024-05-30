@@ -2,7 +2,7 @@
   margin-bottom: 15px;
 }
 
-.sorting-buttons label input[type="radio"] {
+.sorting-buttons label input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -15,11 +15,11 @@
   transition: background-color 0.3s ease;
 }
 
-.sorting-buttons label input[type="radio"]:checked {
+.sorting-buttons label input[type='radio']:checked {
   background-color: #007bff;
   border-color: #007bff;
 }
 
-.sorting-buttons label input[type="radio"]:hover {
+.sorting-buttons label input[type='radio']:hover {
   border-color: #007bff;
 }

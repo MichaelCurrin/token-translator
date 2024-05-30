@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 import {
   textToTokenCount,
   tokenCountToWordCount,
   wordCountToPageCounts,
-} from "../../lib";
-import InputForm from "./InputForm";
-import ResultTable from "./ResultTable";
-import "./index.css";
+} from '../../lib';
+import InputForm from './InputForm';
+import ResultTable from './ResultTable';
+import './index.css';
 
 const DEFAULT_TOKEN_COUNT = 10000;
-const DEFAULT_TEXT = "Enter custom text.";
+const DEFAULT_TEXT = 'Enter custom text.';
 
 function calculateFromToken(tokenValue, setResult) {
   const tokenCount = parseInt(tokenValue, 10);
@@ -56,7 +56,7 @@ function resetResult(setResult) {
 }
 
 function ConvertInput() {
-  const [inputType, setInputType] = useState("number");
+  const [inputType, setInputType] = useState('number');
   const [tokenValue, setTokenValue] = useState(DEFAULT_TOKEN_COUNT);
   const [textValue, setTextValue] = useState(DEFAULT_TEXT);
 
@@ -100,9 +100,9 @@ function ConvertInput() {
   }, [textValue]);
 
   useEffect(() => {
-    if (inputType === "number" && tokenValue) {
+    if (inputType === 'number' && tokenValue) {
       handleTokenSubmit();
-    } else if (inputType === "text" && textValue) {
+    } else if (inputType === 'text' && textValue) {
       handleTextSubmit();
     } else {
       resetResult(setResult);
