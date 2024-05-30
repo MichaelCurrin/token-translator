@@ -16,10 +16,10 @@ function Notes() {
             <h3>Token Conversions</h3>
 
             <ul>
-                <li>Input text tokens are estimated, not precisely calculated.</li>
+                <li>The "Tokens" and "Word count" values are roughly estimated, they are only give general meaning to inputs or to compare model power.</li>
                 <li>
                     According to OpenAI's approximation, 1 token is approximately equal to
-                    ¾ words. (Source:{" "}
+                    4 characters or ¾ words. (Source:{" "}
                     <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">
                         OpenAI Help Center
                     </a>
