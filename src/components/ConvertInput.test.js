@@ -4,7 +4,7 @@ import { LONG_TEXT } from "../fixtures";
 import ConvertInput from "./ConvertInput";
 
 describe("ConvertInput Component", () => {
-  test("renders default state", () => {
+  it("renders default state", () => {
     render(<ConvertInput />);
 
     const radioNumber = screen.getByTestId("radio-number");
@@ -27,7 +27,7 @@ describe("ConvertInput Component", () => {
     );
   });
 
-  test("submits token input and displays results", () => {
+  it("submits token input and displays results", () => {
     render(<ConvertInput />);
 
     const numberInput = screen.getByTestId("user-input-number");
@@ -50,7 +50,7 @@ describe("ConvertInput Component", () => {
     );
   });
 
-  test("submits text input and displays results", () => {
+  it("submits text input and displays results", () => {
     const sampleText = "This is a test text.";
 
     render(<ConvertInput />);
@@ -73,7 +73,7 @@ describe("ConvertInput Component", () => {
     );
   });
 
-  test("submits large text input and displays results", () => {
+  it("submits large text input and displays results", () => {
     render(<ConvertInput />);
 
     const radioText = screen.getByTestId("radio-text");
