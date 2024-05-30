@@ -87,12 +87,16 @@ function ConvertInput() {
   }
 
   const handleTokenSubmit = useCallback(() => {
-    if (!tokenValue) return;
+    if (!tokenValue) {
+      return;
+    }
     calculateFromToken(tokenValue, setResult);
   }, [tokenValue]);
 
   const handleTextSubmit = useCallback(() => {
-    if (!textValue) return;
+    if (!textValue) {
+      return;
+    }
     calculateFromText(textValue, setResult);
   }, [textValue]);
 
