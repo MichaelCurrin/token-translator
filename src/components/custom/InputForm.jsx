@@ -5,16 +5,20 @@ function InputForm({
 }) {
   return (
     <form>
-      <div>
-        <input
-          type="radio"
-          data-testid="radio-number"
-          name="inputType"
-          value="number"
-          checked={inputType === "number"}
-          onChange={() => handleRadioChange("number")} />
-        <label data-testid="user-input-number-label" htmlFor="number">
-          Input Token:{" "}
+      <div >
+        <label htmlFor="radio-number" onClick={() => handleRadioChange("number")}>
+          <input
+            id="radio-number"
+            type="radio"
+            data-testid="radio-number"
+            name="inputType"
+            value="number"
+            checked={inputType === "number"}
+            readOnly
+          />
+          <span data-testid="user-input-number-label">
+            Input Token:
+          </span>
         </label>
         <input
           data-testid="user-input-number"
@@ -24,18 +28,23 @@ function InputForm({
           onChange={handleTokenChange}
           disabled={inputType === "text"}
           placeholder="Enter token count"
-          style={{ textAlign: "right" }} />
+          style={{ textAlign: "right" }}
+        />
       </div>
-      <div>
-        <input
-          type="radio"
-          data-testid="radio-text"
-          name="inputType"
-          value="text"
-          checked={inputType === "text"}
-          onChange={() => handleRadioChange("text")} />
-        <label data-testid="user-input-text-label" htmlFor="text">
-          Input Text:{" "}
+      <div >
+        <label htmlFor="radio-text" onClick={() => handleRadioChange("text")}>
+          <input
+            id="radio-text"
+            type="radio"
+            data-testid="radio-text"
+            name="inputType"
+            value="text"
+            checked={inputType === "text"}
+            readOnly
+          />
+          <span data-testid="user-input-text-label">
+            Input Text:
+          </span>
         </label>
         <textarea
           data-testid="user-input-text"
@@ -43,8 +52,11 @@ function InputForm({
           value={textValue}
           onChange={handleTextChange}
           disabled={inputType === "number"}
-          placeholder="Enter text content" />
+          placeholder="Enter text content"
+        />
       </div>
+
+
     </form>
   );
 }
