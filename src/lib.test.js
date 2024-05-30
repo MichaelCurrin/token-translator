@@ -3,7 +3,21 @@ import {
   WORDS_PER_A5_BOOK,
   WORDS_PER_TOKEN,
 } from "./constants";
-import { addCounts, tokenCountToWordCount, wordCountToPageCounts } from "./lib";
+import { addCounts, textToTokenCount, tokenCountToWordCount, wordCountToPageCounts } from "./lib";
+
+describe('textToTokenCount function', () => {
+  it('should return 0 for an empty string', () => {
+    expect(textToTokenCount('')).toBe(0);
+  });
+
+  it('should return 1 for a string with less than CHARS_PER_TOKEN characters', () => {
+    expect(textToTokenCount('polo')).toBe(1);
+  });
+
+  it('should round up for a string with more than CHARS_PER_TOKEN characters but not a multiple', () => {
+    expect(textToTokenCount('welcome')).toBe(2);
+  });
+});
 
 describe("tokenCountToWordCount", () => {
   test("should convert token count to word count correctly", () => {

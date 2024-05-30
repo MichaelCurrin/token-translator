@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { tokenCountToWordCount, wordCountToPageCounts } from "../lib";
+import { textToTokenCount, tokenCountToWordCount, wordCountToPageCounts } from "../lib";
 import "./ConvertInput.css";
 
 const DEFAULT_TOKEN_COUNT = 10000;
@@ -20,7 +20,7 @@ function calculateFromToken(tokenValue, setResult) {
 }
 
 function calculateFromText(textValue, setResult) {
-  const tokenCount = Math.ceil(textValue.length / 4);
+  const tokenCount = textToTokenCount(textValue);
   const wordCount = tokenCountToWordCount(tokenCount);
   const { a4PageCount, a5NovelCount } = wordCountToPageCounts(wordCount);
 

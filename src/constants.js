@@ -1,3 +1,4 @@
+export const CHARS_PER_TOKEN = 4;
 export const WORDS_PER_TOKEN = 0.75;
 export const WORDS_PER_A4_PAGE = 450;
 export const WORDS_PER_A5_BOOK = 80000;

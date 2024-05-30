@@ -1,8 +1,16 @@
 import {
+  CHARS_PER_TOKEN,
   WORDS_PER_A4_PAGE,
   WORDS_PER_A5_BOOK,
   WORDS_PER_TOKEN,
 } from "./constants";
+
+export function textToTokenCount(textValue) {
+  if (!textValue) {
+    return 0
+  }
+  return Math.ceil(textValue.length / CHARS_PER_TOKEN);
+}
 
 export function tokenCountToWordCount(tokenCount) {
   return tokenCount * WORDS_PER_TOKEN;
