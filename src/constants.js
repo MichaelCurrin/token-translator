@@ -16,48 +16,47 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Meta', modelName: 'Mixtral', tokens: 64000 },
 ];
 
-export const PRICE_PER_MILLION_TOKENS =
-  [
-    {
-      provider: "OpenAI",
-      model: "GPT-4o",
-      input: "$5.00",
-      output: "$15.00"
-    },
-    {
-      provider: "OpenAI",
-      model: "GPT-3.5 Turbo",
-      input: "$0.50",
-      output: "$1.50"
-    },
-    {
-      provider: "Google",
-      model: "Gemini 1.5 Flash (<128k tokens)",
-      input: "$0.35",
-      output: "$1.05"
-    },
-    {
-      provider: "Google",
-      model: "Gemini 1.5 Flash (>128k tokens)",
-      input: "$0.70",
-      output: "$2.10"
-    },
-    {
-      provider: "Google",
-      model: "Gemini 1.5 Pro (<128k tokens)",
-      input: "$3.50",
-      output: "$10.50"
-    },
-    {
-      provider: "Google",
-      model: "Gemini 1.5 Flash (<128k tokens)",
-      input: "$7.00",
-      output: "$21.00"
-    },
-    {
-      provider: "Google",
-      model: "Gemini 1.0 Pro",
-      input: "$0.50",
-      output: "$1.50"
-    }
-  ]
+export const PRICE_PER_MILLION_TOKENS = [
+  {
+    provider: 'OpenAI',
+    model: 'GPT-4o',
+    input: '$5.00',
+    output: '$15.00',
+  },
+  {
+    provider: 'OpenAI',
+    model: 'GPT-3.5 Turbo',
+    input: '$0.50',
+    output: '$1.50',
+  },
+  {
+    provider: 'Google',
+    model: 'Gemini 1.5 Flash (<128k tokens)',
+    input: '$0.35',
+    output: '$1.05',
+  },
+  {
+    provider: 'Google',
+    model: 'Gemini 1.5 Flash (>128k tokens)',
+    input: '$0.70',
+    output: '$2.10',
+  },
+  {
+    provider: 'Google',
+    model: 'Gemini 1.5 Pro (<128k tokens)',
+    input: '$3.50',
+    output: '$10.50',
+  },
+  {
+    provider: 'Google',
+    model: 'Gemini 1.5 Flash (<128k tokens)',
+    input: '$7.00',
+    output: '$21.00',
+  },
+  {
+    provider: 'Google',
+    model: 'Gemini 1.0 Pro',
+    input: '$0.50',
+    output: '$1.50',
+  },
+];
