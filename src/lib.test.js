@@ -116,7 +116,6 @@ describe('addCounts', () => {
 
     const expectedModel = {
       ...model,
-      wordCount: wordCount,
       a4PageCount: a4PageCount,
       a5NovelCount: a5NovelCount,
     };
@@ -131,7 +130,6 @@ describe('addCounts', () => {
 
     const expectedModel = {
       ...model,
-      wordCount: wordCount,
       a4PageCount: a4PageCount,
       a5NovelCount: a5NovelCount,
     };
@@ -146,7 +144,6 @@ describe('addCounts', () => {
 
     const expectedModel = {
       ...model,
-      wordCount: wordCount,
       a4PageCount: a4PageCount,
       a5NovelCount: a5NovelCount,
     };
@@ -161,7 +158,6 @@ describe('addCounts', () => {
 
     const expectedModel = {
       ...model,
-      wordCount: wordCount,
       a4PageCount: a4PageCount,
       a5NovelCount: a5NovelCount,
     };
@@ -176,7 +172,6 @@ describe('addCounts', () => {
 
     const expectedModel = {
       ...model,
-      wordCount: wordCount,
       a4PageCount: a4PageCount,
       a5NovelCount: a5NovelCount,
     };

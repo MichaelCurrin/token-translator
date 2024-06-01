@@ -8,7 +8,6 @@ function ModelsTable({ models }) {
           <th>Provider</th>
           <th>Model</th>
           <th>Tokens</th>
-          <th>Words</th>
           <th>A4 pages</th>
           <th>Novels</th>
         </tr>
@@ -19,12 +18,6 @@ function ModelsTable({ models }) {
             <td>{model.provider}</td>
             <td>{model.modelName}</td>
             <td className="numeric">{model.tokens.toLocaleString()}</td>
-            <td className="numeric">
-              {model.wordCount.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-              })}
-            </td>
             <td className="numeric">
               {model.a4PageCount.toLocaleString(undefined, {
                 minimumFractionDigits: 1,

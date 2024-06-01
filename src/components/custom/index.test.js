@@ -15,9 +15,6 @@ describe('ConvertInput Component', () => {
     expect(textInput).toBeDisabled();
 
     expect(screen.getByTestId('user-table-tokens')).toHaveTextContent('10,000');
-    expect(screen.getByTestId('user-table-word-count')).toHaveTextContent(
-      '7,500',
-    );
     expect(screen.getByTestId('user-table-page-count')).toHaveTextContent(
       '16.7',
     );
@@ -38,9 +35,6 @@ describe('ConvertInput Component', () => {
     fireEvent.blur(numberInput);
 
     expect(screen.getByTestId('user-table-tokens')).toHaveTextContent('12,300');
-    expect(screen.getByTestId('user-table-word-count')).toHaveTextContent(
-      '9,225',
-    );
     expect(screen.getByTestId('user-table-page-count')).toHaveTextContent(
       '20.5',
     );
@@ -63,7 +57,6 @@ describe('ConvertInput Component', () => {
     });
 
     expect(screen.getByTestId('user-table-tokens')).toHaveTextContent('5');
-    expect(screen.getByTestId('user-table-word-count')).toHaveTextContent('4');
     expect(screen.getByTestId('user-table-page-count')).toHaveTextContent(
       '0.0',
     );
@@ -85,9 +78,6 @@ describe('ConvertInput Component', () => {
 
     const tokensValue = screen.getByTestId('user-table-tokens');
     expect(tokensValue).toHaveTextContent('5,373');
-
-    const wordCountValue = screen.getByTestId('user-table-word-count');
-    expect(wordCountValue).toHaveTextContent('4,030');
 
     const a4PageCountValue = screen.getByTestId('user-table-page-count');
     expect(a4PageCountValue).toHaveTextContent('9.0');
