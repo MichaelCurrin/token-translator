@@ -8,7 +8,7 @@ function Models() {
   const [sortedModels, setSortedModels] = useState(
     MODEL_INPUT_LIMITS.map(addCounts),
   );
-  const [sortConfig, setSortConfig] = useState('providerAndModel');
+  const [sortBy, setSoryBy] = useState('providerAndModel');
 
   const sortModels = (key) => {
     let sortedArray = [...sortedModels];
@@ -25,13 +25,13 @@ function Models() {
     }
 
     setSortedModels(sortedArray);
-    setSortConfig(key);
+    setSoryBy(key);
   };
 
   return (
     <div>
       <SortingButtons
-        sortOption={sortConfig}
+        sortOption={sortBy}
         onSort={sortModels}
         className="sorting-buttons"
       />
