@@ -1,5 +1,3 @@
-import './ModelsTable.css';
-
 function ModelsTable({ models }) {
   return (
     <table>
