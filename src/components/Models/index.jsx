@@ -31,7 +31,7 @@ function Models() {
   return (
     <div>
       <SortingButtons
-        sortOption={sortBy}
+        sortBy={sortBy}
         onSort={sortModels}
         className="sorting-buttons"
       />

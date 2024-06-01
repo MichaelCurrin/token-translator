@@ -1,6 +1,6 @@
 import './SortingButtons.css';
 
-function SortingButtons({ sortOption, onSort }) {
+function SortingButtons({ sortBy, onSort }) {
   return (
     <div className="sorting-buttons">
       <span>Sort by: </span>
@@ -8,7 +8,7 @@ function SortingButtons({ sortOption, onSort }) {
         <input
           type="radio"
           value="providerAndModel"
-          checked={sortOption === 'providerAndModel'}
+          checked={sortBy === 'providerAndModel'}
           onChange={() => onSort('providerAndModel')}
         />
         Name
@@ -17,7 +17,7 @@ function SortingButtons({ sortOption, onSort }) {
         <input
           type="radio"
           value="tokens"
-          checked={sortOption === 'tokens'}
+          checked={sortBy === 'tokens'}
           onChange={() => onSort('tokens')}
         />
         Input size (largest first)
