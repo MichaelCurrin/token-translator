@@ -27,16 +27,16 @@ function Models() {
   );
   const [sortBy, setSortBy] = useState('providerAndModel');
 
-  const onSort = (key) => {
-    setSortedModels(sortModels(key, sortedModels));
+  const handleOnSortBy = (key) => {
     setSortBy(key);
+    setSortedModels(sortModels(key, sortedModels));
   };
 
   return (
     <div>
       <SortingButtons
         sortBy={sortBy}
-        onSort={onSort}
+        handleOnSortBy={handleOnSortBy}
         className="sorting-buttons"
       />
       <Table models={sortedModels} />
