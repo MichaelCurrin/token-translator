@@ -3,7 +3,7 @@ export const WORDS_PER_TOKEN = 0.75;
 export const WORDS_PER_A4_PAGE = 450;
 export const WORDS_PER_A5_BOOK = 80000;
 
-export const MODELS = [
+export const MODEL_INPUT_LIMITS = [
   { provider: 'Google', modelName: 'Gemini 1.5 Pro', tokens: 1048576 },
   { provider: 'Google', modelName: 'Gemini 1.5 Flash', tokens: 1048576 },
   { provider: 'Google', modelName: 'Gemini 1.0 Pro', tokens: 30720 },

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { MODELS } from '../../constants';
+import { MODEL_INPUT_LIMITS } from '../../constants';
 import { addCounts } from '../../lib';
 import ModelsTable from './ModelsTable';
 import SortingButtons from './SortingButtons';
 
 function Models() {
-  const [sortedModels, setSortedModels] = useState(MODELS.map(addCounts));
+  const [sortedModels, setSortedModels] = useState(MODEL_INPUT_LIMITS.map(addCounts));
   const [sortConfig, setSortConfig] = useState('providerAndModel');
 
   const sortModels = (key) => {
