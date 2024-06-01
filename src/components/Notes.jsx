@@ -13,27 +13,25 @@ function Notes() {
         .
       </p>
 
-      <h3>Token conversions</h3>
+      <h3>Token and word conversions</h3>
 
       <ul>
         <li>
-          The "Tokens" and "Words" values are roughly estimated, they are only
-          give general meaning to inputs or to compare model power.
-        </li>
-        <li>
           According to OpenAI's approximation, 1 token is approximately equal to
-          4 characters or ¾ words. (Source:{' '}
+          4 characters or ¾ words (Source:{' '}
           <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">
             OpenAI Help Center
           </a>
-          )
+          ). The calculated word count is not so useful to show here on this
+          page, but it is necessary for internal use so that number of pages and
+          books can be calculated. See below.
         </li>
         <li>
-          For precise values, consider using OpenAI's user-friendly tokenizer
-          tool available at{' '}
-          <a href="https://platform.openai.com/tokenizer">OpenAI Platform</a>.
-          They also recommend integrating <code>tiktoken</code> package into
-          your application for accurate tokenization.
+          If you are interested a precise value for the number of tokens and
+          words in a piece of text, check out OpenAI's tokenizer tool{' '}
+          <a href="https://platform.openai.com/tokenizer">here</a>. For
+          programmitic use, they recommend using the <code>tiktoken</code>{' '}
+          package.
         </li>
       </ul>
 
@@ -42,16 +40,17 @@ function Notes() {
       <ul>
         <li>
           An A4 page typically contains 400-500 words, averaging around 450
-          words based on various sources.
+          words, based on search result various sources.
         </li>
         <li>
           For novels (assuming A5 format), the word count ranges from 70,000 to
           120,000 words, with a minimum of 50,000 words and a typical range of
-          80,000 words. This application uses the latter as the standard.
+          80,000 words. This is based on search result various sources. This
+          tool uses the latter value as the standard.
         </li>
       </ul>
 
-      <h3>Model info sources</h3>
+      <h3>Model details</h3>
 
       <p>
         Models limits are sourced from the links below. They are presented
@@ -90,7 +89,8 @@ function Notes() {
             <td>
               <a href="https://ollama.com/blog/llama3">Ollama blog</a>,{' '}
               <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
-              <a href="https://ollama.com/library/mixtral">Mixtral model</a> page.
+              <a href="https://ollama.com/library/mixtral">Mixtral model</a>{' '}
+              page.
             </td>
           </tr>
         </tbody>
