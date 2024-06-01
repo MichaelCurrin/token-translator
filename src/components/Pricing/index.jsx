@@ -58,8 +58,8 @@ function Pricing() {
   return (
     <div>
       <p>
-        Prices for using the model through an API, as price per 1 million tokens
-        (as given by the sources under <a href="#api-pricing">API Pricing</a>)
+        Prices for using each model through an API. The prices are for 1 million tokens
+        (as given by the sources under <a href="#api-pricing">API Pricing</a>). Tip: enter <code>1000000</code> in the form above to see how many pages or novels that is.
       </p>
       <div>
         <label htmlFor="sortBy">Sort by: </label>
