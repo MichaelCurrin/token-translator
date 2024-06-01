@@ -51,7 +51,7 @@ function Notes() {
         </li>
       </ul>
 
-      <h3>Models</h3>
+      <h3>Model Info Sources</h3>
 
       <p>
         Models limits are sourced from the links below. They are presented
@@ -61,28 +61,40 @@ function Notes() {
         the "OUT" portion.
       </p>
 
-      <ul>
-        <li>
-          <b>Gemini</b> models sourced from{' '}
-          <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
-            Google's Gemini API documentation
-          </a>
-          .
-        </li>
-        <li>
-          <b>OpenAI</b> models sourced from{' '}
-          <a href="https://platform.openai.com/docs/models">
-            OpenAI Platform documentation
-          </a>
-          .
-        </li>
-        <li>
-          <b>Meta</b> models sourced the{' '}
-          <a href="https://ollama.com/blog/llama3">Ollama blog</a>, the{' '}
-          <a href="https://ollama.com/library/phi3">Phi model</a> page, and the{' '}
-          <a href="https://ollama.com/library/mixtral">Mixtral model</a> page. .
-        </li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google</td>
+            <td>
+              <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
+                Google's Gemini API documentation
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>OpenAI</td>
+            <td>
+              <a href="https://platform.openai.com/docs/models">
+                OpenAI Platform documentation
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Meta</td>
+            <td>
+              <a href="https://ollama.com/blog/llama3">Ollama blog</a>,{' '}
+              <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
+              <a href="https://ollama.com/library/mixtral">Mixtral model</a> page.
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
       <h3>Artwork</h3>
       <p>
