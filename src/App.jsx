@@ -1,7 +1,7 @@
+import ConvertInput from './components/Custom';
 import Header from './components/Header';
+import Models from './components/Models';
 import Notes from './components/Notes';
-import ConvertInput from './components/custom';
-import Models from './components/models';
 
 function App() {
   return (
