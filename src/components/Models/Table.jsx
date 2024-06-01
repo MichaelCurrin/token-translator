@@ -1,4 +1,4 @@
-function ModelsTable({ models }) {
+function Table({ models }) {
   return (
     <table>
       <thead>
@@ -35,4 +35,4 @@ function ModelsTable({ models }) {
   );
 }
 
-export default ModelsTable;
+export default Table;

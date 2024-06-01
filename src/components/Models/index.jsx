@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { MODEL_INPUT_LIMITS } from '../../constants';
 import { addCounts } from '../../lib';
-import ModelsTable from './ModelsTable';
 import SortingButtons from './SortingButtons';
+import Table from './Table';
 
 function Models() {
   const [sortedModels, setSortedModels] = useState(
@@ -35,7 +35,7 @@ function Models() {
         onSort={sortModels}
         className="sorting-buttons"
       />
-      <ModelsTable models={sortedModels} />
+      <Table models={sortedModels} />
     </div>
   );
 }
