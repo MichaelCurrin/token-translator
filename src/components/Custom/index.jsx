@@ -125,6 +125,7 @@ function ConvertInput() {
         handleTextChange={handleTextChange}
         handleRadioChange={handleRadioChange}
       />
+      <p>Tip: 1x A4 page is about 600 tokens and 1x novel is about 100K tokens.</p>
       <p>
         Enter text as long as you like (such as from an article or a book), then
         you find out how many tokens it is and that will help you figure out
