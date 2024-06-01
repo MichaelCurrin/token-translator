@@ -18,6 +18,7 @@ function InputForm({
             value="number"
             checked={inputType === 'number'}
             onClick={() => handleRadioChange('number')}
+            readOnly
           />
           <span data-testid="user-input-number-label">Tokens: </span>
         </label>
@@ -42,6 +43,7 @@ function InputForm({
             value="text"
             checked={inputType === 'text'}
             onClick={() => handleRadioChange('text')}
+            readOnly
           />
           <span data-testid="user-input-text-label">Text content: </span>
         </label>
