@@ -45,7 +45,7 @@ tr {
   background-color: #fff;
 }
 
-td.numeric {
+.align-right {
   text-align: right;
 }
 
