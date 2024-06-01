@@ -5,7 +5,9 @@ import ModelsTable from './ModelsTable';
 import SortingButtons from './SortingButtons';
 
 function Models() {
-  const [sortedModels, setSortedModels] = useState(MODEL_INPUT_LIMITS.map(addCounts));
+  const [sortedModels, setSortedModels] = useState(
+    MODEL_INPUT_LIMITS.map(addCounts),
+  );
   const [sortConfig, setSortConfig] = useState('providerAndModel');
 
   const sortModels = (key) => {
