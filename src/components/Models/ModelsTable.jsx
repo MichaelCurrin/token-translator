@@ -17,14 +17,14 @@ function ModelsTable({ models }) {
           <tr key={index}>
             <td>{model.provider}</td>
             <td>{model.modelName}</td>
-            <td className="numeric">{model.tokens.toLocaleString()}</td>
-            <td className="numeric">
+            <td className="align-right">{model.tokens.toLocaleString()}</td>
+            <td className="align-right">
               {model.a4PageCount.toLocaleString(undefined, {
                 minimumFractionDigits: 1,
                 maximumFractionDigits: 1,
               })}
             </td>
-            <td className="numeric">
+            <td className="align-right">
               {model.a5NovelCount.toLocaleString(undefined, {
                 minimumFractionDigits: 1,
                 maximumFractionDigits: 1,
