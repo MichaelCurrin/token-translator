@@ -25,7 +25,7 @@ function sortModels(key, models) {
 
   if (key === 'providerAndModel') {
     sortedArray.sort((a, b) => {
-      console.log(a.provider, a.modelName)
+      console.log(a.provider, a.modelName);
       if (a.provider === b.provider) {
         return a.modelName.localeCompare(b.modelName);
       }
@@ -35,7 +35,7 @@ function sortModels(key, models) {
     sortedArray.sort((a, b) => {
       const aPrice = parsePriceString(a[key]);
       const bPrice = parsePriceString(b[key]);
-      console.log(aPrice, bPrice)
+      console.log(aPrice, bPrice);
       return bPrice - aPrice;
     });
   }
@@ -43,18 +43,15 @@ function sortModels(key, models) {
   return sortedArray;
 }
 
-
 function Pricing() {
-  const [sortedModels, setSortedModels] = useState(
-    PRICE_PER_MILLION_TOKENS,
-  );
+  const [sortedModels, setSortedModels] = useState(PRICE_PER_MILLION_TOKENS);
 
   const [sortBy, setSortBy] = useState('providerAndModel');
 
   const handleOnSortBy = (event) => {
-    const value = event.target.value
+    const value = event.target.value;
     setSortBy(value);
-    const x = sortModels(value, sortedModels)
+    const x = sortModels(value, sortedModels);
     setSortedModels(x);
   };
 
@@ -66,7 +63,7 @@ function Pricing() {
       </p>
       <div>
         <label htmlFor="sortBy">Sort by: </label>
-        <select id="sortBy" value={sortBy} onChange={handleOnSortBy} >
+        <select id="sortBy" value={sortBy} onChange={handleOnSortBy}>
           <option value="providerAndModel">Name</option>
           <option value="input">Price (descending)</option>
         </select>
