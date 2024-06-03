@@ -1,5 +1,5 @@
 # Token Translator
-> Web app to convert the token input limis of LLMs like ChatGPT into real-world measures like number of pages 
+> Web app to convert the token input limits of LLMs like ChatGPT into real-world measures like number of pages 
 
 [![GH Pages Deploy](https://github.com/MichaelCurrin/token-translator/actions/workflows/main.yml/badge.svg)](https://github.com/MichaelCurrin/token-translator/actions?query=workflow:"GH+Pages+Deploy")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/token-translator?include_prereleases=&sort=semver&color=blue)](https://github.com/MichaelCurrin/token-translator/releases/)
