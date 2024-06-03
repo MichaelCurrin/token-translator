@@ -8,7 +8,7 @@ function Header() {
 
       <p>
         <i>
-          Compare the input token limits of GPT models as real-world measures
+          Convert the token input limits of LLMs like ChatGPT into real-world measures like number of pages 
         </i>
       </p>
       <img src={headerImage} alt="Robot holding books" width="202"></img>
