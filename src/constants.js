@@ -14,7 +14,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Meta', modelName: 'Llama 2', tokens: 8000 },
   { provider: 'Meta', modelName: 'Phi-3', tokens: 128000 },
   { provider: 'Meta', modelName: 'Mixtral', tokens: 64000 },
-  { provider: 'Anthropic', modelName: 'Claude 3', tokens: 200000 }
+  { provider: 'Anthropic', modelName: 'Claude 3', tokens: 200000 },
 ];
 
 export const PRICE_PER_MILLION_TOKENS = [
