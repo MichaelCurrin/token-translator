@@ -8,63 +8,65 @@ const LINK_OPENAI_TOKENS_ARTICLE =
   'https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them';
 const LINK_TOKENIZER = 'https://platform.openai.com/tokenizer';
 
-const CONVERSION_RATES_FIELDS = [
-  {
-    name: 'Measure',
-  },
-  {
-    name: 'Value',
-    alignRight: true,
-  },
-  {
-    name: 'Comment',
-  },
-];
-const CONVERSION_RATES_DATA = [
-  {
-    measure: 'Characters per token',
-    value: CHARS_PER_TOKEN,
-    comment: (
-      <span>
-        According to OpenAI's approximation, 1 token is approximately equal to{' '}
-        <b>4 characters</b> or <b>¾ words</b> (Source:{' '}
-        <a href={LINK_OPENAI_TOKENS_ARTICLE}>OpenAI Help Center</a>
-        ). The calculated word count is not so useful to show here on this page,
-        but it is necessary for internal use so that number of pages and books
-        can be calculated. See below. <br /> If you are interested a{' '}
-        <b>precise</b> value for the number of tokens and words in a piece of
-        text, check out OpenAI's tokenizer tool{' '}
-        <a href={LINK_TOKENIZER}>here</a>. For programmitic use, they recommend
-        using the <code>tiktoken</code> package.
-      </span>
-    ),
-  },
-  {
-    measure: 'Words per A4 page',
-    value: WORDS_PER_A4_PAGE.toLocaleString(),
-    comment:
-      'An A4 page typically contains 400-500 words, averaging around 450 words, based on search result various sources.',
-  },
-  {
-    measure: 'Words per A5 novel',
-    value: WORDS_PER_A5_BOOK.toLocaleString(),
-    comment:
-      'For novels (assuming A5 format), the word count ranges from 70,000 to 120,000 words, with a minimum of 50,000 words and a typical range of 80,000 words. This is based on search result various sources. This tool uses the latter value as the standard.',
-  },
-];
+const CONVERSION_RATES = {
+  fields: [
+    {
+      name: 'Measure',
+    },
+    {
+      name: 'Value',
+      alignRight: true,
+    },
+    {
+      name: 'Comment',
+    },
+  ],
+  rows: [
+    {
+      measure: 'Characters per token',
+      value: CHARS_PER_TOKEN,
+      comment: (
+        <span>
+          According to OpenAI's approximation, 1 token is approximately equal to{' '}
+          <b>4 characters</b> or <b>¾ words</b> (Source:{' '}
+          <a href={LINK_OPENAI_TOKENS_ARTICLE}>OpenAI Help Center</a>
+          ). The calculated word count is not so useful to show here on this
+          page, but it is necessary for internal use so that number of pages and
+          books can be calculated. See below. <br /> If you are interested a{' '}
+          <b>precise</b> value for the number of tokens and words in a piece of
+          text, check out OpenAI's tokenizer tool{' '}
+          <a href={LINK_TOKENIZER}>here</a>. For programmitic use, they
+          recommend using the <code>tiktoken</code> package.
+        </span>
+      ),
+    },
+    {
+      measure: 'Words per A4 page',
+      value: WORDS_PER_A4_PAGE.toLocaleString(),
+      comment:
+        'An A4 page typically contains 400-500 words, averaging around 450 words, based on search result various sources.',
+    },
+    {
+      measure: 'Words per A5 novel',
+      value: WORDS_PER_A5_BOOK.toLocaleString(),
+      comment:
+        'For novels (assuming A5 format), the word count ranges from 70,000 to 120,000 words, with a minimum of 50,000 words and a typical range of 80,000 words. This is based on search result various sources. This tool uses the latter value as the standard.',
+    },
+  ],
+};
 
-function Table({ data, fields }) {
+function Table({ tableData }) {
   return (
     <table>
       <thead>
         <tr>
-          {fields.map((field) => (
+          {tableData.fields.map((field) => (
             <th key={field.name}>{field.name}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {data.map((row) => (
+        {tableData.rows.map((row) => (
           <tr key={Math.random()}>
             {Object.values(row).map((value) => (
               <td key={value}>{value}</td>
@@ -94,7 +96,7 @@ function Notes() {
       <div>
         <h3>Conversion rates used</h3>
 
-        <Table data={CONVERSION_RATES_DATA} fields={CONVERSION_RATES_FIELDS} />
+        <Table tableData={CONVERSION_RATES} />
       </div>
 
       <div>
