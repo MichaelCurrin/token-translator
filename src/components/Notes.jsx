@@ -1,3 +1,81 @@
+import {
+  CHARS_PER_TOKEN,
+  WORDS_PER_A4_PAGE,
+  WORDS_PER_A5_BOOK,
+} from '../constants';
+
+const LINK_OPENAI_TOKENS_ARTICLE =
+  'https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them';
+const LINK_TOKENIZER = 'https://platform.openai.com/tokenizer';
+
+const CONVERSION_RATES_FIELDS = [
+  {
+    name: 'Measure',
+  },
+  {
+    name: 'Value',
+    alignRight: true,
+  },
+  {
+    name: 'Comment',
+  },
+];
+const CONVERSION_RATES_DATA = [
+  {
+    measure: 'Characters per token',
+    value: CHARS_PER_TOKEN,
+    comment: (
+      <span>
+        According to OpenAI's approximation, 1 token is approximately equal to{' '}
+        <b>4 characters</b> or <b>¾ words</b> (Source:{' '}
+        <a href={LINK_OPENAI_TOKENS_ARTICLE}>OpenAI Help Center</a>
+        ). The calculated word count is not so useful to show here on this page,
+        but it is necessary for internal use so that number of pages and books
+        can be calculated. See below. <br /> If you are interested a{' '}
+        <b>precise</b> value for the number of tokens and words in a piece of
+        text, check out OpenAI's tokenizer tool{' '}
+        <a href={LINK_TOKENIZER}>here</a>. For programmitic use, they recommend
+        using the <code>tiktoken</code> package.
+      </span>
+    ),
+  },
+  {
+    measure: 'Words per A4 page',
+    value: WORDS_PER_A4_PAGE.toLocaleString(),
+    comment:
+      'An A4 page typically contains 400-500 words, averaging around 450 words, based on search result various sources.',
+  },
+  {
+    measure: 'Words per A5 novel',
+    value: WORDS_PER_A5_BOOK.toLocaleString(),
+    comment:
+      'For novels (assuming A5 format), the word count ranges from 70,000 to 120,000 words, with a minimum of 50,000 words and a typical range of 80,000 words. This is based on search result various sources. This tool uses the latter value as the standard.',
+  },
+];
+
+function Table({ data, fields }) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          {fields.map((field) => (
+            <th key={field.name}>{field.name}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row) => (
+          <tr key={Math.random()}>
+            {Object.values(row).map((value) => (
+              <td key={value}>{value}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
 function Notes() {
   return (
     <div>
@@ -14,44 +92,9 @@ function Notes() {
       </p>
 
       <div>
-        <h3>Token and word conversions</h3>
+        <h3>Conversion rates used</h3>
 
-        <ul>
-          <li>
-            According to OpenAI's approximation, 1 token is approximately equal
-            to 4 characters or ¾ words (Source:{' '}
-            <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">
-              OpenAI Help Center
-            </a>
-            ). The calculated word count is not so useful to show here on this
-            page, but it is necessary for internal use so that number of pages
-            and books can be calculated. See below.
-          </li>
-          <li>
-            If you are interested a precise value for the number of tokens and
-            words in a piece of text, check out OpenAI's tokenizer tool{' '}
-            <a href="https://platform.openai.com/tokenizer">here</a>. For
-            programmitic use, they recommend using the <code>tiktoken</code>{' '}
-            package.
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Page and book formats</h3>
-
-        <ul>
-          <li>
-            An A4 page typically contains 400-500 words, averaging around 450
-            words, based on search result various sources.
-          </li>
-          <li>
-            For novels (assuming A5 format), the word count ranges from 70,000
-            to 120,000 words, with a minimum of 50,000 words and a typical range
-            of 80,000 words. This is based on search result various sources.
-            This tool uses the latter value as the standard.
-          </li>
-        </ul>
+        <Table data={CONVERSION_RATES_DATA} fields={CONVERSION_RATES_FIELDS} />
       </div>
 
       <div>
