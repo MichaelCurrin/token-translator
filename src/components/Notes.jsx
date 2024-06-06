@@ -68,18 +68,14 @@ const TABLE_DATA_PROVIDERS = {
   fields: [{ name: 'Provider' }, { name: 'Source' }],
   rows: [
     {
+      provider: 'Anthropic',
+      source: <><a href="https://www.anthropic.com/api">Anthropic API</a> page</>
+    },
+    {
       provider: 'Google',
       source: (
         <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
           Google's Gemini API documentation
-        </a>
-      ),
-    },
-    {
-      provider: 'OpenAI',
-      source: (
-        <a href="https://platform.openai.com/docs/models">
-          OpenAI Platform documentation
         </a>
       ),
     },
@@ -93,6 +89,14 @@ const TABLE_DATA_PROVIDERS = {
         </>
       ),
     },
+    {
+      provider: 'OpenAI',
+      source: (
+        <a href="https://platform.openai.com/docs/models">
+          OpenAI Platform documentation
+        </a>
+      ),
+    },
   ],
 };
 
@@ -100,18 +104,18 @@ const TABLE_DATA_PRICING = {
   fields: [{ name: 'Provider' }, { name: 'Source' }],
   rows: [
     {
-      provider: 'OpenAI',
+      provider: 'Google',
       source: (
-        <a href="https://openai.com/api/pricing/">
-          https://openai.com/api/pricing/
+        <a href="https://ai.google.dev/pricing">
+          Google AI pricing page
         </a>
       ),
     },
     {
-      provider: 'Gemini',
+      provider: 'OpenAI',
       source: (
-        <a href="https://ai.google.dev/pricing">
-          https://ai.google.dev/pricing
+        <a href="https://openai.com/api/pricing/">
+          API pricing page
         </a>
       ),
     },
