@@ -69,7 +69,11 @@ const TABLE_DATA_PROVIDERS = {
   rows: [
     {
       provider: 'Anthropic',
-      source: <><a href="https://www.anthropic.com/api">Anthropic API</a> page</>
+      source: (
+        <>
+          <a href="https://www.anthropic.com/api">Anthropic API</a> page
+        </>
+      ),
     },
     {
       provider: 'Google',
@@ -106,18 +110,12 @@ const TABLE_DATA_PRICING = {
     {
       provider: 'Google',
       source: (
-        <a href="https://ai.google.dev/pricing">
-          Google AI pricing page
-        </a>
+        <a href="https://ai.google.dev/pricing">Google AI pricing page</a>
       ),
     },
     {
       provider: 'OpenAI',
-      source: (
-        <a href="https://openai.com/api/pricing/">
-          API pricing page
-        </a>
-      ),
+      source: <a href="https://openai.com/api/pricing/">API pricing page</a>,
     },
   ],
 };
