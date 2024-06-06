@@ -3,13 +3,13 @@ import {
   WORDS_PER_A4_PAGE,
   WORDS_PER_A5_BOOK,
 } from '../constants';
-import Table from "./Table";
+import Table from './Table';
 
 const LINK_OPENAI_TOKENS_ARTICLE =
   'https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them';
 const LINK_TOKENIZER = 'https://platform.openai.com/tokenizer';
 
-const CONVERSION_RATES = {
+const TABLE_DATA_CONVERSION_RATES = {
   fields: [
     {
       name: 'Measure',
@@ -56,6 +56,60 @@ const CONVERSION_RATES = {
   ],
 };
 
+const TABLE_DATA_PROVIDERS = {
+  fields: [{ name: 'Provider' }, { name: 'Source' }],
+  rows: [
+    {
+      provider: 'Google',
+      source: (
+        <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
+          Google's Gemini API documentation
+        </a>
+      ),
+    },
+    {
+      provider: 'OpenAI',
+      source: (
+        <a href="https://platform.openai.com/docs/models">
+          OpenAI Platform documentation
+        </a>
+      ),
+    },
+    {
+      provider: 'Meta',
+      source: (
+        <>
+          <a href="https://ollama.com/blog/llama3">Ollama blog</a> page,{' '}
+          <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
+          <a href="https://ollama.com/library/mixtral">Mixtral model</a>{' '}
+        </>
+      ),
+    },
+  ],
+};
+
+const TABLE_DATA_PRICING = {
+  fields: [{ name: 'Provider' }, { name: 'Source' }],
+  rows: [
+    {
+      provider: 'OpenAI',
+      source: (
+        <a href="https://openai.com/api/pricing/">
+          https://openai.com/api/pricing/
+        </a>
+      ),
+    },
+    {
+      provider: 'Gemini',
+      source: (
+        <a href="https://ai.google.dev/pricing">
+          https://ai.google.dev/pricing
+        </a>
+      ),
+    },
+  ],
+};
+
 function Notes() {
   return (
     <div>
@@ -74,7 +128,7 @@ function Notes() {
       <div>
         <h3>Conversion rates used</h3>
 
-        <Table tableData={CONVERSION_RATES} />
+        <Table tableData={TABLE_DATA_CONVERSION_RATES} />
       </div>
 
       <div>
@@ -87,72 +141,12 @@ function Notes() {
           interaction). This tool focuses on the input you can provide to a
           model, so ignores the "OUT" portion.
         </p>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Provider</th>
-              <th>Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Google</td>
-              <td>
-                <a href="https://ai.google.dev/gemini-api/docs/models/gemini">
-                  Google's Gemini API documentation
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>OpenAI</td>
-              <td>
-                <a href="https://platform.openai.com/docs/models">
-                  OpenAI Platform documentation
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Meta</td>
-              <td>
-                <a href="https://ollama.com/blog/llama3">Ollama blog</a>,{' '}
-                <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
-                <a href="https://ollama.com/library/mixtral">Mixtral model</a>{' '}
-                page.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <Table tableData={TABLE_DATA_PROVIDERS} />
       </div>
 
       <div>
         <h3 id="api-pricing">API pricing</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Provider</th>
-              <th>Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>OpenAI</td>
-              <td>
-                <a href="https://openai.com/api/pricing/">
-                  https://openai.com/api/pricing/
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Gemini</td>
-              <td>
-                <a href="https://ai.google.dev/pricing">
-                  https://ai.google.dev/pricing
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <Table tableData={TABLE_DATA_PRICING} />
       </div>
 
       <div>
