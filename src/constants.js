@@ -60,4 +60,22 @@ export const PRICE_PER_MILLION_TOKENS = [
     input: '$0.50',
     output: '$1.50',
   },
+  {
+    provider: 'Anthropic',
+    modelName: 'Claude 3 - Haiku',
+    input: '$0.25',
+    output: '$1.25',
+  },
+  {
+    provider: 'Anthropic',
+    modelName: 'Claude 3 - Sonnet',
+    input: '$3',
+    output: '$15',
+  },
+  {
+    provider: 'Anthropic',
+    modelName: 'Claude 3 - Opus',
+    input: '$15',
+    output: '$75',
+  },
 ];
