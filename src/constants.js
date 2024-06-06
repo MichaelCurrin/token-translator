@@ -15,11 +15,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Meta', modelName: 'Phi-3', tokens: 128000 },
   { provider: 'Meta', modelName: 'Mixtral', tokens: 64000 },
   { provider: 'Anthropic', modelName: 'Claude 3', tokens: 200000 },
-  {
-    provider: 'Anthropic',
-    modelName: 'Claude 2.1 ("Legacy model")',
-    tokens: 200000,
-  },
+  { provider: 'Anthropic', modelName: 'Claude 2.1', tokens: 200000 },
 ];
 
 export const PRICE_PER_MILLION_TOKENS = [
@@ -55,7 +51,7 @@ export const PRICE_PER_MILLION_TOKENS = [
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 1.5 Flash (<128k tokens)',
+    modelName: 'Gemini 1.5 Pro (>128k tokens)',
     input: '$7.00',
     output: '$21.00',
   },
