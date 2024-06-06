@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
 import Table from './Table';
 
+const INITIAL_SORT_KEY = 'providerAndModel';
+
 /**
  * Parse a price string and return the numeric value.
  *
@@ -35,7 +37,6 @@ function sortModels(key, models) {
     sortedArray.sort((a, b) => {
       const aPrice = parsePriceString(a[key]);
       const bPrice = parsePriceString(b[key]);
-      console.log(aPrice, bPrice);
       return bPrice - aPrice;
     });
   }
@@ -44,15 +45,15 @@ function sortModels(key, models) {
 }
 
 function Pricing() {
-  const [sortedModels, setSortedModels] = useState(PRICE_PER_MILLION_TOKENS);
-
+  const [sortedModels, setSortedModels] = useState(
+    sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS),
+  );
   const [sortBy, setSortBy] = useState('providerAndModel');
 
   const handleOnSortBy = (event) => {
     const value = event.target.value;
     setSortBy(value);
-    const x = sortModels(value, sortedModels);
-    setSortedModels(x);
+    setSortedModels(sortModels(value, sortedModels));
   };
 
   return (
