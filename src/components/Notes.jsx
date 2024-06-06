@@ -3,6 +3,7 @@ import {
   WORDS_PER_A4_PAGE,
   WORDS_PER_A5_BOOK,
 } from '../constants';
+import Table from "./Table";
 
 const LINK_OPENAI_TOKENS_ARTICLE =
   'https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them';
@@ -54,29 +55,6 @@ const CONVERSION_RATES = {
     },
   ],
 };
-
-function Table({ tableData }) {
-  return (
-    <table>
-      <thead>
-        <tr>
-          {tableData.fields.map((field) => (
-            <th key={field.name}>{field.name}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {tableData.rows.map((row) => (
-          <tr key={Math.random()}>
-            {Object.values(row).map((value) => (
-              <td key={value}>{value}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
 
 function Notes() {
   return (
