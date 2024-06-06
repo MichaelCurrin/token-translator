@@ -2,6 +2,7 @@ import {
   CHARS_PER_TOKEN,
   WORDS_PER_A4_PAGE,
   WORDS_PER_A5_BOOK,
+  WORDS_PER_TOKEN,
 } from '../constants';
 import Table from './Table';
 
@@ -16,7 +17,6 @@ const TABLE_DATA_CONVERSION_RATES = {
     },
     {
       name: 'Value',
-      alignRight: true,
     },
     {
       name: 'Comment',
@@ -29,15 +29,23 @@ const TABLE_DATA_CONVERSION_RATES = {
       comment: (
         <span>
           According to OpenAI's approximation, 1 token is approximately equal to{' '}
-          <b>4 characters</b> or <b>¾ words</b> (Source:{' '}
+          <b>4 characters</b> or <b>¾ words</b> (source:{' '}
           <a href={LINK_OPENAI_TOKENS_ARTICLE}>OpenAI Help Center</a>
-          ). The calculated word count is not so useful to show here on this
-          page, but it is necessary for internal use so that number of pages and
-          books can be calculated. See below. <br /> If you are interested a{' '}
-          <b>precise</b> value for the number of tokens and words in a piece of
-          text, check out OpenAI's tokenizer tool{' '}
-          <a href={LINK_TOKENIZER}>here</a>. For programmitic use, they
-          recommend using the <code>tiktoken</code> package.
+          ).
+        </span>
+      ),
+    },
+    {
+      measure: 'Words per token',
+      value: WORDS_PER_TOKEN,
+      comment: (
+        <span>
+          Same source as above. This measure is used when entering custom text
+          as a rough calculation. But, if you are interested a <b>precise</b>{' '}
+          value for the number of tokens and words in a piece of text, check out
+          OpenAI's tokenizer tool <a href={LINK_TOKENIZER}>here</a>. For
+          programmitic use, they recommend using the <code>tiktoken</code>{' '}
+          package.
         </span>
       ),
     },
@@ -51,7 +59,7 @@ const TABLE_DATA_CONVERSION_RATES = {
       measure: 'Words per A5 novel',
       value: WORDS_PER_A5_BOOK.toLocaleString(),
       comment:
-        'For novels (assuming A5 format), the word count ranges from 70,000 to 120,000 words, with a minimum of 50,000 words and a typical range of 80,000 words. This is based on search result various sources. This tool uses the latter value as the standard.',
+        'For novels (assuming A5 format), info was from mixed sources says a word count ranges from 70,000 to 120,000 words, or a minimum of 50,000 words and a typical range of 80,000 words.',
     },
   ],
 };
