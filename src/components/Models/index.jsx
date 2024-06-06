@@ -4,6 +4,8 @@ import { addCounts } from '../../lib';
 import SortingButtons from './SortingButtons';
 import Table from './Table';
 
+const INITIAL_SORT_KEY = 'providerAndModel';
+
 function sortModelsByKey(key, models) {
   let sortedArray = [...models];
 
@@ -22,12 +24,10 @@ function sortModelsByKey(key, models) {
 }
 
 function Models() {
-  const initialSortKey = 'providerAndModel';
-
   const [sortedModels, setSortedModels] = useState(
-    sortModelsByKey(initialSortKey, MODEL_INPUT_LIMITS.map(addCounts))
+    sortModelsByKey(INITIAL_SORT_KEY, MODEL_INPUT_LIMITS.map(addCounts)),
   );
-  const [sortBy, setSortBy] = useState(initialSortKey);
+  const [sortBy, setSortBy] = useState(INITIAL_SORT_KEY);
 
   const handleOnSortBy = (key) => {
     setSortBy(key);
