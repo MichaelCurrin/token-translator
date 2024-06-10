@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Models from './components/Models';
 import Notes from './components/Notes';
 import Pricing from './components/Pricing';
+import PricingCalculator from './components/PricingCalculator';
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
       <div>
         <h2>Pricing</h2>
         <Pricing />
+      </div>
+      <div>
+        <h2>Pricing Calculator</h2>
+        <PricingCalculator />
       </div>
       <div>
         <h2>Notes</h2>
