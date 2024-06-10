@@ -112,7 +112,8 @@ function ConvertInput() {
   return (
     <div>
       <p>
-        Convert a total token count or the length of your sample text to more human-relatable measures.
+        Convert a total token count or the length of your sample text to more
+        human-relatable measures.
       </p>
       <ResultTable result={result} />
       <br />
@@ -136,6 +137,12 @@ function ConvertInput() {
           article or a book), then you find out how many tokens it is and that
           will help you figure out which models are capable of handling that
           content.
+        </p>
+      </blockquote>
+      <blockquote>
+        <p>
+          🔒 You can safely put any info you want in the text field. Anything
+          you input will <b>NOT</b> be stored anywhere or sent to any services.
         </p>
       </blockquote>
     </div>
