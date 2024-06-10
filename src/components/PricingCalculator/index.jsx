@@ -38,8 +38,6 @@ function PricingCalculator() {
   const calculateCosts = (
     inTokens,
     outTokens,
-    calculatedTotalInputTokens,
-    calculatedTotalOutputTokens,
   ) => {
     const selectedModel = modelChoices.find(
       (model) => model.modelName === modelName,
@@ -48,15 +46,15 @@ function PricingCalculator() {
     const queryRange = selectedModel.range;
     const inputCostRate = parsePriceString(
       selectedModel.input ||
-        (inTokens >= queryRange.threshold
-          ? queryRange.high.input
-          : queryRange.low.input),
+      (inTokens >= queryRange.threshold
+        ? queryRange.high.input
+        : queryRange.low.input),
     );
     const outputCostRate = parsePriceString(
       selectedModel.output ||
-        (outTokens >= queryRange.threshold
-          ? queryRange.high.output
-          : queryRange.low.output),
+      (outTokens >= queryRange.threshold
+        ? queryRange.high.output
+        : queryRange.low.output),
     );
 
     const calculatedTotalInputCost =
@@ -84,6 +82,8 @@ function PricingCalculator() {
     customQuerySize,
     resultSize,
     customResultSize,
+    calculateTokens,
+    calculateCosts
   ]);
 
   return (
