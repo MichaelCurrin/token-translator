@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
+import { parsePriceString, sortModels } from '../Pricing';
+
+const ONE_MILLION_TOKENS = 1000000;
 
 const PricingCalculator = () => {
-  const modelNames = PRICE_PER_MILLION_TOKENS.map(
-    (modelData) => `${modelData.provider} - ${modelData.modelName}`,
-  ).sort((a, b) => a.localeCompare(b));
+  const modelChoices = sortModels('providerAndModel', PRICE_PER_MILLION_TOKENS);
 
-  const [model, setModel] = useState(modelNames[0]);
+  const [modelName, setModelName] = useState(modelChoices[0].modelName);
   const [queries, setQueries] = useState(1);
+
   const [querySize, setQuerySize] = useState('50');
-  const [customQuerySize, setCustomQuerySize] = useState(600);
+  const [customQuerySize, setCustomQuerySize] = useState(1000000);
   const [resultSize, setResultSize] = useState('50');
-  const [customResultSize, setCustomResultSize] = useState(600);
+  const [customResultSize, setCustomResultSize] = useState(1000000);
+
   const [totalInputTokens, setTotalInputTokens] = useState(0);
   const [totalOutputTokens, setTotalOutputTokens] = useState(0);
   const [totalTokens, setTotalTokens] = useState(
@@ -20,17 +23,51 @@ const PricingCalculator = () => {
   const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => {
-    const queryTokens =
+    const inTokens =
       querySize === 'custom' ? customQuerySize : parseInt(querySize, 10);
-    const resultTokens =
+    const outTokens =
       resultSize === 'custom' ? customResultSize : parseInt(resultSize, 10);
-    const tokensPerQuery = queryTokens + resultTokens;
 
-    setTotalInputTokens(queries * queryTokens);
-    setTotalOutputTokens(queries * resultTokens);
-    setTotalTokens(queries * tokensPerQuery);
+    const selectedModel = modelChoices.find(
+      (model) => model.modelName === modelName,
+    );
+
+    const queryRange = selectedModel.range;
+    const inputCostRate = parsePriceString(
+      selectedModel.input ||
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.input
+          : queryRange.low.input),
+    );
+    const outputCostRate = parsePriceString(
+      selectedModel.output ||
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.output
+          : queryRange.low.output),
+    );
+
+    const calculatedTotalInputTokens = inTokens * queries;
+    const calculatedTotalInputCost =
+      (calculatedTotalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
+
+    const calculatedTotalOutputTokens = outTokens * queries;
+    const calculatedTotalOutputCost =
+      (calculatedTotalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
+
+    setTotalInputTokens(calculatedTotalInputTokens);
+    setTotalOutputTokens(calculatedTotalOutputTokens);
+    setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
+
+    const calculatedTotalCost =
+      calculatedTotalInputCost + calculatedTotalOutputCost;
+    setTotalCost(
+      calculatedTotalCost.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 6,
+      }),
+    );
   }, [
-    model,
+    modelName,
     queries,
     querySize,
     customQuerySize,
@@ -50,18 +87,24 @@ const PricingCalculator = () => {
         cost out.
       </p>
       <h3>Estimated usage</h3>
+      <blockquote>
+        <p>
+          ℹ️ Recommended - if you're running your app as a service, set "Total
+          queries" based on the number of expected queries per day, month, etc.
+        </p>
+      </blockquote>
       <form>
         <div>
           <label htmlFor="model">Model: </label>
           <select
             id="model"
             name="model"
-            value={model}
-            onChange={(e) => setModel(e.target.value)}
+            value={modelName}
+            onChange={(e) => setModelName(e.target.value)}
           >
-            {modelNames.map((name, index) => (
-              <option key={index} value={name}>
-                {name}
+            {modelChoices.map((m, index) => (
+              <option key={index} value={m.modelName}>
+                {m.provider} - {m.modelName}
               </option>
             ))}
           </select>
@@ -89,9 +132,12 @@ const PricingCalculator = () => {
             value={querySize}
             onChange={(e) => setQuerySize(e.target.value)}
           >
-            <option value="50">One line (≈50 tokens)</option>
-            <option value="200">Paragraph (≈200 tokens)</option>
-            <option value="600">Page (≈600 tokens)</option>
+            <option value="50">1x line (≈50 tokens)</option>
+            <option value="200">1x paragraph (≈200 tokens)</option>
+            <option value="600">1x A4 page (≈600 tokens)</option>
+            <option value="100000">1x novel (≈100k tokens)</option>
+            <option value="128000">128K tokens</option>
+            <option value="1000000">1M tokens</option>
             <option value="custom">Custom</option>
           </select>
           {querySize === 'custom' && (
@@ -117,9 +163,12 @@ const PricingCalculator = () => {
             value={resultSize}
             onChange={(e) => setResultSize(e.target.value)}
           >
-            <option value="50">One line (≈50 tokens)</option>
-            <option value="200">Paragraph (≈200 tokens)</option>
-            <option value="600">Page (≈600 tokens)</option>
+            <option value="50">1x line (≈50 tokens)</option>
+            <option value="200">1x paragraph (≈200 tokens)</option>
+            <option value="600">1x A4 page (≈600 tokens)</option>
+            <option value="100000">1x novel (≈100k tokens)</option>
+            <option value="128000">128K tokens</option>
+            <option value="1000000">1M tokens</option>
             <option value="custom">Custom</option>
           </select>
           {resultSize === 'custom' && (
