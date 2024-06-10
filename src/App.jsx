@@ -11,7 +11,7 @@ function App() {
       <Header />
       <h2>About</h2>
       <p>
-        Language models like GPT-4 or LLaMA can process a lot of text, but the
+        Language models like GPT-4 or Llama can process a lot of text, but the
         amount of text they can handle is not always easy to visualize.
         Especially since the limit of a model is quoted not in characters or
         words in "tokens", which are groups of characters.{' '}
