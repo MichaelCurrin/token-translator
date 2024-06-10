@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
 import { parsePriceString, sortModels } from '../Pricing';
+import { CostSummary } from './CostSummary';
 
 const ONE_MILLION_TOKENS = 1000000;
 
@@ -197,34 +198,14 @@ function PricingCalculator() {
 
       <div>
         <h3>Estimated results</h3>
-        <p>Total input tokens: {totalInputTokens.toLocaleString()}</p>
-        <p>Total output tokens: {totalOutputTokens.toLocaleString()}</p>
-        <p>Combined tokens: {totalTokens.toLocaleString()}</p>
-
-        <p>
-          Total input cost: $
-          {totalInputCost.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 6,
-          })}
-        </p>
-        <p>
-          Total output cost: $
-          {totalOutputCost.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 6,
-          })}
-        </p>
-        <p>
-          Combined cost:{' '}
-          <b>
-            $
-            {totalCost.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </b>
-        </p>
+        <CostSummary
+          totalInputTokens={totalInputTokens}
+          totalOutputTokens={totalOutputTokens}
+          totalTokens={totalTokens}
+          totalInputCost={totalInputCost}
+          totalOutputCost={totalOutputCost}
+          totalCost={totalCost}
+        />
       </div>
     </div>
   );
