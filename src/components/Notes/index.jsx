@@ -53,13 +53,13 @@ const TABLE_DATA_CONVERSION_RATES = {
       measure: 'Words per A4 page',
       value: WORDS_PER_A4_PAGE.toLocaleString(),
       comment:
-        'An A4 page typically contains 400-500 words, averaging around 450 words, based on search result various sources.',
+        'An A4 page typically contains 400-500 words, averaging around 450 words, based on various sources.',
     },
     {
       measure: 'Words per A5 novel',
       value: WORDS_PER_A5_BOOK.toLocaleString(),
       comment:
-        'For novels (assuming A5 format), info was from mixed sources says a word count ranges from 70,000 to 120,000 words, or a minimum of 50,000 words and a typical range of 80,000 words.',
+        'For novels (assuming A5 format), info was found from a few sources which said a word count ranges from about 70K to 120K words, the minimum is 50K words, and a typical count is 80K words.',
     },
   ],
 };
