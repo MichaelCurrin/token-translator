@@ -24,6 +24,17 @@ body {
   text-align: left;
 }
 
+.align-right {
+  text-align: right;
+}
+
+
+div {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -45,10 +56,6 @@ tr {
   background-color: #fff;
 }
 
-.align-right {
-  text-align: right;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -63,4 +70,9 @@ blockquote {
 
 blockquote p {
   margin: 0;
+}
+
+.numeric-input {
+  width: 10em;
+  font-size: medium;
 }
