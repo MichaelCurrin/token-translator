@@ -1,11 +1,11 @@
 const TOKEN_SIZE_OPTIONS = [
-  { value: "50", label: "1x line (≈50 tokens)" },
-  { value: "200", label: "1x paragraph (≈200 tokens)" },
-  { value: "600", label: "1x A4 page (≈600 tokens)" },
-  { value: "100000", label: "1x novel (≈100k tokens)" },
-  { value: "128000", label: "128K tokens" },
-  { value: "1000000", label: "1M tokens" },
-  { value: "custom", label: "Custom" },
+  { value: '50', label: '1x line (≈50 tokens)' },
+  { value: '200', label: '1x paragraph (≈200 tokens)' },
+  { value: '600', label: '1x A4 page (≈600 tokens)' },
+  { value: '100000', label: '1x novel (≈100k tokens)' },
+  { value: '128000', label: '128K tokens' },
+  { value: '1000000', label: '1M tokens' },
+  { value: 'custom', label: 'Custom' },
 ];
 
 function Form({
@@ -114,4 +114,4 @@ function Form({
   );
 }
 
-export default Form
+export default Form;

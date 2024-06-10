@@ -45,15 +45,15 @@ function PricingCalculator() {
       const queryRange = selectedModel.range;
       const inputCostRate = parsePriceString(
         selectedModel.input ||
-        (inTokens >= queryRange.threshold
-          ? queryRange.high.input
-          : queryRange.low.input),
+          (inTokens >= queryRange.threshold
+            ? queryRange.high.input
+            : queryRange.low.input),
       );
       const outputCostRate = parsePriceString(
         selectedModel.output ||
-        (outTokens >= queryRange.threshold
-          ? queryRange.high.output
-          : queryRange.low.output),
+          (outTokens >= queryRange.threshold
+            ? queryRange.high.output
+            : queryRange.low.output),
       );
 
       const calculatedTotalInputCost =
@@ -80,18 +80,24 @@ function PricingCalculator() {
     customQuerySize,
     resultSize,
     customResultSize,
-    modelChoices, totalInputTokens, totalOutputTokens
+    modelChoices,
+    totalInputTokens,
+    totalOutputTokens,
   ]);
 
   return (
     <div>
       <p>
-        Enter how many tokens you expect to send and receive on your API queries.
+        Enter how many tokens you expect to send and receive on your API
+        queries.
       </p>
-      <blockquote><p>ℹ️ If you to use an LLM through a paid API subscription, you might want
-        to estimate the Dollar cost for a typical query so you can budget well
-        and choose a suitable model.
-      </p></blockquote>
+      <blockquote>
+        <p>
+          ℹ️ If you to use an LLM through a paid API subscription, you might
+          want to estimate the Dollar cost for a typical query so you can budget
+          well and choose a suitable model.
+        </p>
+      </blockquote>
       <Form
         modelChoices={modelChoices}
         modelName={modelName}
