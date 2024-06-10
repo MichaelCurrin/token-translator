@@ -86,14 +86,12 @@ function PricingCalculator() {
   return (
     <div>
       <p>
-        If you to use an LLM through a paid API subscriptions, you probably want
+        Enter how many tokens you expect to send and receive on your API queries.
+      </p>
+      <blockquote><p>ℹ️ If you to use an LLM through a paid API subscription, you might want
         to estimate the Dollar cost for a typical query so you can budget well
         and choose a suitable model.
-      </p>
-      <p>
-        Enter how many tokens you expect to send and receive and then get the
-        cost out.
-      </p>
+      </p></blockquote>
       <Form
         modelChoices={modelChoices}
         modelName={modelName}
