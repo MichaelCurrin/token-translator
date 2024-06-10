@@ -112,15 +112,8 @@ function ConvertInput() {
   return (
     <div>
       <p>
-        Convert a total token count to more human-relatable measures. If you
-        enter text instead, it will be converted to estimated tokens first.
+        Convert a total token count or the length of your sample text to more human-relatable measures.
       </p>
-      <blockquote>
-        <p>
-          ℹ️ Tip: 1x A4 page is about 600 tokens and 1x novel is about 100K
-          tokens.
-        </p>
-      </blockquote>
       <ResultTable result={result} />
       <br />
       <InputForm
@@ -131,6 +124,12 @@ function ConvertInput() {
         handleTextChange={handleTextChange}
         handleRadioChange={handleRadioChange}
       />
+      <blockquote>
+        <p>
+          ℹ️ Tip: 1x A4 page is about 600 tokens and 1x novel is about 100K
+          tokens.
+        </p>
+      </blockquote>
       <blockquote>
         <p>
           ℹ️ For "Text content", enter text as long as you like (such as from an
