@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
 import { parsePriceString, sortModels } from '../Pricing';
 import { CostSummary } from './CostSummary';
-import Form from './Form';
+import Form, { TOKEN_SIZE_OPTIONS } from './Form';
 
 const ONE_MILLION_TOKENS = 1000000;
+
 
 function PricingCalculator() {
   const modelChoices = sortModels('providerAndModel', PRICE_PER_MILLION_TOKENS);
@@ -12,10 +13,11 @@ function PricingCalculator() {
   const [modelName, setModelName] = useState(modelChoices[0].modelName);
   const [queries, setQueries] = useState(1);
 
-  const [querySize, setQuerySize] = useState('50');
-  const [customQuerySize, setCustomQuerySize] = useState(1000000);
-  const [resultSize, setResultSize] = useState('50');
-  const [customResultSize, setCustomResultSize] = useState(1000000);
+  const firstTokenSizeOptionValue = TOKEN_SIZE_OPTIONS[0].value
+  const [querySize, setQuerySize] = useState(firstTokenSizeOptionValue.toString());
+  const [customQuerySize, setCustomQuerySize] = useState(ONE_MILLION_TOKENS);
+  const [resultSize, setResultSize] = useState(firstTokenSizeOptionValue.toString());
+  const [customResultSize, setCustomResultSize] = useState(ONE_MILLION_TOKENS);
 
   const [totalInputTokens, setTotalInputTokens] = useState(0);
   const [totalOutputTokens, setTotalOutputTokens] = useState(0);
@@ -45,15 +47,15 @@ function PricingCalculator() {
       const queryRange = selectedModel.range;
       const inputCostRate = parsePriceString(
         selectedModel.input ||
-          (inTokens >= queryRange.threshold
-            ? queryRange.high.input
-            : queryRange.low.input),
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.input
+          : queryRange.low.input),
       );
       const outputCostRate = parsePriceString(
         selectedModel.output ||
-          (outTokens >= queryRange.threshold
-            ? queryRange.high.output
-            : queryRange.low.output),
+        (outTokens >= queryRange.threshold
+          ? queryRange.high.output
+          : queryRange.low.output),
       );
 
       const calculatedTotalInputCost =
