@@ -22,12 +22,18 @@ function PricingCalculator() {
   );
   const [totalCost, setTotalCost] = useState(0);
 
-  useEffect(() => {
-    const inTokens =
-      querySize === 'custom' ? customQuerySize : parseInt(querySize, 10);
-    const outTokens =
-      resultSize === 'custom' ? customResultSize : parseInt(resultSize, 10);
+  const calculateTokens = (inTokens, outTokens) => {
+    const calculatedTotalInputTokens = inTokens * queries;
 
+    const calculatedTotalOutputTokens = outTokens * queries;
+    return { calculatedTotalInputTokens, calculatedTotalOutputTokens };
+  };
+  const calculateCosts = (
+    inTokens,
+    outTokens,
+    calculatedTotalInputTokens,
+    calculatedTotalOutputTokens,
+  ) => {
     const selectedModel = modelChoices.find(
       (model) => model.modelName === modelName,
     );
@@ -35,36 +41,47 @@ function PricingCalculator() {
     const queryRange = selectedModel.range;
     const inputCostRate = parsePriceString(
       selectedModel.input ||
-        (inTokens >= queryRange.threshold
-          ? queryRange.high.input
-          : queryRange.low.input),
+      (inTokens >= queryRange.threshold
+        ? queryRange.high.input
+        : queryRange.low.input),
     );
     const outputCostRate = parsePriceString(
       selectedModel.output ||
-        (inTokens >= queryRange.threshold
-          ? queryRange.high.output
-          : queryRange.low.output),
+      (outTokens >= queryRange.threshold
+        ? queryRange.high.output
+        : queryRange.low.output),
     );
 
-    const calculatedTotalInputTokens = inTokens * queries;
     const calculatedTotalInputCost =
       (calculatedTotalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
-
-    const calculatedTotalOutputTokens = outTokens * queries;
     const calculatedTotalOutputCost =
       (calculatedTotalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
+
+    return { calculatedTotalInputCost, calculatedTotalOutputCost };
+  };
+
+  useEffect(() => {
+    const inTokens =
+      querySize === 'custom' ? customQuerySize : parseInt(querySize, 10);
+    const outTokens =
+      resultSize === 'custom' ? customResultSize : parseInt(resultSize, 10);
+
+    const { calculatedTotalInputTokens, calculatedTotalOutputTokens } =
+      calculateTokens(inTokens, outTokens);
+    const { calculatedTotalInputCost, calculatedTotalOutputCost } =
+      calculateCosts(
+        inTokens,
+        outTokens,
+        calculatedTotalInputTokens,
+        calculatedTotalOutputTokens,
+      );
 
     setTotalInputTokens(calculatedTotalInputTokens);
     setTotalOutputTokens(calculatedTotalOutputTokens);
     setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
 
-    const calculatedTotalCost =
-      calculatedTotalInputCost + calculatedTotalOutputCost;
     setTotalCost(
-      calculatedTotalCost.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 6,
-      }),
+      calculatedTotalInputCost + calculatedTotalOutputCost
     );
   }, [
     modelName,
@@ -190,7 +207,10 @@ function PricingCalculator() {
         <p>Total input tokens: {totalInputTokens.toLocaleString()}</p>
         <p>Total output tokens: {totalOutputTokens.toLocaleString()}</p>
         <p>Total tokens: {totalTokens.toLocaleString()}</p>
-        <p>Cost: ${totalCost}</p>
+        <p>Cost: <b>${totalCost.toLocaleString(undefined, {
+          minimumFractionDigits: 4,
+          maximumFractionDigits: 4,
+        })}</b></p>
       </div>
     </div>
   );
