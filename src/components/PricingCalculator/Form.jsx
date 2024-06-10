@@ -102,17 +102,19 @@ function Form({
             </option>
           ))}
         </select>
-        {resultSize === 'custom' && (<>
-          < input
-            id="customResultSize"
-            name="customResultSize"
-            className="numeric-input"
-            type="number"
-            placeholder="Enter custom token size"
-            value={customResultSize}
-            onChange={(e) => setCustomResultSize(e.target.value)}
-            style={{ marginLeft: '10px' }}
-          /></>
+        {resultSize === 'custom' && (
+          <>
+            <input
+              id="customResultSize"
+              name="customResultSize"
+              className="numeric-input"
+              type="number"
+              placeholder="Enter custom token size"
+              value={customResultSize}
+              onChange={(e) => setCustomResultSize(e.target.value)}
+              style={{ marginLeft: '10px' }}
+            />
+          </>
         )}
       </div>
     </form>
