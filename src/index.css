@@ -53,3 +53,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 0.25em solid #ddd;
+  background-color: #f8f8f8;
+}
+
+blockquote p {
+  margin: 0;
+}
