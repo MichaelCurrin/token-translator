@@ -26,48 +26,45 @@ function PricingCalculator() {
   const [totalOutputCost, setTotalOutputCost] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
 
-  const calculateTokens = (inTokens, outTokens) => {
-    const calculatedTotalInputTokens = inTokens * queries;
-    const calculatedTotalOutputTokens = outTokens * queries;
-
-    setTotalInputTokens(calculatedTotalInputTokens);
-    setTotalOutputTokens(calculatedTotalOutputTokens);
-    setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
-  };
-
-  const calculateCosts = (
-    inTokens,
-    outTokens,
-  ) => {
-    const selectedModel = modelChoices.find(
-      (model) => model.modelName === modelName,
-    );
-
-    const queryRange = selectedModel.range;
-    const inputCostRate = parsePriceString(
-      selectedModel.input ||
-      (inTokens >= queryRange.threshold
-        ? queryRange.high.input
-        : queryRange.low.input),
-    );
-    const outputCostRate = parsePriceString(
-      selectedModel.output ||
-      (outTokens >= queryRange.threshold
-        ? queryRange.high.output
-        : queryRange.low.output),
-    );
-
-    const calculatedTotalInputCost =
-      (totalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
-    const calculatedTotalOutputCost =
-      (totalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
-
-    setTotalInputCost(calculatedTotalInputCost);
-    setTotalOutputCost(calculatedTotalOutputCost);
-    setTotalCost(calculatedTotalInputCost + calculatedTotalOutputCost);
-  };
-
   useEffect(() => {
+    const calculateTokens = (inTokens, outTokens) => {
+      const calculatedTotalInputTokens = inTokens * queries;
+      const calculatedTotalOutputTokens = outTokens * queries;
+
+      setTotalInputTokens(calculatedTotalInputTokens);
+      setTotalOutputTokens(calculatedTotalOutputTokens);
+      setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
+    };
+
+    const calculateCosts = (inTokens, outTokens) => {
+      const selectedModel = modelChoices.find(
+        (model) => model.modelName === modelName,
+      );
+
+      const queryRange = selectedModel.range;
+      const inputCostRate = parsePriceString(
+        selectedModel.input ||
+          (inTokens >= queryRange.threshold
+            ? queryRange.high.input
+            : queryRange.low.input),
+      );
+      const outputCostRate = parsePriceString(
+        selectedModel.output ||
+          (outTokens >= queryRange.threshold
+            ? queryRange.high.output
+            : queryRange.low.output),
+      );
+
+      const calculatedTotalInputCost =
+        (totalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
+      const calculatedTotalOutputCost =
+        (totalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
+
+      setTotalInputCost(calculatedTotalInputCost);
+      setTotalOutputCost(calculatedTotalOutputCost);
+      setTotalCost(calculatedTotalInputCost + calculatedTotalOutputCost);
+    };
+
     const inTokens =
       querySize === 'custom' ? customQuerySize : parseInt(querySize, 10);
     const outTokens =
@@ -83,7 +80,7 @@ function PricingCalculator() {
     resultSize,
     customResultSize,
     calculateTokens,
-    calculateCosts
+    calculateCosts,
   ]);
 
   return (
