@@ -89,7 +89,7 @@ const TABLE_DATA_PROVIDERS = {
         <>
           <a href="https://ollama.com/blog/llama3">Ollama blog</a> page,{' '}
           <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
-          <a href="https://ollama.com/library/mixtral">Mixtral model</a>{' '}page
+          <a href="https://ollama.com/library/mixtral">Mixtral model</a> page
         </>
       ),
     },
