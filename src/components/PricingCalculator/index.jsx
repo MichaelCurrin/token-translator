@@ -20,6 +20,9 @@ function PricingCalculator() {
   const [totalTokens, setTotalTokens] = useState(
     totalInputTokens + totalOutputTokens,
   );
+
+  const [totalInputCost, setTotalInputCost] = useState(0);
+  const [totalOutputCost, setTotalOutputCost] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
 
   const calculateTokens = (inTokens, outTokens) => {
@@ -41,15 +44,15 @@ function PricingCalculator() {
     const queryRange = selectedModel.range;
     const inputCostRate = parsePriceString(
       selectedModel.input ||
-      (inTokens >= queryRange.threshold
-        ? queryRange.high.input
-        : queryRange.low.input),
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.input
+          : queryRange.low.input),
     );
     const outputCostRate = parsePriceString(
       selectedModel.output ||
-      (outTokens >= queryRange.threshold
-        ? queryRange.high.output
-        : queryRange.low.output),
+        (outTokens >= queryRange.threshold
+          ? queryRange.high.output
+          : queryRange.low.output),
     );
 
     const calculatedTotalInputCost =
@@ -80,9 +83,9 @@ function PricingCalculator() {
     setTotalOutputTokens(calculatedTotalOutputTokens);
     setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
 
-    setTotalCost(
-      calculatedTotalInputCost + calculatedTotalOutputCost
-    );
+    setTotalInputCost(calculatedTotalInputCost);
+    setTotalOutputCost(calculatedTotalOutputCost);
+    setTotalCost(calculatedTotalInputCost + calculatedTotalOutputCost);
   }, [
     modelName,
     queries,
@@ -207,10 +210,31 @@ function PricingCalculator() {
         <p>Total input tokens: {totalInputTokens.toLocaleString()}</p>
         <p>Total output tokens: {totalOutputTokens.toLocaleString()}</p>
         <p>Total tokens: {totalTokens.toLocaleString()}</p>
-        <p>Cost: <b>${totalCost.toLocaleString(undefined, {
-          minimumFractionDigits: 4,
-          maximumFractionDigits: 4,
-        })}</b></p>
+
+        <p>
+          Total input cost: $
+          {totalInputCost.toLocaleString(undefined, {
+            minimumFractionDigits: 4,
+            maximumFractionDigits: 4,
+          })}
+        </p>
+        <p>
+          Total output cost: $
+          {totalOutputCost.toLocaleString(undefined, {
+            minimumFractionDigits: 4,
+            maximumFractionDigits: 4,
+          })}
+        </p>
+        <p>
+          Total cost:{' '}
+          <b>
+            $
+            {totalCost.toLocaleString(undefined, {
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 4,
+            })}
+          </b>
+        </p>
       </div>
     </div>
   );
