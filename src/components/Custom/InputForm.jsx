@@ -23,6 +23,7 @@ function InputForm({
           <span data-testid="user-input-number-label">Tokens: </span>
         </label>
         <input
+          class="numeric-input"
           data-testid="user-input-number"
           type="number"
           value={tokenValue}
@@ -30,7 +31,6 @@ function InputForm({
           onChange={handleTokenChange}
           disabled={inputType === 'text'}
           placeholder="Enter token count"
-          style={{ textAlign: 'right', width: '10em', fontSize: 'medium' }}
         />
       </div>
       <div>
