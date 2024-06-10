@@ -43,8 +43,8 @@ export const PRICE_PER_MILLION_TOKENS = [
       high: {
         input: '$0.70',
         output: '$2.10',
-      }
-    }
+      },
+    },
   },
   {
     provider: 'Google',
@@ -58,8 +58,8 @@ export const PRICE_PER_MILLION_TOKENS = [
       high: {
         input: '$7.00',
         output: '$21.00',
-      }
-    }
+      },
+    },
   },
   {
     provider: 'Google',

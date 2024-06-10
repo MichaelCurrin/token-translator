@@ -25,7 +25,7 @@ function flattenModelWithRange(model) {
       input: model.input,
       output: model.output,
       note: '',
-    }
+    };
   }
 
   const { threshold, low, high } = model.range;
@@ -77,14 +77,18 @@ function sortModels(key, models) {
 
 function Pricing() {
   const [sortedModels, setSortedModels] = useState(
-    (sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS)).flatMap(flattenModelWithRange)
+    sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS).flatMap(
+      flattenModelWithRange,
+    ),
   );
   const [sortBy, setSortBy] = useState('providerAndModel');
 
   const handleOnSortBy = (event) => {
     const value = event.target.value;
     setSortBy(value);
-    setSortedModels((sortModels(value, sortedModels)).flatMap(flattenModelWithRange));
+    setSortedModels(
+      sortModels(value, sortedModels).flatMap(flattenModelWithRange),
+    );
   };
 
   return (

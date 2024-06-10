@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { PRICE_PER_MILLION_TOKENS } from "../../constants";
+import { PRICE_PER_MILLION_TOKENS } from '../../constants';
 
 const PricingCalculator = () => {
-  const modelNames = PRICE_PER_MILLION_TOKENS.map(modelData => `${modelData.provider} - ${modelData.modelName}`).sort((a, b) => a.localeCompare(b));
+  const modelNames = PRICE_PER_MILLION_TOKENS.map(
+    (modelData) => `${modelData.provider} - ${modelData.modelName}`,
+  ).sort((a, b) => a.localeCompare(b));
 
   const [model, setModel] = useState(modelNames[0]);
   const [queries, setQueries] = useState(1);
@@ -12,8 +14,10 @@ const PricingCalculator = () => {
   const [customResultSize, setCustomResultSize] = useState(600);
   const [totalInputTokens, setTotalInputTokens] = useState(0);
   const [totalOutputTokens, setTotalOutputTokens] = useState(0);
-  const [totalTokens, setTotalTokens] = useState(totalInputTokens + totalOutputTokens);
-  const [totalCost, setTotalCost] = useState(0)
+  const [totalTokens, setTotalTokens] = useState(
+    totalInputTokens + totalOutputTokens,
+  );
+  const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => {
     const queryTokens =
@@ -37,9 +41,14 @@ const PricingCalculator = () => {
   return (
     <div>
       <p>
-        If you to use an LLM through a paid API subscriptions, you probably want to estimate the Dollar cost for a typical query so you can budget well and choose a suitable model.
+        If you to use an LLM through a paid API subscriptions, you probably want
+        to estimate the Dollar cost for a typical query so you can budget well
+        and choose a suitable model.
       </p>
-      <p>Enter how many tokens you expect to send and receive and then get the cost out.</p>
+      <p>
+        Enter how many tokens you expect to send and receive and then get the
+        cost out.
+      </p>
       <h3>Estimated usage</h3>
       <form>
         <div>
