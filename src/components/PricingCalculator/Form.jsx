@@ -1,3 +1,13 @@
+const TOKEN_SIZE_OPTIONS = [
+  { value: "50", label: "1x line (≈50 tokens)" },
+  { value: "200", label: "1x paragraph (≈200 tokens)" },
+  { value: "600", label: "1x A4 page (≈600 tokens)" },
+  { value: "100000", label: "1x novel (≈100k tokens)" },
+  { value: "128000", label: "128K tokens" },
+  { value: "1000000", label: "1M tokens" },
+  { value: "custom", label: "Custom" },
+];
+
 function Form({
   modelChoices,
   modelName,
@@ -53,13 +63,11 @@ function Form({
           value={querySize}
           onChange={(e) => setQuerySize(e.target.value)}
         >
-          <option value="50">1x line (≈50 tokens)</option>
-          <option value="200">1x paragraph (≈200 tokens)</option>
-          <option value="600">1x A4 page (≈600 tokens)</option>
-          <option value="100000">1x novel (≈100k tokens)</option>
-          <option value="128000">128K tokens</option>
-          <option value="1000000">1M tokens</option>
-          <option value="custom">Custom</option>
+          {TOKEN_SIZE_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
         {querySize === 'custom' && (
           <input
@@ -84,13 +92,11 @@ function Form({
           value={resultSize}
           onChange={(e) => setResultSize(e.target.value)}
         >
-          <option value="50">1x line (≈50 tokens)</option>
-          <option value="200">1x paragraph (≈200 tokens)</option>
-          <option value="600">1x A4 page (≈600 tokens)</option>
-          <option value="100000">1x novel (≈100k tokens)</option>
-          <option value="128000">128K tokens</option>
-          <option value="1000000">1M tokens</option>
-          <option value="custom">Custom</option>
+          {TOKEN_SIZE_OPTIONS.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
         {resultSize === 'custom' && (
           <input
@@ -108,4 +114,4 @@ function Form({
   );
 }
 
-export default Form;
+export default Form
