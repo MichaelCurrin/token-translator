@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
 import { parsePriceString, sortModels } from '../Pricing';
 import { CostSummary } from './CostSummary';
+import Form from './Form';
 
 const ONE_MILLION_TOKENS = 1000000;
 
@@ -44,15 +45,15 @@ function PricingCalculator() {
       const queryRange = selectedModel.range;
       const inputCostRate = parsePriceString(
         selectedModel.input ||
-          (inTokens >= queryRange.threshold
-            ? queryRange.high.input
-            : queryRange.low.input),
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.input
+          : queryRange.low.input),
       );
       const outputCostRate = parsePriceString(
         selectedModel.output ||
-          (outTokens >= queryRange.threshold
-            ? queryRange.high.output
-            : queryRange.low.output),
+        (outTokens >= queryRange.threshold
+          ? queryRange.high.output
+          : queryRange.low.output),
       );
 
       const calculatedTotalInputCost =
@@ -79,8 +80,6 @@ function PricingCalculator() {
     customQuerySize,
     resultSize,
     customResultSize,
-    calculateTokens,
-    calculateCosts,
   ]);
 
   return (
@@ -94,105 +93,21 @@ function PricingCalculator() {
         Enter how many tokens you expect to send and receive and then get the
         cost out.
       </p>
-      <h3>Estimated usage</h3>
-      <blockquote>
-        <p>
-          ℹ️ Recommended - if you're running your app as a service, set "Total
-          queries" based on the number of expected queries per day, month, etc.
-        </p>
-      </blockquote>
-      <form>
-        <div>
-          <label htmlFor="model">Model: </label>
-          <select
-            id="model"
-            name="model"
-            value={modelName}
-            onChange={(e) => setModelName(e.target.value)}
-          >
-            {modelChoices.map((m, index) => (
-              <option key={index} value={m.modelName}>
-                {m.provider} - {m.modelName}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="queries">Total queries: </label>
-          <input
-            className="numeric-input"
-            id="queries"
-            type="number"
-            name="queries"
-            min="1"
-            value={queries}
-            onChange={(e) => setQueries(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="querySize">Query input size: </label>
-          <select
-            id="querySize"
-            name="querySize"
-            min="1"
-            value={querySize}
-            onChange={(e) => setQuerySize(e.target.value)}
-          >
-            <option value="50">1x line (≈50 tokens)</option>
-            <option value="200">1x paragraph (≈200 tokens)</option>
-            <option value="600">1x A4 page (≈600 tokens)</option>
-            <option value="100000">1x novel (≈100k tokens)</option>
-            <option value="128000">128K tokens</option>
-            <option value="1000000">1M tokens</option>
-            <option value="custom">Custom</option>
-          </select>
-          {querySize === 'custom' && (
-            <input
-              id="customQuerySize"
-              name="customQuerySize"
-              className="numeric-input"
-              type="number"
-              placeholder="Enter custom token size"
-              min="1"
-              value={customQuerySize}
-              onChange={(e) => setCustomQuerySize(e.target.value)}
-            />
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="resultSize">Query output size: </label>
-          <select
-            id="resultSize"
-            name="resultSize"
-            min="1"
-            value={resultSize}
-            onChange={(e) => setResultSize(e.target.value)}
-          >
-            <option value="50">1x line (≈50 tokens)</option>
-            <option value="200">1x paragraph (≈200 tokens)</option>
-            <option value="600">1x A4 page (≈600 tokens)</option>
-            <option value="100000">1x novel (≈100k tokens)</option>
-            <option value="128000">128K tokens</option>
-            <option value="1000000">1M tokens</option>
-            <option value="custom">Custom</option>
-          </select>
-          {resultSize === 'custom' && (
-            <input
-              id="customResultSize"
-              name="customResultSize"
-              className="numeric-input"
-              type="number"
-              placeholder="Enter custom token size"
-              value={customResultSize}
-              onChange={(e) => setCustomResultSize(e.target.value)}
-            />
-          )}
-        </div>
-      </form>
-
+      <Form
+        modelChoices={modelChoices}
+        modelName={modelName}
+        setModelName={setModelName}
+        queries={queries}
+        setQueries={setQueries}
+        querySize={querySize}
+        setQuerySize={setQuerySize}
+        customQuerySize={customQuerySize}
+        setCustomQuerySize={setCustomQuerySize}
+        resultSize={resultSize}
+        setResultSize={setResultSize}
+        customResultSize={customResultSize}
+        setCustomResultSize={setCustomResultSize}
+      />
       <div>
         <h3>Estimated results</h3>
         <CostSummary
