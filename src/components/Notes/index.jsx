@@ -136,14 +136,17 @@ function Notes() {
       <div>
         <h3>Model input limits</h3>
 
-        <p>
-          Models limits are sourced from the links below. They are presented
-          either as "context window" token limit (which considers a history of
-          interactions) or "IN" and "OUT" token limits (for a single
-          interaction). This tool focuses on the input you can provide to a
-          model, so ignores the "OUT" portion.
-        </p>
+        <p>Models limits are sourced from the links below.</p>
         <Table tableData={TABLE_DATA_PROVIDERS} />
+        <blockquote>
+          <p>
+            ℹ️ In the sources, limtis are presented either as "context window"
+            token limit (which considers a history of interactions) or as "IN"
+            and "OUT" token limits (limits for a single interaction). This tool
+            uses whatever is available, but ignores the "OUT" portion, since the
+            focus of this tool is on inputting text.
+          </p>
+        </blockquote>
       </div>
 
       <div>
