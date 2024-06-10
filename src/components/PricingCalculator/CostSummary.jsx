@@ -21,7 +21,7 @@ export function CostSummary(props) {
           <td className="align-right">{props.totalTokens.toLocaleString()}</td>
         </tr>
         <tr>
-          <td>Costs</td>
+          <td>Cost</td>
           <td className="align-right">
             $
             {props.totalInputCost.toLocaleString(undefined, {
