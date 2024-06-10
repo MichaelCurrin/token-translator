@@ -36,6 +36,8 @@ div {
 table {
   border-collapse: collapse;
   width: 100%;
+  /* Stop overflow outside the container, on very wide values in the table. */
+  max-width: 100%;
 }
 
 th,
