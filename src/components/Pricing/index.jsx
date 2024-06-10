@@ -11,7 +11,7 @@ const INITIAL_SORT_KEY = 'providerAndModel';
  *
  * @return {number} The numeric value of the price string.
  */
-function parsePriceString(priceString) {
+export function parsePriceString(priceString) {
   return Number(priceString.replace(/[^0-9.-]/g, ''));
 }
 
@@ -54,7 +54,7 @@ function flattenModelWithRange(model) {
  * @param {Array} models The array of models to be sorted.
  * @return {Array} The sorted array of models.
  */
-function sortModels(key, models) {
+export function sortModels(key, models) {
   let sortedArray = [...models];
 
   if (key === 'providerAndModel') {
