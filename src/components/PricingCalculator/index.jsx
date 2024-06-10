@@ -4,7 +4,7 @@ import { parsePriceString, sortModels } from '../Pricing';
 
 const ONE_MILLION_TOKENS = 1000000;
 
-const PricingCalculator = () => {
+function PricingCalculator() {
   const modelChoices = sortModels('providerAndModel', PRICE_PER_MILLION_TOKENS);
 
   const [modelName, setModelName] = useState(modelChoices[0].modelName);
@@ -194,6 +194,6 @@ const PricingCalculator = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PricingCalculator;
