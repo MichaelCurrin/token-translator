@@ -27,10 +27,13 @@ function PricingCalculator() {
 
   const calculateTokens = (inTokens, outTokens) => {
     const calculatedTotalInputTokens = inTokens * queries;
-
     const calculatedTotalOutputTokens = outTokens * queries;
-    return { calculatedTotalInputTokens, calculatedTotalOutputTokens };
+
+    setTotalInputTokens(calculatedTotalInputTokens);
+    setTotalOutputTokens(calculatedTotalOutputTokens);
+    setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
   };
+
   const calculateCosts = (
     inTokens,
     outTokens,
@@ -44,23 +47,25 @@ function PricingCalculator() {
     const queryRange = selectedModel.range;
     const inputCostRate = parsePriceString(
       selectedModel.input ||
-        (inTokens >= queryRange.threshold
-          ? queryRange.high.input
-          : queryRange.low.input),
+      (inTokens >= queryRange.threshold
+        ? queryRange.high.input
+        : queryRange.low.input),
     );
     const outputCostRate = parsePriceString(
       selectedModel.output ||
-        (outTokens >= queryRange.threshold
-          ? queryRange.high.output
-          : queryRange.low.output),
+      (outTokens >= queryRange.threshold
+        ? queryRange.high.output
+        : queryRange.low.output),
     );
 
     const calculatedTotalInputCost =
-      (calculatedTotalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
+      (totalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
     const calculatedTotalOutputCost =
-      (calculatedTotalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
+      (totalOutputTokens * outputCostRate) / ONE_MILLION_TOKENS;
 
-    return { calculatedTotalInputCost, calculatedTotalOutputCost };
+    setTotalInputCost(calculatedTotalInputCost);
+    setTotalOutputCost(calculatedTotalOutputCost);
+    setTotalCost(calculatedTotalInputCost + calculatedTotalOutputCost);
   };
 
   useEffect(() => {
@@ -69,23 +74,8 @@ function PricingCalculator() {
     const outTokens =
       resultSize === 'custom' ? customResultSize : parseInt(resultSize, 10);
 
-    const { calculatedTotalInputTokens, calculatedTotalOutputTokens } =
-      calculateTokens(inTokens, outTokens);
-    const { calculatedTotalInputCost, calculatedTotalOutputCost } =
-      calculateCosts(
-        inTokens,
-        outTokens,
-        calculatedTotalInputTokens,
-        calculatedTotalOutputTokens,
-      );
-
-    setTotalInputTokens(calculatedTotalInputTokens);
-    setTotalOutputTokens(calculatedTotalOutputTokens);
-    setTotalTokens(calculatedTotalInputTokens + calculatedTotalOutputTokens);
-
-    setTotalInputCost(calculatedTotalInputCost);
-    setTotalOutputCost(calculatedTotalOutputCost);
-    setTotalCost(calculatedTotalInputCost + calculatedTotalOutputCost);
+    calculateTokens(inTokens, outTokens);
+    calculateCosts(inTokens, outTokens);
   }, [
     modelName,
     queries,
@@ -209,29 +199,29 @@ function PricingCalculator() {
         <h3>Estimated results</h3>
         <p>Total input tokens: {totalInputTokens.toLocaleString()}</p>
         <p>Total output tokens: {totalOutputTokens.toLocaleString()}</p>
-        <p>Total tokens: {totalTokens.toLocaleString()}</p>
+        <p>Combined tokens: {totalTokens.toLocaleString()}</p>
 
         <p>
           Total input cost: $
           {totalInputCost.toLocaleString(undefined, {
-            minimumFractionDigits: 4,
-            maximumFractionDigits: 4,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 6,
           })}
         </p>
         <p>
           Total output cost: $
           {totalOutputCost.toLocaleString(undefined, {
-            minimumFractionDigits: 4,
-            maximumFractionDigits: 4,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 6,
           })}
         </p>
         <p>
-          Total cost:{' '}
+          Combined cost:{' '}
           <b>
             $
             {totalCost.toLocaleString(undefined, {
-              minimumFractionDigits: 4,
-              maximumFractionDigits: 4,
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
             })}
           </b>
         </p>
