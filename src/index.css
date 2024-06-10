@@ -73,7 +73,8 @@ blockquote p {
 }
 
 select,
-.numeric-input {
+input,
+textarea {
   font-size: medium;
 }
 
