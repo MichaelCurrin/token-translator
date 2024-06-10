@@ -3,10 +3,10 @@ export function CostSummary(props) {
     <table>
       <thead>
         <tr>
-          <th>Description</th>
-          <th>Input</th>
-          <th>Output</th>
-          <th>Total</th>
+          <th style={{ width: '20%' }}>Description</th>
+          <th style={{ width: '20%' }}>Input</th>
+          <th style={{ width: '20%' }}>Output</th>
+          <th style={{ width: '20%' }}>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -47,6 +47,6 @@ export function CostSummary(props) {
           </td>
         </tr>
       </tbody>
-    </table>
+    </table >
   );
 }
