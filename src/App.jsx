@@ -18,7 +18,7 @@ function App() {
       </p>
       <p>
         This tool helps you translate token counts into real-world measures so
-        you can decide which models is suitable for your needs and how much
+        you can decide which models are suitable for your needs and how much
         you're likely to pay if using an API subscription.
       </p>
       <blockquote>
