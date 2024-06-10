@@ -36,11 +36,11 @@ function App() {
         <ConvertInput />
       </div>
       <div>
-        <h2>Pricing</h2>
+        <h2>Pricing overview</h2>
         <Pricing />
       </div>
       <div>
-        <h2>Pricing calculator</h2>
+        <h2>Cost calculator</h2>
         <PricingCalculator />
       </div>
       <div>
