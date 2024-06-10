@@ -14,12 +14,12 @@ function App() {
         Language models like GPT-4 or Llama can process a lot of text, but the
         amount of text they can handle is not always easy to visualize.
         Especially since the limit of a model is quoted not in characters or
-        words in "tokens", which are groups of characters.{' '}
+        words in "tokens", which you can think of as pieces of words.
       </p>
       <p>
         This tool helps you translate token counts into real-world measures so
         you can decide which models is suitable for your needs and how much
-        you're likelly to pay if using an API subscription.
+        you're likely to pay if using an API subscription.
       </p>
       <blockquote>
         <p>
