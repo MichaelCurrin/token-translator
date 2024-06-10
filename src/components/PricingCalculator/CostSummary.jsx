@@ -47,6 +47,6 @@ export function CostSummary(props) {
           </td>
         </tr>
       </tbody>
-    </table >
+    </table>
   );
 }
