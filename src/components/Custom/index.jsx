@@ -141,8 +141,8 @@ function ConvertInput() {
       </blockquote>
       <blockquote>
         <p>
-          🔒 You can safely put any info you want in the text field. Anything
-          you input will <b>NOT</b> be stored anywhere or sent to any services.
+          🔒 You can safely put sensitive info in the text field. Anything you
+          enter will <b>not</b> be stored anywhere or sent to any services.
         </p>
       </blockquote>
     </div>
