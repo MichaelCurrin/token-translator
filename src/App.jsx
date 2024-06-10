@@ -40,7 +40,7 @@ function App() {
         <Pricing />
       </div>
       <div>
-        <h2>Pricing Calculator</h2>
+        <h2>Pricing calculator</h2>
         <PricingCalculator />
       </div>
       <div>
