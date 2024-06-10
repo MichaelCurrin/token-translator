@@ -72,7 +72,11 @@ blockquote p {
   margin: 0;
 }
 
+select,
+.numeric-input {
+  font-size: medium;
+}
+
 .numeric-input {
   width: 10em;
-  font-size: medium;
 }
