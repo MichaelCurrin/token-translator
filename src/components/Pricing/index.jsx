@@ -16,6 +16,38 @@ function parsePriceString(priceString) {
 }
 
 /**
+ * Flatten a model, handling models with a range and models without a range.
+ */
+function flattenModelWithRange(model) {
+  if (!model.range) {
+    return {
+      ...model,
+      input: model.input,
+      output: model.output,
+      note: '',
+    }
+  }
+
+  const { threshold, low, high } = model.range;
+
+  const lowModel = {
+    ...model,
+    input: low.input,
+    output: low.output,
+    note: `<${threshold} tokens`,
+  };
+
+  const highModel = {
+    ...model,
+    input: high.input,
+    output: high.output,
+    note: `>${threshold} tokens`,
+  };
+
+  return [lowModel, highModel];
+}
+
+/**
  * Sort an array of models based on the specified key.
  *
  * @param {string} key The key to sort the models by.
@@ -27,7 +59,6 @@ function sortModels(key, models) {
 
   if (key === 'providerAndModel') {
     sortedArray.sort((a, b) => {
-      console.log(a.provider, a.modelName);
       if (a.provider === b.provider) {
         return a.modelName.localeCompare(b.modelName);
       }
@@ -46,14 +77,14 @@ function sortModels(key, models) {
 
 function Pricing() {
   const [sortedModels, setSortedModels] = useState(
-    sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS),
+    (sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS)).flatMap(flattenModelWithRange)
   );
   const [sortBy, setSortBy] = useState('providerAndModel');
 
   const handleOnSortBy = (event) => {
     const value = event.target.value;
     setSortBy(value);
-    setSortedModels(sortModels(value, sortedModels));
+    setSortedModels((sortModels(value, sortedModels)).flatMap(flattenModelWithRange));
   };
 
   return (

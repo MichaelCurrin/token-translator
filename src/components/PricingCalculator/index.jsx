@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
+import { PRICE_PER_MILLION_TOKENS } from "../../constants";
 
 const PricingCalculator = () => {
-  const [model, setModel] = useState('gpt-3.5');
+  const modelNames = PRICE_PER_MILLION_TOKENS.map(modelData => `${modelData.provider} - ${modelData.modelName}`).sort((a, b) => a.localeCompare(b));
+
+  const [model, setModel] = useState(modelNames[0]);
   const [queries, setQueries] = useState(1);
-  const [querySize, setQuerySize] = useState('10');
-  const [customQuerySize, setCustomQuerySize] = useState(0);
-  const [resultSize, setResultSize] = useState('10');
-  const [customResultSize, setCustomResultSize] = useState(0);
-  const [totalTokens, setTotalTokens] = useState(0);
+  const [querySize, setQuerySize] = useState('50');
+  const [customQuerySize, setCustomQuerySize] = useState(600);
+  const [resultSize, setResultSize] = useState('50');
+  const [customResultSize, setCustomResultSize] = useState(600);
+  const [totalInputTokens, setTotalInputTokens] = useState(0);
+  const [totalOutputTokens, setTotalOutputTokens] = useState(0);
+  const [totalTokens, setTotalTokens] = useState(totalInputTokens + totalOutputTokens);
+  const [totalCost, setTotalCost] = useState(0)
 
   useEffect(() => {
     const queryTokens =
@@ -16,6 +22,8 @@ const PricingCalculator = () => {
       resultSize === 'custom' ? customResultSize : parseInt(resultSize, 10);
     const tokensPerQuery = queryTokens + resultTokens;
 
+    setTotalInputTokens(queries * queryTokens);
+    setTotalOutputTokens(queries * resultTokens);
     setTotalTokens(queries * tokensPerQuery);
   }, [
     model,
@@ -29,8 +37,9 @@ const PricingCalculator = () => {
   return (
     <div>
       <p>
-        If you to use an LLM through a paid API subscriptions, you probably want to estimate the Dollar cost for a typical query so you can budget well and choose a suitable model. Enter how many tokens you expect to send and receive and then get the cost out below.
+        If you to use an LLM through a paid API subscriptions, you probably want to estimate the Dollar cost for a typical query so you can budget well and choose a suitable model.
       </p>
+      <p>Enter how many tokens you expect to send and receive and then get the cost out.</p>
       <h3>Estimated usage</h3>
       <form>
         <div>
@@ -41,18 +50,22 @@ const PricingCalculator = () => {
             value={model}
             onChange={(e) => setModel(e.target.value)}
           >
-            <option value="gpt-3.5">GPT-3.5</option>
-            <option value="gpt-4">GPT-4</option>
+            {modelNames.map((name, index) => (
+              <option key={index} value={name}>
+                {name}
+              </option>
+            ))}
           </select>
         </div>
 
         <div>
           <label htmlFor="queries">Total queries: </label>
           <input
-            class="numeric-input"
+            className="numeric-input"
             id="queries"
             type="number"
             name="queries"
+            min="1"
             value={queries}
             onChange={(e) => setQueries(e.target.value)}
           />
@@ -63,20 +76,23 @@ const PricingCalculator = () => {
           <select
             id="querySize"
             name="querySize"
+            min="1"
             value={querySize}
             onChange={(e) => setQuerySize(e.target.value)}
           >
-            <option value="10">One line (≈10 tokens)</option>
-            <option value="50">Paragraph (≈50 tokens)</option>
-            <option value="250">Page (≈250 tokens)</option>
+            <option value="50">One line (≈50 tokens)</option>
+            <option value="200">Paragraph (≈200 tokens)</option>
+            <option value="600">Page (≈600 tokens)</option>
             <option value="custom">Custom</option>
           </select>
           {querySize === 'custom' && (
             <input
-              type="number"
               id="customQuerySize"
               name="customQuerySize"
+              className="numeric-input"
+              type="number"
               placeholder="Enter custom token size"
+              min="1"
               value={customQuerySize}
               onChange={(e) => setCustomQuerySize(e.target.value)}
             />
@@ -88,19 +104,21 @@ const PricingCalculator = () => {
           <select
             id="resultSize"
             name="resultSize"
+            min="1"
             value={resultSize}
             onChange={(e) => setResultSize(e.target.value)}
           >
-            <option value="10">One line (≈10 tokens)</option>
-            <option value="50">Paragraph (≈50 tokens)</option>
-            <option value="250">Page (≈250 tokens)</option>
+            <option value="50">One line (≈50 tokens)</option>
+            <option value="200">Paragraph (≈200 tokens)</option>
+            <option value="600">Page (≈600 tokens)</option>
             <option value="custom">Custom</option>
           </select>
           {resultSize === 'custom' && (
             <input
-              type="number"
               id="customResultSize"
               name="customResultSize"
+              className="numeric-input"
+              type="number"
               placeholder="Enter custom token size"
               value={customResultSize}
               onChange={(e) => setCustomResultSize(e.target.value)}
@@ -111,8 +129,10 @@ const PricingCalculator = () => {
 
       <div>
         <h3>Estimated results</h3>
-        <p>Tokens {totalTokens}</p>
-        <p>Cost {0}</p>
+        <p>Total input tokens: {totalInputTokens.toLocaleString()}</p>
+        <p>Total output tokens: {totalOutputTokens.toLocaleString()}</p>
+        <p>Total tokens: {totalTokens.toLocaleString()}</p>
+        <p>Cost: ${totalCost}</p>
       </div>
     </div>
   );

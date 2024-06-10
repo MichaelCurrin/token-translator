@@ -33,27 +33,33 @@ export const PRICE_PER_MILLION_TOKENS = [
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 1.5 Flash (<128k tokens)',
-    input: '$0.35',
-    output: '$1.05',
+    modelName: 'Gemini 1.5 Flash',
+    range: {
+      threshold: 128000,
+      low: {
+        input: '$0.35',
+        output: '$1.05',
+      },
+      high: {
+        input: '$0.70',
+        output: '$2.10',
+      }
+    }
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 1.5 Flash (>128k tokens)',
-    input: '$0.70',
-    output: '$2.10',
-  },
-  {
-    provider: 'Google',
-    modelName: 'Gemini 1.5 Pro (<128k tokens)',
-    input: '$3.50',
-    output: '$10.50',
-  },
-  {
-    provider: 'Google',
-    modelName: 'Gemini 1.5 Pro (>128k tokens)',
-    input: '$7.00',
-    output: '$21.00',
+    modelName: 'Gemini 1.5 Pro',
+    range: {
+      threshold: 128000,
+      low: {
+        input: '$3.50',
+        output: '$10.50',
+      },
+      high: {
+        input: '$7.00',
+        output: '$21.00',
+      }
+    }
   },
   {
     provider: 'Google',

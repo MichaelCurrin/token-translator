@@ -23,7 +23,7 @@ function InputForm({
           <span data-testid="user-input-number-label">Tokens: </span>
         </label>
         <input
-          class="numeric-input"
+          className="numeric-input"
           data-testid="user-input-number"
           type="number"
           value={tokenValue}
