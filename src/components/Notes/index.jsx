@@ -127,14 +127,6 @@ function Notes() {
         How the calculations are performed and where the source data comes from.
       </p>
 
-      <p>
-        For detailed constants, refer to{' '}
-        <a href="https://github.com/MichaelCurrin/token-translator/blob/main/src/constants.js">
-          <code>constants.js</code>
-        </a>
-        .
-      </p>
-
       <div>
         <h3>Conversion rates used</h3>
 
