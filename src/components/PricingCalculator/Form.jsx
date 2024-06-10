@@ -33,9 +33,9 @@ function Form({
           value={modelName}
           onChange={(e) => setModelName(e.target.value)}
         >
-          {modelChoices.map((m, index) => (
-            <option key={index} value={m.modelName}>
-              {m.provider} - {m.modelName}
+          {modelChoices.map((model, index) => (
+            <option key={index} value={model.modelName}>
+              {model.provider} - {model.modelName}
             </option>
           ))}
         </select>
@@ -55,7 +55,7 @@ function Form({
       </div>
 
       <div>
-        <label htmlFor="querySize">Query input size: </label>
+        <label htmlFor="querySize">Prompt input size: </label>
         <select
           id="querySize"
           name="querySize"
@@ -84,7 +84,7 @@ function Form({
       </div>
 
       <div>
-        <label htmlFor="resultSize">Query output size: </label>
+        <label htmlFor="resultSize">Prompt output size: </label>
         <select
           id="resultSize"
           name="resultSize"
