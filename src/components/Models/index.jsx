@@ -36,6 +36,11 @@ function Models() {
 
   return (
     <div>
+      <p>
+        The "Tokens" value is the maximum input or context window. Each
+        value is converted to a meaningful metric, based on rough conversation rates.
+        See <a href="#notes">Notes</a> for sources of information.
+      </p>
       <SortingButtons
         sortBy={sortBy}
         handleOnSortBy={handleOnSortBy}
