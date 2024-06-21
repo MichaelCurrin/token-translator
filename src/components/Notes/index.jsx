@@ -140,7 +140,7 @@ function Notes() {
         <Table tableData={TABLE_DATA_PROVIDERS} />
         <blockquote>
           <p>
-            ℹ️ In the sources, limtis are presented either as "context window"
+            ℹ️ In the sources, limits are presented either as "context window"
             token limit (which considers a history of interactions) or as "IN"
             and "OUT" token limits (limits for a single interaction). This tool
             uses whatever is available, but ignores the "OUT" portion, since the
