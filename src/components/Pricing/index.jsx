@@ -94,8 +94,8 @@ function Pricing() {
   return (
     <div>
       <p>
-        Prices are shown if a model is accessible through a paid API
-        subscription. A price is for 1 million tokens (as given by the sources
+        Prices are shown here if a model is accessible through a paid API
+        subscription. The prices are quoted as cost per 1 million tokens, as taken from the sources
         under <a href="#api-pricing">API Pricing</a>).
       </p>
       <blockquote>
