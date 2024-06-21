@@ -117,6 +117,10 @@ const TABLE_DATA_PRICING = {
       provider: 'OpenAI',
       source: <a href="https://openai.com/api/pricing/">API pricing page</a>,
     },
+    {
+      provider: 'Anthropic',
+      source: <a href="https://docs.anthropic.com/en/docs/about-claude/models">Models documentation page</a>,
+    },
   ],
 };
 
