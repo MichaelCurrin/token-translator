@@ -119,7 +119,11 @@ const TABLE_DATA_PRICING = {
     },
     {
       provider: 'Anthropic',
-      source: <a href="https://docs.anthropic.com/en/docs/about-claude/models">Models documentation page</a>,
+      source: (
+        <a href="https://docs.anthropic.com/en/docs/about-claude/models">
+          Models documentation page
+        </a>
+      ),
     },
   ],
 };
