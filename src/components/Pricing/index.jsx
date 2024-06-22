@@ -52,6 +52,7 @@ function flattenModelWithRange(model) {
  *
  * @param {string} key The key to sort the models by.
  * @param {Array} models The array of models to be sorted.
+ *
  * @return {Array} The sorted array of models.
  */
 export function sortModels(key, models) {
@@ -68,6 +69,7 @@ export function sortModels(key, models) {
     sortedArray.sort((a, b) => {
       const aPrice = parsePriceString(a[key]);
       const bPrice = parsePriceString(b[key]);
+
       return bPrice - aPrice;
     });
   }
@@ -76,15 +78,16 @@ export function sortModels(key, models) {
 }
 
 function Pricing() {
+  const [sortBy, setSortBy] = useState('providerAndModel');
   const [sortedModels, setSortedModels] = useState(
     sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS).flatMap(
       flattenModelWithRange,
     ),
   );
-  const [sortBy, setSortBy] = useState('providerAndModel');
 
   const handleOnSortBy = (event) => {
     const value = event.target.value;
+
     setSortBy(value);
     setSortedModels(
       sortModels(value, sortedModels).flatMap(flattenModelWithRange),
