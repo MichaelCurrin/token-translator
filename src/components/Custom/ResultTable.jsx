@@ -1,6 +1,6 @@
 function ResultTable({ result }) {
   return (
-    <table>
+    <table id="result-table">
       <thead>
         <tr>
           <th>Tokens</th>
