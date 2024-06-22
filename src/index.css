@@ -69,6 +69,10 @@ textarea {
   width: 10em;
 }
 
+input {
+  text-align: right;
+}
+
 input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
