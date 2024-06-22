@@ -12,6 +12,9 @@ const INITIAL_SORT_KEY = 'providerAndModel';
  * @return {number} The numeric value of the price string.
  */
 export function parsePriceString(priceString) {
+  if (!priceString) {
+    throw Error('Price must be set so it can be converted');
+  }
   return Number(priceString.replace(/[^0-9.-]/g, ''));
 }
 
@@ -20,12 +23,13 @@ export function parsePriceString(priceString) {
  */
 function flattenModelWithRange(model) {
   if (!model.range) {
-    return {
+    const singleModel = {
       ...model,
       input: model.input,
       output: model.output,
       note: '',
     };
+    return [singleModel];
   }
 
   const { threshold, low, high } = model.range;
@@ -67,10 +71,10 @@ export function sortModels(key, models) {
     });
   } else if (key === 'input' || key === 'output') {
     sortedArray.sort((a, b) => {
-      const aPrice = parsePriceString(a[key]);
-      const bPrice = parsePriceString(b[key]);
+      const aValue = a[key];
+      const bValue = b[key];
 
-      return bPrice - aPrice;
+      return parsePriceString(bValue) - parsePriceString(aValue);
     });
   }
 
@@ -78,20 +82,16 @@ export function sortModels(key, models) {
 }
 
 function Pricing() {
-  const [sortBy, setSortBy] = useState('providerAndModel');
+  const [sortBy, setSortBy] = useState(INITIAL_SORT_KEY);
   const [sortedModels, setSortedModels] = useState(
-    sortModels(INITIAL_SORT_KEY, PRICE_PER_MILLION_TOKENS).flatMap(
-      flattenModelWithRange,
-    ),
+    sortModels(sortBy, PRICE_PER_MILLION_TOKENS.flatMap(flattenModelWithRange)),
   );
 
   const handleOnSortBy = (event) => {
     const value = event.target.value;
 
     setSortBy(value);
-    setSortedModels(
-      sortModels(value, sortedModels).flatMap(flattenModelWithRange),
-    );
+    setSortedModels(sortModels(value, sortedModels));
   };
 
   return (
