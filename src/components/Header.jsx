@@ -20,7 +20,7 @@ function Header() {
           title="Go to GitHub repo"
         >
           <img
-            src="https://img.shields.io/static/v1?label=MichaelCurrin&message=token-translator&color=blue&logo=github"
+            src="https://img.shields.io/static/v1?label=MichaelCurrin&message=token-translator&color=458a8f&logo=github"
             alt="MichaelCurrin - token-translator"
           />
         </a>

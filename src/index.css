@@ -7,7 +7,8 @@ body {
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 15px;
-  background-color: #ccc;
+  background-color: #fb9480;
+  color: black;
 }
 
 #root {
@@ -33,27 +34,12 @@ div {
   margin-bottom: 0.5em;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  /* Stop overflow outside the container, on very wide values in the table. */
-  max-width: 100%;
+a {
+  color: #ee8b77;
 }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #e5e5e5;
-  text-align: center;
-}
-
-tr {
-  background-color: #fff;
+a:hover {
+  color: #cf7f6f;
 }
 
 code {
@@ -81,4 +67,110 @@ textarea {
 
 .numeric-input {
   width: 10em;
+}
+
+input[type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+input[type='radio']:checked {
+  border-color: #c77261;
+  background-color: #fb9480;
+  box-shadow: inset 0 0 0 1px #c77261;
+  cursor: default;
+}
+
+input[type='radio']:hover {
+  border-color: #cc6a56;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /* Stop overflow outside the container, on very wide values in the table. */
+  max-width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #e5e5e5;
+  text-align: center;
+}
+
+tr {
+  background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  #root {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  a {
+    color: #f08671;
+  }
+
+  a:hover {
+    color: #ffaf9f;
+  }
+
+  a:visited {
+    color: #ff6cc2;
+  }
+
+  a:hover:visited {
+    color: #ff8ace;
+  }
+
+  h1,
+  h2 {
+    color: #ffffff;
+  }
+
+  blockquote {
+    border-left: 0.25em solid #444;
+    color: #b0b0b0;
+    background-color: #2a2a2a;
+  }
+
+  input,
+  select {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #4a4a4a;
+  }
+
+  th,
+  td {
+    border: 1px solid #444;
+  }
+
+  th {
+    background-color: #333333;
+  }
+
+  tr {
+    background-color: #222222;
+  }
+
+  tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
 }
