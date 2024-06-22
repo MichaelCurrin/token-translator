@@ -8,6 +8,7 @@ body {
   margin-top: 0px;
   margin-bottom: 15px;
   background-color: #fb9480;
+  background-image: linear-gradient(to bottom, #fb9480, #c56870);
   color: black;
 }
 
@@ -35,11 +36,11 @@ div {
 }
 
 a {
-  color: #ee8b77;
+  color: #e28370;
 }
 
 a:hover {
-  color: #cf7f6f;
+  color: #d36651;
 }
 
 code {
