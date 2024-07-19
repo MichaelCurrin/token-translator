@@ -8,6 +8,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Google', modelName: 'Gemini 1.5 Flash', tokens: 1048576 },
   { provider: 'Google', modelName: 'Gemini 1.0 Pro', tokens: 30720 },
   { provider: 'OpenAI', modelName: 'GPT-4o', tokens: 128000 },
+  { provider: 'OpenAI', modelName: 'GPT-4o mini', tokens: 128000 },
   { provider: 'OpenAI', modelName: 'GPT-4 Turbo', tokens: 128000 },
   { provider: 'OpenAI', modelName: 'GPT-3.5 Turbo', tokens: 16385 },
   { provider: 'Meta', modelName: 'Llama 3', tokens: 16000 },
@@ -20,6 +21,12 @@ export const MODEL_INPUT_LIMITS = [
 ];
 
 export const PRICE_PER_MILLION_TOKENS = [
+  {
+    provider: 'OpenAI',
+    modelName: 'GPT-4 mini',
+    input: '$0.15',
+    output: '$0.60',
+  },
   {
     provider: 'OpenAI',
     modelName: 'GPT-4o',
