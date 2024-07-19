@@ -24,7 +24,7 @@ export const MODEL_INPUT_LIMITS = [
 export const PRICE_PER_MILLION_TOKENS = [
   {
     provider: 'OpenAI',
-    modelName: 'GPT-4 mini',
+    modelName: 'GPT-4o mini',
     input: '$0.15',
     output: '$0.60',
   },
