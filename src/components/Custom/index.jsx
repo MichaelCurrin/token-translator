@@ -127,8 +127,8 @@ function ConvertInput() {
       />
       <blockquote>
         <p>
-          ℹ️ Tip: 1x A4 page is about 600 tokens and 1x novel is about 100K
-          tokens.
+          ℹ️ Guidelines: An A4 page is about 600 tokens. A novel is about 100K
+          tokens. And 1M tokens is about 2,500 pages in an A5 book.
         </p>
       </blockquote>
       <blockquote>
