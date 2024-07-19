@@ -99,11 +99,11 @@ function Pricing() {
       <p>
         Prices are shown here if a model is accessible through a paid API
         subscription. The prices are quoted as cost per 1 million tokens, as
-        taken from the sources under <a href="#api-pricing">API Pricing</a>).
+        taken from the sources under <a href="#api-pricing">API Pricing</a>.
       </p>
       <blockquote>
         <p>
-          💡 Tip: enter <code>1000000</code> in the form above to see how many
+          💡 Tip: enter <code>1000000</code> (one million) in the form above to calculate how many
           pages or novels that would be.
         </p>
       </blockquote>
