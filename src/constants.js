@@ -10,6 +10,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'OpenAI', modelName: 'GPT-4o', tokens: 128000 },
   { provider: 'OpenAI', modelName: 'GPT-4o mini', tokens: 128000 },
   { provider: 'OpenAI', modelName: 'GPT-4 Turbo', tokens: 128000 },
+  { provider: 'OpenAI', modelName: 'GPT-4', tokens: 8192 },
   { provider: 'OpenAI', modelName: 'GPT-3.5 Turbo', tokens: 16385 },
   { provider: 'Meta', modelName: 'Llama 3', tokens: 16000 },
   { provider: 'Meta', modelName: 'Llama 2', tokens: 8000 },
