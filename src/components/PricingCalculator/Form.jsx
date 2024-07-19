@@ -7,7 +7,7 @@ export const TOKEN_SIZE_OPTIONS = [
   { value: '100000', label: '100K tokens - a novel' },
   { value: '128000', label: '128K tokens' },
   { value: '200000', label: '200K tokens' },
-  { value: '1000000', label: '1M tokens' },
+  { value: '1000000', label: '1M tokens - 2,5k A5 pages or 9 novels' },
   { value: 'custom', label: 'Custom...' },
 ];
 
