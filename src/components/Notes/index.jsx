@@ -87,7 +87,8 @@ const TABLE_DATA_PROVIDERS = {
       provider: 'Meta',
       source: (
         <>
-          <a href="https://ollama.com/blog/llama3">Ollama blog</a> page,{' '}
+          <a href="https://ollama.com/library/llama3.1">Llama 3.1 blog post</a>,{' '}
+          <a href="https://ollama.com/blog/llama3">Llama 3 blog post</a>,{' '}
           <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
           <a href="https://ollama.com/library/mixtral">Mixtral model</a> page
         </>
