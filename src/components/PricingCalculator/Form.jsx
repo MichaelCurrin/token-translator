@@ -81,7 +81,7 @@ function Form({
             placeholder="Enter custom token size"
             min="1"
             value={customQuerySize}
-            onChange={(e) => setCustomQuerySize(e.target.value)}
+            onChange={(e) => setCustomQuerySize(isNaN(e.target.value) ? customQuerySize : Number(e.target.value))}
             style={{ marginLeft: '10px' }}
           />
         )}
@@ -111,7 +111,7 @@ function Form({
               type="number"
               placeholder="Enter custom token size"
               value={customResultSize}
-              onChange={(e) => setCustomResultSize(e.target.value)}
+              onChange={(e) => setCustomResultSize(isNaN(e.target.value) ? customQuerySize : Number(e.target.value))}
               style={{ marginLeft: '10px' }}
             />
           </>
