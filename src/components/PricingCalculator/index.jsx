@@ -95,7 +95,7 @@ function PricingCalculator() {
       </p>
       <blockquote>
         <p>
-          ℹ️ If you to use an LLM through a paid API subscription, you might
+          ℹ️ If you use an LLM through a paid API subscription, you might
           want to estimate the Dollar cost for a typical query so you can budget
           well and choose a suitable model.
         </p>
