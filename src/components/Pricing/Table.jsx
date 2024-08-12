@@ -17,13 +17,15 @@ function Table({ models }) {
               {model.modelName} {model.note ? `(${model.note})` : ''}
             </td>
             <td className="align-right">
-              $ {Number(model.input).toLocaleString(undefined, {
+              ${' '}
+              {Number(model.input).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </td>
             <td className="align-right">
-              $ {Number(model.output).toLocaleString(undefined, {
+              ${' '}
+              {Number(model.output).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
