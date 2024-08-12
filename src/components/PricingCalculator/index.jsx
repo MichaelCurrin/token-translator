@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PRICE_PER_MILLION_TOKENS } from '../../constants';
-import { parsePriceString, sortModels } from '../Pricing';
+import { sortModels } from '../Pricing';
 import { CostSummary } from './CostSummary';
 import Form, { TOKEN_SIZE_OPTIONS } from './Form';
 
@@ -48,19 +48,16 @@ function PricingCalculator() {
       );
 
       const queryRange = selectedModel.range;
-      const inputCostRate = parsePriceString(
+      const inputCostRate =
         selectedModel.input ||
-          (inTokens >= queryRange.threshold
-            ? queryRange.high.input
-            : queryRange.low.input),
-      );
-      const outputCostRate = parsePriceString(
+        (inTokens >= queryRange.threshold
+          ? queryRange.high.input
+          : queryRange.low.input);
+      const outputCostRate =
         selectedModel.output ||
-          (outTokens >= queryRange.threshold
-            ? queryRange.high.output
-            : queryRange.low.output),
-      );
-
+        (outTokens >= queryRange.threshold
+          ? queryRange.high.output
+          : queryRange.low.output);
       const calculatedTotalInputCost =
         (totalInputTokens * inputCostRate) / ONE_MILLION_TOKENS;
       const calculatedTotalOutputCost =

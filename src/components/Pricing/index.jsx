@@ -5,20 +5,6 @@ import Table from './Table';
 const INITIAL_SORT_KEY = 'providerAndModel';
 
 /**
- * Parse a price string and return the numeric value.
- *
- * @param {string} priceString - The price string to be parsed.
- *
- * @return {number} The numeric value of the price string.
- */
-export function parsePriceString(priceString) {
-  if (!priceString) {
-    throw Error('Price must be set so it can be converted');
-  }
-  return Number(priceString.replace(/[^0-9.-]/g, ''));
-}
-
-/**
  * Flatten a model, handling models with a range and models without a range.
  */
 function flattenModelWithRange(model) {
@@ -74,7 +60,7 @@ export function sortModels(key, models) {
       const aValue = a[key];
       const bValue = b[key];
 
-      return parsePriceString(bValue) - parsePriceString(aValue);
+      return bValue - aValue;
     });
   }
 
@@ -103,8 +89,8 @@ function Pricing() {
       </p>
       <blockquote>
         <p>
-          💡 Tip: enter <code>1000000</code> (one million) in the form above to calculate how many
-          pages or novels that would be.
+          💡 Tip: enter <code>1000000</code> (one million) in the form above to
+          calculate how many pages or novels that would be.
         </p>
       </blockquote>
       <div>
