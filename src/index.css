@@ -43,6 +43,14 @@ a:hover {
   color: #d36651;
 }
 
+h2>a {
+  text-decoration: none;
+}
+
+h2>a:hover {
+  text-decoration: underline;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -145,8 +153,9 @@ tr {
   }
 
   h1,
-  h2 {
-    color: #ffffff;
+  h2,
+  h2>a {
+    color: #ffffff !important;
   }
 
   blockquote {
