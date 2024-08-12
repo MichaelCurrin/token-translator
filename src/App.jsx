@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <h2 id="about">About</h2>
+      <h2 id="about"><a href="#about">About</a></h2>
       <p>
         Language models like GPT-4 or Llama can process a lot of text, but the
         amount of text they can handle is not always easy to visualize.
@@ -28,23 +28,23 @@ function App() {
         </p>
       </blockquote>
       <div>
-        <h2 id="popular-models">Popular models</h2>
+        <h2 id="popular-models"><a href="#popular-models">Popular models</a></h2>
         <Models />
       </div>
       <div>
-        <h2 id="custom-input">Custom input</h2>
+        <h2 id="custom-input"><a href="#custom-input">Custom input</a></h2>
         <ConvertInput />
       </div>
       <div>
-        <h2 id="pricing-overview">Pricing overview</h2>
+        <h2 id="pricing-overview"><a href="#pricing-overview">Pricing overview</a></h2>
         <Pricing />
       </div>
       <div>
-        <h2 id="cost-calculator">Cost calculator</h2>
+        <h2 id="cost-calculator"><a href="#cost-calculator">Cost calculator</a></h2>
         <PricingCalculator />
       </div>
       <div>
-        <h2 id="notes">Notes</h2>
+        <h2 id="notes"><a href="#notes">Notes</a></h2>
         <Notes />
       </div>
     </div>
