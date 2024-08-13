@@ -50,7 +50,7 @@ function Form({
       <div>
         <label htmlFor="queries">Total queries: </label>
         <input
-          className="numeric-input"
+          className="number--width-fixed"
           id="queries"
           type="number"
           name="queries"
@@ -79,7 +79,7 @@ function Form({
           <input
             id="customQuerySize"
             name="customQuerySize"
-            className="numeric-input"
+            className="number--width-fixed"
             type="number"
             placeholder="Enter custom token size"
             min="1"
@@ -113,7 +113,7 @@ function Form({
             <input
               id="customResultSize"
               name="customResultSize"
-              className="numeric-input"
+              className="number--width-fixed"
               type="number"
               placeholder="Enter custom token size"
               value={customResultSize}

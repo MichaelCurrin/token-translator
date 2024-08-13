@@ -10,16 +10,16 @@ function ResultTable({ result }) {
       </thead>
       <tbody>
         <tr>
-          <td className="align-right" data-testid="user-table-tokens">
+          <td className="td--align-right" data-testid="user-table-tokens">
             {result.tokens.toLocaleString()}
           </td>
-          <td className="align-right" data-testid="user-table-page-count">
+          <td className="td--align-right" data-testid="user-table-page-count">
             {result.a4PageCount.toLocaleString(undefined, {
               minimumFractionDigits: 1,
               maximumFractionDigits: 1,
             })}
           </td>
-          <td className="align-right" data-testid="user-table-novel-count">
+          <td className="td--align-right" data-testid="user-table-novel-count">
             {result.a5NovelCount.toLocaleString(undefined, {
               minimumFractionDigits: 1,
               maximumFractionDigits: 1,

@@ -36,10 +36,6 @@ body {
   text-align: left;
 }
 
-.align-right {
-  text-align: right;
-}
-
 div {
   margin: 0.5em 0;
 }
@@ -83,7 +79,7 @@ textarea {
   font-size: medium;
 }
 
-.numeric-input {
+.number--width-fixed {
   width: 10em;
 }
 
@@ -127,6 +123,10 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+}
+
+.td--align-right {
+  text-align: right;
 }
 
 th {

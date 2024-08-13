@@ -12,31 +12,33 @@ export function CostSummary(props) {
       <tbody>
         <tr>
           <td>Tokens</td>
-          <td className="align-right">
+          <td className="td--align-right">
             {props.totalInputTokens.toLocaleString()}
           </td>
-          <td className="align-right">
+          <td className="td--align-right">
             {props.totalOutputTokens.toLocaleString()}
           </td>
-          <td className="align-right">{props.totalTokens.toLocaleString()}</td>
+          <td className="td--align-right">
+            {props.totalTokens.toLocaleString()}
+          </td>
         </tr>
         <tr>
           <td>Cost</td>
-          <td className="align-right">
+          <td className="td--align-right">
             $
             {props.totalInputCost.toLocaleString(undefined, {
               minimumFractionDigits: 4,
               maximumFractionDigits: 6,
             })}
           </td>
-          <td className="align-right">
+          <td className="td--align-right">
             $
             {props.totalOutputCost.toLocaleString(undefined, {
               minimumFractionDigits: 4,
               maximumFractionDigits: 6,
             })}
           </td>
-          <td className="align-right">
+          <td className="td--align-right">
             <b>
               $
               {props.totalCost.toLocaleString(undefined, {
