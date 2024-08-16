@@ -14,11 +14,13 @@ body {
   padding: 0;
   margin: 0 0 15px 0;
   background-color: var(--primary-bg-color);
-  background-image: linear-gradient(
-    to bottom,
-    var(--primary-bg-color),
-    var(--secondary-bg-color)
-  );
+  background-image: linear-gradient(to bottom,
+      var(--primary-bg-color),
+      var(--secondary-bg-color));
+  background-attachment: fixed;
+  /* Keeps the gradient fixed during scroll */
+  background-size: cover;
+  /* Ensures the gradient covers the entire viewport */
   color: var(--text-color);
 }
 
@@ -48,11 +50,11 @@ a:hover {
   color: #d36651;
 }
 
-h2 > a {
+h2>a {
   text-decoration: none;
 }
 
-h2 > a:hover {
+h2>a:hover {
   text-decoration: underline;
 }
 
@@ -162,7 +164,7 @@ tr {
 
   h1,
   h2,
-  h2 > a {
+  h2>a {
     color: #ffffff !important;
   }
 
