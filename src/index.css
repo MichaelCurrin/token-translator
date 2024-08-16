@@ -18,9 +18,7 @@ body {
       var(--primary-bg-color),
       var(--secondary-bg-color));
   background-attachment: fixed;
-  /* Keeps the gradient fixed during scroll */
   background-size: cover;
-  /* Ensures the gradient covers the entire viewport */
   color: var(--text-color);
 }
 
