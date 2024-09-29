@@ -88,9 +88,13 @@ const TABLE_DATA_PROVIDERS = {
       source: (
         <>
           <a href="https://ollama.com/library/llama3.1">Llama 3.1 blog post</a>,{' '}
-          <a href="https://ollama.com/blog/llama3">Llama 3 blog post</a>,{' '}
-          <a href="https://ollama.com/library/phi3">Phi model</a> page,{' '}
-          <a href="https://ollama.com/library/mixtral">Mixtral model</a> page
+          <a href="https://ollama.com/blog/llama3">Llama 3 blog post</a> on
+          Ollama, <a href="https://ollama.com/library/phi3">Phi-3 model</a> page
+          on Ollama,{' '}
+          <a href="https://huggingface.co/microsoft/phi-2">Phi-2 model</a> page
+          on HuggingFace,{' '}
+          <a href="https://ollama.com/library/mixtral">Mixtral model</a> page on
+          Ollama
         </>
       ),
     },
