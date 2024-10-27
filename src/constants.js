@@ -6,6 +6,7 @@ export const WORDS_PER_A5_BOOK = 80000;
 export const MODEL_INPUT_LIMITS = [
   { provider: 'Google', modelName: 'Gemini 1.5 Pro', tokens: 2097152 },
   { provider: 'Google', modelName: 'Gemini 1.5 Flash', tokens: 1048576 },
+  { provider: 'Google', modelName: 'Gemini 1.5 Flash-8B', tokens: 1048576 },
   { provider: 'Google', modelName: 'Gemini 1.0 Pro', tokens: 30720 },
   { provider: 'OpenAI', modelName: 'GPT-4o', tokens: 128000 },
   { provider: 'OpenAI', modelName: 'GPT-4o mini', tokens: 128000 },
@@ -58,6 +59,21 @@ export const PRICE_PER_MILLION_TOKENS = [
       high: {
         input: 0.15,
         output: 0.6,
+      },
+    },
+  },
+  {
+    provider: 'Google',
+    modelName: 'Gemini 1.5 Flash-8B',
+    range: {
+      threshold: 128000,
+      low: {
+        input: 0.0375,
+        output: 0.15,
+      },
+      high: {
+        input: 0.075,
+        output: 0.3,
       },
     },
   },
