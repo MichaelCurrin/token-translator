@@ -134,7 +134,7 @@ function ConvertInput() {
       <blockquote>
         <p>
           ℹ️ For "Text content", enter text as long as you like (such as from an
-          article or a book), then you find out how many tokens it is and that
+          article or a book), then you find out how many tokens it is (rough calculation only) and that
           will help you figure out which models are capable of handling that
           content.
         </p>
