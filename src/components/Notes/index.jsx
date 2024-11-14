@@ -71,7 +71,8 @@ const TABLE_DATA_PROVIDERS = {
       provider: 'Anthropic',
       source: (
         <>
-          <a href="https://www.anthropic.com/api">Anthropic API</a> page
+          <a href="https://www.anthropic.com/api">Anthropic API</a> page{' '}
+          <a href="https://www.anthropic.com/claude/haiku">Haiku</a> page
         </>
       ),
     },
