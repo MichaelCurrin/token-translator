@@ -52,7 +52,7 @@ function Models() {
         handleOnSortBy={handleOnSortBy}
         className="sorting-buttons"
       />
-      <Chart chartData={chartData} />
+      <Chart xAxisLabel='Provider' yAxisLabel='Tokens' chartData={chartData} />
       <Table models={sortedModels} />
     </div>
   );

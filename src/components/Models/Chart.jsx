@@ -17,7 +17,7 @@ function formatNumber(value) {
   return value.toString();
 }
 
-function Chart({ chartData }) {
+function Chart({ xAxisLabel, yAxisLabel, chartData }) {
   return (
     <div
       style={{
@@ -35,7 +35,7 @@ function Chart({ chartData }) {
               dataKey="name"
               tick={{ fill: '#fff' }}
               label={{
-                value: 'Provider',
+                value: xAxisLabel,
                 position: 'insideBottom',
                 offset: -10,
                 fill: '#fff',
@@ -45,7 +45,7 @@ function Chart({ chartData }) {
               tick={{ fill: '#fff' }}
               tickFormatter={formatNumber}
               label={{
-                value: 'Tokens',
+                value: yAxisLabel,
                 angle: -90,
                 position: 'insideLeft',
                 fill: '#fff',
