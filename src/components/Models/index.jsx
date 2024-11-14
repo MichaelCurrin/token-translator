@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MODEL_INPUT_LIMITS } from '../../constants';
 import { addCounts } from '../../lib';
+import Chart from './Chart';
 import SortingButtons from './SortingButtons';
 import Table from './Table';
 
@@ -34,6 +35,11 @@ function Models() {
     setSortedModels(sortModelsByKey(key, sortedModels));
   };
 
+  const chartData = sortedModels.map((item) => ({
+    name: item.modelName,
+    value: item.tokens,
+  }));
+
   return (
     <div>
       <p>
@@ -46,6 +52,7 @@ function Models() {
         handleOnSortBy={handleOnSortBy}
         className="sorting-buttons"
       />
+      <Chart chartData={chartData} />
       <Table models={sortedModels} />
     </div>
   );
