@@ -114,6 +114,14 @@ const TABLE_DATA_PRICING = {
   fields: [{ name: 'Provider' }, { name: 'Source' }],
   rows: [
     {
+      provider: 'Anthropic',
+      source: (
+        <a href="https://docs.anthropic.com/en/docs/about-claude/models">
+          Models documentation page
+        </a>
+      ),
+    },
+    {
       provider: 'Google',
       source: (
         <a href="https://ai.google.dev/pricing">Google AI pricing page</a>
@@ -122,14 +130,6 @@ const TABLE_DATA_PRICING = {
     {
       provider: 'OpenAI',
       source: <a href="https://openai.com/api/pricing/">API pricing page</a>,
-    },
-    {
-      provider: 'Anthropic',
-      source: (
-        <a href="https://docs.anthropic.com/en/docs/about-claude/models">
-          Models documentation page
-        </a>
-      ),
     },
   ],
 };
