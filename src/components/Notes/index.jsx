@@ -107,6 +107,14 @@ const TABLE_DATA_PROVIDERS = {
         </a>
       ),
     },
+    {
+      provider: 'MiniMaxAI',
+      source: (
+        <a href="https://huggingface.co/MiniMaxAI/MiniMax-Text-01">
+          MiniMax-Text-01 model page
+        </a>
+      ),
+    },
   ],
 };
 

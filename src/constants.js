@@ -6,6 +6,11 @@ export const WORDS_PER_A5_BOOK = 80000;
 export const MODEL_INPUT_LIMITS = [
   {
     provider: 'Google',
+    modelName: 'Gemini 2.0 Experimental Advanced (Gemini-Exp-1206)',
+    tokens: 2000000,
+  },
+  {
+    provider: 'Google',
     modelName: 'Gemini 2.0 Flash (Experimental)',
     tokens: 1048576,
   },
@@ -22,6 +27,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Anthropic', modelName: 'Claude 3.5', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 3.0', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 2.1', tokens: 200000 },
+  { provider: 'MiniMaxAI', modelName: 'MiniMax-Text-01', tokens: 4000000 },
 ];
 
 export const PRICE_PER_MILLION_TOKENS = [
