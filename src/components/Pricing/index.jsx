@@ -15,6 +15,7 @@ function flattenModelWithRange(model) {
       output: model.output,
       note: '',
     };
+
     return [singleModel];
   }
 
