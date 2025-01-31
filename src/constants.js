@@ -5,6 +5,16 @@ export const WORDS_PER_A5_BOOK = 80000;
 
 export const MODEL_INPUT_LIMITS = [
   {
+    provider: 'DeekSeek',
+    modelName: 'deepseek-chat',
+    tokens: 64000,
+  },
+  {
+    provider: 'DeekSeek',
+    modelName: 'deepseek-reasoner',
+    tokens: 64000,
+  },
+  {
     provider: 'Google',
     modelName: 'Gemini 2.0 Experimental Advanced (Gemini-Exp-1206)',
     tokens: 2000000,
@@ -31,6 +41,20 @@ export const MODEL_INPUT_LIMITS = [
 ];
 
 export const PRICE_PER_MILLION_TOKENS = [
+  {
+    provider: 'DeepSeek',
+    modelName: 'deepseek-chat',
+    input: '$0.14',
+    output: '$0.28',
+  },
+
+  {
+    provider: 'DeepSeek',
+    modelName: 'deepseek-reasoner',
+    input: '$0.55',
+    output: '$2.19',
+  },
+
   {
     provider: 'OpenAI',
     modelName: 'GPT-4o',

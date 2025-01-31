@@ -115,6 +115,17 @@ const TABLE_DATA_PROVIDERS = {
         </a>
       ),
     },
+    {
+      provider: 'DeepSeek',
+      source: (
+        <span>
+          DeepSeek API docs{' '}
+          <a href="https://api-docs.deepseek.com/quick_start/pricing/">
+            Models & Pricing
+          </a>
+        </span>
+      ),
+    },
   ],
 };
 
