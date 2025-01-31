@@ -43,9 +43,10 @@ function Models() {
   return (
     <div>
       <p>
-        The "Tokens" value is the maximum input or the maximum context length. Each value is also
-        converted to a more human-relatable metric, based on rough conversation rates. See{' '}
-        <a href="#notes">Notes</a> for sources of information.
+        The "Tokens" value is the maximum input or the maximum context length.
+        Each value is also converted to a more human-relatable metric, based on
+        rough conversation rates. See <a href="#notes">Notes</a> for sources of
+        information.
       </p>
       <SortingButtons
         sortBy={sortBy}
