@@ -40,32 +40,32 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'MiniMaxAI', modelName: 'MiniMax-Text-01', tokens: 4000000 },
 ];
 
+// Assume price is in Dollars. Better to keep as string not number, as readable
+// currency.
 export const PRICE_PER_MILLION_TOKENS = [
   {
     provider: 'DeepSeek',
     modelName: 'deepseek-chat',
-    input: '$0.14',
-    output: '$0.28',
+    input: '0.14',
+    output: '0.28',
   },
-
   {
     provider: 'DeepSeek',
     modelName: 'deepseek-reasoner',
-    input: '$0.55',
-    output: '$2.19',
+    input: '0.55',
+    output: '2.19',
   },
-
   {
     provider: 'OpenAI',
     modelName: 'GPT-4o',
-    input: '$5.00',
-    output: '$15.00',
+    input: '5.00',
+    output: '15.00',
   },
   {
     provider: 'OpenAI',
     modelName: 'GPT-3.5 Turbo',
-    input: '$0.50',
-    output: '$1.50',
+    input: '0.50',
+    output: '1.50',
   },
   {
     provider: 'Google',
@@ -73,12 +73,12 @@ export const PRICE_PER_MILLION_TOKENS = [
     range: {
       threshold: 128000,
       low: {
-        input: '$0.35',
-        output: '$1.05',
+        input: '0.35',
+        output: '1.05',
       },
       high: {
-        input: '$0.70',
-        output: '$2.10',
+        input: '0.70',
+        output: '2.10',
       },
     },
   },
@@ -88,49 +88,49 @@ export const PRICE_PER_MILLION_TOKENS = [
     range: {
       threshold: 128000,
       low: {
-        input: '$3.50',
-        output: '$10.50',
+        input: '3.50',
+        output: '10.50',
       },
       high: {
-        input: '$7.00',
-        output: '$21.00',
+        input: '7.00',
+        output: '21.00',
       },
     },
   },
   {
     provider: 'Google',
     modelName: 'Gemini 1.0 Pro',
-    input: '$0.50',
-    output: '$1.50',
+    input: '0.50',
+    output: '1.50',
   },
   {
     provider: 'Anthropic',
     modelName: 'Claude 3.5 - Sonnet',
-    input: '$3.00',
-    output: '$15.00',
+    input: '3.00',
+    output: '15.00',
   },
   {
     provider: 'Anthropic',
     modelName: 'Claude 3.0 - Haiku',
-    input: '$0.25',
-    output: '$1.25',
+    input: '0.25',
+    output: '1.25',
   },
   {
     provider: 'Anthropic',
     modelName: 'Claude 3.0 - Sonnet',
-    input: '$3.00',
-    output: '$15.00',
+    input: '3.00',
+    output: '15.00',
   },
   {
     provider: 'Anthropic',
     modelName: 'Claude 3.0 - Opus',
-    input: '$15.00',
-    output: '$75.00',
+    input: '15.00',
+    output: '75.00',
   },
   {
     provider: 'Anthropic',
     modelName: 'Claude 2.1',
-    input: '$8.00',
-    output: '$24.00',
+    input: '8.00',
+    output: '24.00',
   },
 ];
