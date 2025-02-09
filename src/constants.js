@@ -16,12 +16,12 @@ export const MODEL_INPUT_LIMITS = [
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 2.0 Experimental Advanced (Gemini-Exp-1206)',
+    modelName: 'Gemini 2.0 Experimental Advanced',
     tokens: 2000000,
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 2.0 Flash (Experimental)',
+    modelName: 'Gemini 2.0 Flash',
     tokens: 1048576,
   },
   { provider: 'Google', modelName: 'Gemini 1.5 Pro', tokens: 1048576 },
@@ -66,6 +66,18 @@ export const PRICE_PER_MILLION_TOKENS = [
     modelName: 'GPT-3.5 Turbo',
     input: '0.50',
     output: '1.50',
+  },
+  {
+    provider: 'Google',
+    modelName: 'Gemini 2.0 Flash',
+    input: '0.10',
+    output: '0.40',
+  },
+  {
+    provider: 'Google',
+    modelName: 'Gemini 2.0 Flash-Lite',
+    input: '0.075',
+    output: '0.30',
   },
   {
     provider: 'Google',
