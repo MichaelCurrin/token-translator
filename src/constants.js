@@ -57,9 +57,21 @@ export const PRICE_PER_MILLION_TOKENS = [
   },
   {
     provider: 'OpenAI',
+    modelName: 'o1',
+    input: '15.00',
+    output: '7.50',
+  },
+  {
+    provider: 'OpenAI',
+    modelName: 'GPT-4o mini',
+    input: '0.150',
+    output: '0.075',
+  },
+  {
+    provider: 'OpenAI',
     modelName: 'GPT-4o',
-    input: '5.00',
-    output: '15.00',
+    input: '2.50',
+    output: '1.25',
   },
   {
     provider: 'OpenAI',
