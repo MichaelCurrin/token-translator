@@ -34,6 +34,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Meta', modelName: 'Llama 2', tokens: 8000 },
   { provider: 'Meta', modelName: 'Phi-3', tokens: 128000 },
   { provider: 'Meta', modelName: 'Mixtral', tokens: 64000 },
+  { provider: 'Anthropic', modelName: 'Claude 3.7', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 3.5', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 3.0', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 2.1', tokens: 200000 },
@@ -129,9 +130,21 @@ export const PRICE_PER_MILLION_TOKENS = [
   },
   {
     provider: 'Anthropic',
+    modelName: 'Claude 3.7 - Sonnet', // same as 3.5
+    input: '3.00',
+    output: '15.00',
+  },
+  {
+    provider: 'Anthropic',
     modelName: 'Claude 3.5 - Sonnet',
     input: '3.00',
     output: '15.00',
+  },
+  {
+    provider: 'Anthropic',
+    modelName: 'Claude 3.5 - Haiku',
+    input: '0.80',
+    output: '4.00',
   },
   {
     provider: 'Anthropic',
