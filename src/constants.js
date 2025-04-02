@@ -16,8 +16,8 @@ export const MODEL_INPUT_LIMITS = [
   },
   {
     provider: 'Google',
-    modelName: 'Gemini 2.0 Experimental Advanced',
-    tokens: 2000000,
+    modelName: 'Gemini 2.5 Pro Experimental',
+    tokens: 1048576,
   },
   {
     provider: 'Google',
@@ -55,6 +55,12 @@ export const PRICE_PER_MILLION_TOKENS = [
     modelName: 'deepseek-reasoner',
     input: '0.55',
     output: '2.19',
+  },
+  {
+    provider: 'Google',
+    modelName: 'Gemini 2.5 Pro Experimental',
+    input: '0.50',
+    output: '1.50',
   },
   {
     provider: 'OpenAI',
