@@ -46,7 +46,11 @@ function Models() {
         The "Tokens" value is the maximum input or the maximum context length.
         Each value is also converted to a more human-relatable metric, based on
         rough conversation rates. See <a href="#notes">Notes</a> for sources of
-        information.
+        information. See{' '}
+        <a href="https://artificialanalysis.ai/leaderboards/models">
+          LLM leaderboard
+        </a>{' '}
+        for a wider range of models and stats.
       </p>
       <SortingButtons
         sortBy={sortBy}
