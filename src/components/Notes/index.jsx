@@ -102,9 +102,16 @@ const TABLE_DATA_PROVIDERS = {
     {
       provider: 'OpenAI',
       source: (
-        <a href="https://platform.openai.com/docs/models">
-          OpenAI Platform documentation
-        </a>
+        <>
+          <a href="https://platform.openai.com/docs/models">
+            OpenAI Platform documentation
+          </a>
+          ,{' '}
+          <a href="https://artificialanalysis.ai/models/gpt-5">
+            GPT-5 model info
+          </a>{' '}
+          on Artificial Analysis.
+        </>
       ),
     },
     {
@@ -124,6 +131,17 @@ const TABLE_DATA_PROVIDERS = {
             Models & Pricing
           </a>
         </span>
+      ),
+    },
+    {
+      provider: 'xAI',
+      source: (
+        <>
+          <a href="https://artificialanalysis.ai/models/grok-4/providers">
+            Grok 4 model info
+          </a>{' '}
+          on Artificial Analysis
+        </>
       ),
     },
   ],
@@ -155,6 +173,14 @@ const TABLE_DATA_PRICING = {
     {
       provider: 'OpenAI',
       source: <a href="https://openai.com/api/pricing/">API pricing page</a>,
+    },
+    {
+      provider: 'xAI',
+      source: (
+        <a href="https://artificialanalysis.ai/models/grok-4/providers">
+          Grok 4 model info on Artificial Analysis
+        </a>
+      ),
     },
   ],
 };

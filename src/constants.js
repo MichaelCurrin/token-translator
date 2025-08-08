@@ -41,6 +41,7 @@ export const MODEL_INPUT_LIMITS = [
   { provider: 'Anthropic', modelName: 'Claude 3.0', tokens: 200000 },
   { provider: 'Anthropic', modelName: 'Claude 2.1', tokens: 200000 },
   { provider: 'MiniMaxAI', modelName: 'MiniMax-Text-01', tokens: 4 * 10 ** 6 },
+  { provider: 'xAI', modelName: 'Grok 4', tokens: 256000 },
 ];
 
 // Assume price is in Dollars. Better to keep as string not number, as readable
@@ -183,5 +184,11 @@ export const PRICE_PER_MILLION_TOKENS = [
     modelName: 'Claude 2.1',
     input: '8.00',
     output: '24.00',
+  },
+  {
+    provider: 'xAI',
+    modelName: 'Grok 4',
+    input: '3.00',
+    output: '15.00',
   },
 ];

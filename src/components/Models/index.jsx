@@ -50,7 +50,7 @@ function Models() {
         <a href="https://artificialanalysis.ai/leaderboards/models">
           LLM leaderboard
         </a>{' '}
-        for a wider range of models and stats.
+        for a wider range of models and stats and the most up-to-date info.
       </p>
       <SortingButtons
         sortBy={sortBy}
