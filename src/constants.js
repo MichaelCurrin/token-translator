@@ -145,6 +145,12 @@ export const PRICE_PER_MILLION_TOKENS = [
   },
   {
     provider: 'Anthropic',
+    modelName: 'Claude 4.6 - Opus',
+    input: '5.00',
+    output: '25.00',
+  },
+  {
+    provider: 'Anthropic',
     modelName: 'Claude 3.7 - Sonnet', // same as 3.5
     input: '3.00',
     output: '15.00',
@@ -172,18 +178,6 @@ export const PRICE_PER_MILLION_TOKENS = [
     modelName: 'Claude 3.0 - Sonnet',
     input: '3.00',
     output: '15.00',
-  },
-  {
-    provider: 'Anthropic',
-    modelName: 'Claude 3.0 - Opus',
-    input: '15.00',
-    output: '75.00',
-  },
-  {
-    provider: 'Anthropic',
-    modelName: 'Claude 2.1',
-    input: '8.00',
-    output: '24.00',
   },
   {
     provider: 'xAI',
